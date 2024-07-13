@@ -2,11 +2,14 @@
 title: Lenovo ideapad 5 14are05 review
 description: Because why not review a 4 year old laptop that nobody can buy anymore?
 published: 2024-07-12
+previewImage: ./picture.jpg
 ---
 
 # What?
 
 I'm looking into replacing my current laptop (a lenovo ideapad 5 14are05) as the 8gb of RAM I bought it with is beginning to become a limitation, and I've had to be actively keeping an eye on memory usage when trying to do anything more intensive. Although it's been a fantastic laptop and otherwise I've liked it a lot, I don't like having to keep an eye on memory usage, so the memory not being upgradable is now become an issue for me.
+
+![Photo of the laptop, open and running NixOS, from the front](./picture.jpg)
 
 So now that I've pretty much finished using it as a laptop (I'll very likely attempt to repurpose it into a server at some point), I felt like writing an overview of its specs and how I found using it, to me understand what I've liked about it and what I want from a laptop.
 
@@ -78,6 +81,8 @@ Trackpad 10.5cm x 6.5cm - has felt a little on the small side
 Keyboard - has been pretty good! Not fantastic, but I've done a lot of typing on it by now, and when I'm typing I don't notice the keyboard, which I think is ideal
 
 Overall construction - feels well built and solid. The metal top feels and looks nice, I like how small and off to the side the logo is (although I'd prefer none at all, as somebody who doesn't enjoy paying a company money to advertise their products). The bottom half is some kind of plastic, but feels surprisingly decent, and has held up so far over time.
+
+![Photo of the laptop from a side angle](./picture2.jpg)
 
 # Software
 
