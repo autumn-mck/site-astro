@@ -46,3 +46,8 @@ body {
 	margin: 0;
 	color: var(--text);
 }
+
+::selection {
+	background: #c6a0f6;
+	color: #181926;
+}
