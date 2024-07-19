@@ -14,7 +14,7 @@ tags:
 
 When I was using Windows, [MusicBee](https://getmusicbee.com/) was easily my favourite music player - for its customizability, how feature-rich it felt, and for me to as easily as possible play music the way I want to play it (either by artist or by album).
 
-But when I switched to linux and tried out a range of music players that support it ([and I tried a lot about them](https://wiki.archlinux.org/title/List_of_applications#Graphical_13)), I ended up feeling disappointed in various ways by each of them. So what could I do to get MusicBee working on linux? And how much can I automate its installation?
+But when I switched to linux and tried out a range of music players that support it ([and I tried a lot of them](https://wiki.archlinux.org/title/List_of_applications#Graphical_13)), I ended up feeling disappointed in various ways by each of them. So what could I do to get MusicBee working on linux? And how much can I automate its installation?
 
 Some quick searching brought up this [thread on the MusicBee forum](https://getmusicbee.com/forum/index.php?topic=30205.0). Perfect! So it looks like all we need to install to set up the [wine prefix](https://wiki.archlinux.org/title/Wine#WINEPREFIX) is `dotnet48`, `xmllite`, and `gdiplus`. This could be done through [winetricks](https://wiki.winehq.org/Winetricks)' GUI, but I'm looking to automate this! (After all, it's definitely worth spending an hour now to save one minute of clicking buttons in the future).
 
