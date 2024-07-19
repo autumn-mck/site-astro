@@ -6,10 +6,10 @@ interface Props {
 	name: string;
 	items: Array<{
 		name: string;
-		href: string;
 		textContent: string;
+		href: string | undefined;
 	}>;
-	image?: {
+	image: {
 		src: ImageMetadata;
 		alt: string;
 	};
@@ -27,32 +27,182 @@ const extraSpaces = 3;
 const dashes = maxLength + textMaxLength + extraSpaces + 1;
 ---
 
-<div id="fetch">
-	<pre class="terminal">[{user}]$ fetch-info</pre>
-	<div id="fetch-row">
-		{image && <Image id="img" src={image.src} alt={image.alt} />}
-		<pre
-			class="terminal">
+<div id="terminal" data-user={user}>
+	<div id="terminalContent">
+		<pre>[james@mck]$ whoami</pre>
+		<div id="fetch-row">
+			<Image id="img" src={image.src} alt={image.alt} />
+			<pre>
 {name}
 {"-".repeat(dashes)}
 {items.map(item =>
-	<p>{item.name}:{" ".repeat(maxLength - item.name.length + extraSpaces)}<a href={item.href} rel="noopener" target="_blank">{item.textContent}</a></p>
+	<p>{item.name}:{" ".repeat(maxLength - item.name.length + extraSpaces)}{item.href && <a href={item.href} rel="noopener" target="_blank">{item.textContent}</a>}{!item.href && <span>{item.textContent}</span>}</p>
 )}</pre>
+		</div>
+		<pre>[{user}]$ fetch-music</pre>
+		<music-display
+			nowPlayingApi="https://music-display.mck.is/now-playing"
+			websocketUrl="wss://music-display.mck.is/now-playing-ws"></music-display>
 	</div>
-	<pre class="terminal">[{user}]$ fetch-current-music</pre>
-	<music-display
-		nowPlayingApi="https://music-display.mck.is/now-playing"
-		websocketUrl="wss://music-display.mck.is/now-playing-ws">
-	</music-display>
-	<pre class="terminal">[{user}]$ <span id="caret">_</span></pre>
+	<pre>[{user}]$ <span id="typed" /><span id="caret">_</span></pre>
 </div>
 
-<style>
+<script>
+	const user = document.getElementById("terminal")!.dataset.user;
+	const dirs = ["projects", "blog", "uses"];
+	const fetchInfoCopy = document.getElementById("fetch-row")!.cloneNode(true);
+	const files = {
+		"secret.txt": ":3",
+	} as Record<string, string>;
+
+	function displayFetchInfo() {
+		const terminal = document.getElementById("terminalContent")!;
+		terminal.appendChild(fetchInfoCopy.cloneNode(true));
+	}
+
+	function displayFetchMusic() {
+		const terminal = document.getElementById("terminalContent")!;
+		const musicDisplay = document.createElement("music-display");
+
+		musicDisplay.setAttribute(
+			"nowPlayingApi",
+			"https://music-display.mck.is/now-playing"
+		);
+		musicDisplay.setAttribute(
+			"websocketUrl",
+			"wss://music-display.mck.is/now-playing-ws"
+		);
+		terminal.appendChild(musicDisplay);
+	}
+
+	function printTermLine(text: string) {
+		const terminal = document.getElementById("terminalContent")!;
+		const pre = document.createElement("pre");
+		pre.textContent = text;
+		terminal.appendChild(pre);
+	}
+
+	function printLs() {
+		printTermLine(dirs.join("/ ") + "/ " + Object.keys(files).join("/ "));
+	}
+
+	function echo(text: string) {
+		printTermLine(text);
+	}
+
+	function catFile(file: string) {
+		if (files[file]) {
+			printTermLine(files[file]);
+		} else {
+			printTermLine(`cat: ${file}: No such file or directory`);
+		}
+	}
+
+	function clear() {
+		const terminal = document.getElementById("terminalContent")!;
+		terminal.innerHTML = "";
+	}
+
+	function cd(dir: string) {
+		if (dirs.includes(dir)) {
+			window.location.href = `/${dir}`;
+		} else {
+			printTermLine(`cd: The directory '${dir}' does not exist`); // not accurate to bash, but i use fish
+		}
+	}
+
+	function printPwd() {
+		printTermLine("/home/autumn");
+	}
+
+	function printHelp() {
+		printTermLine(`Available commands:
+whoami - about me
+fetch-music - what I'm listening to
+ls - list available directories
+cd - change directory
+pwd - print working directory
+cat - print file contents
+clear - clear the terminal
+echo - print text
+help - display this message
+`);
+	}
+
+	function tryRunCommand(command: string) {
+		const typed = document.getElementById("typed")!;
+		const caret = document.getElementById("caret")!;
+		printTermLine(`[${user}]$ ${command}`);
+
+		const args = command.trim().split(" ");
+
+		switch (args[0]) {
+			case "whoami":
+				displayFetchInfo();
+				break;
+			case "fetch-music":
+				displayFetchMusic();
+				break;
+			case "ls":
+				printLs();
+				break;
+			case "cat":
+				catFile(args[1]);
+				break;
+			case "cd":
+				cd(args[1]);
+				break;
+			case "pwd":
+				printPwd();
+				break;
+			case "clear":
+				clear();
+				break;
+			case "echo":
+				echo(args.slice(1).join(" "));
+				break;
+			case "help":
+				printHelp();
+				break;
+			default:
+				printTermLine(
+					`bash: ${command}: command not found.\nRun 'help' for a list of available commands.`
+				);
+		}
+
+		typed.textContent = "";
+		caret.style.opacity = "1";
+	}
+
+	function onKeyPressed(event: KeyboardEvent) {
+		const typed = document.getElementById("typed")!;
+		const caret = document.getElementById("caret")!;
+		if (event.key === "Enter") {
+			tryRunCommand(typed.textContent!);
+		} else if (event.key === "Backspace") {
+			typed.textContent = typed.textContent!.slice(0, -1);
+		} else {
+			if (event.key.length === 1 && event.key.charCodeAt(0) >= 32) {
+				typed.textContent += event.key;
+
+				// on space, prevent scrolling
+				if (event.key === " ") {
+					event.preventDefault();
+				}
+			}
+		}
+		caret.style.opacity = "1";
+	}
+
+	document.addEventListener("keydown", onKeyPressed);
+</script>
+
+<style is:inline>
 	music-display {
 		margin: 0 auto;
 	}
 
-	#fetch {
+	#terminal {
 		background: #24273a7a;
 		padding: 1rem;
 		border: 2px solid var(--base-below-below);
@@ -64,24 +214,30 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 		backdrop-filter: blur(8px);
 	}
 
-	#fetch p {
+	#terminalContent {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	#terminal p {
 		margin: 0;
 	}
 
-	#fetch a,
-	#fetch a:visited {
+	#terminal pre {
+		margin: 0;
+	}
+
+	#terminal a,
+	#terminal a:visited {
 		text-decoration: none;
 		color: var(--accent-2);
 	}
 
-	#fetch a:hover,
-	#fetch a:focus {
+	#terminal a:hover,
+	#terminal a:focus {
 		text-decoration: underline;
 		color: var(--accent);
-	}
-
-	.terminal {
-		margin: 0;
 	}
 
 	#fetch-row {
@@ -102,6 +258,10 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 		opacity: 1;
 	}
 
+	music-display {
+		min-height: calc(100px + 1.6rem);
+	}
+
 	@keyframes caretToggle {
 		0% {
 			opacity: 1;
@@ -118,7 +278,7 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 	}
 
 	@media (max-width: 600px) {
-		#fetch {
+		#terminal {
 			font-size: 0.9rem;
 		}
 
