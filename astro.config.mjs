@@ -1,7 +1,8 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
+import { compile } from "@catppuccin/vscode";
 
-import vscodeCatppuccinMacchiato from "./macchiato.json";
+let vscodeCatppuccinMacchiato = compile("macchiato");
 vscodeCatppuccinMacchiato.colors["editor.background"] = "#181926";
 
 // https://astro.build/config
