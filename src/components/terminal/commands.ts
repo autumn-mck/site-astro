@@ -19,6 +19,7 @@ export function printTermLine(text: string) {
 	const pre = document.createElement("pre");
 	pre.textContent = text;
 	terminal.appendChild(pre);
+	terminal.scrollTop = terminal.scrollHeight;
 }
 
 async function ls() {

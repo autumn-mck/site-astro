@@ -24,6 +24,9 @@ export async function onEnterKey(command: string) {
 		await tryRunCommand(command);
 	}
 
+	const terminal = document.getElementById("terminalContent")!;
+	terminal.scrollTop = terminal.scrollHeight;
+
 	typed.textContent = "";
 	caret.style.opacity = "1";
 	input.style.display = "block";
