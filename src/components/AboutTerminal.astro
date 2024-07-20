@@ -212,32 +212,32 @@ help - display this message
 		flex-direction: column;
 		gap: 0.5rem;
 		backdrop-filter: blur(8px);
+
+		p {
+			margin: 0;
+		}
+
+		pre {
+			margin: 0;
+		}
+
+		a,
+		a:visited {
+			text-decoration: none;
+			color: var(--accent-2);
+		}
+
+		a:hover,
+		a:focus {
+			text-decoration: underline;
+			color: var(--accent);
+		}
 	}
 
 	#terminalContent {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-	}
-
-	#terminal p {
-		margin: 0;
-	}
-
-	#terminal pre {
-		margin: 0;
-	}
-
-	#terminal a,
-	#terminal a:visited {
-		text-decoration: none;
-		color: var(--accent-2);
-	}
-
-	#terminal a:hover,
-	#terminal a:focus {
-		text-decoration: underline;
-		color: var(--accent);
 	}
 
 	#fetch-row {
