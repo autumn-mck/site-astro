@@ -10,9 +10,10 @@ export const commands = {
 	pwd: { fn: pwd, desc: "print working directory" },
 	help: { fn: help, desc: "display this message" },
 	clear: { fn: clear, desc: "clear the terminal" },
+	ping: { fn: ping, desc: "ping a server" },
 	whoami: { fn: whoAmI, desc: "about me" },
 	"fetch-music": { fn: fetchMusic, desc: "what I'm listening to" },
-} as Record<string, { fn: (...args: string[]) => void; desc: string }>;
+} as Record<string, { fn: (...args: string[]) => Promise<void>; desc: string }>;
 
 export function printTermLine(text: string) {
 	const pre = document.createElement("pre");
@@ -20,16 +21,16 @@ export function printTermLine(text: string) {
 	terminal.appendChild(pre);
 }
 
-function ls() {
+async function ls() {
 	printTermLine(dirs.join("/ ") + "/ " + Object.keys(files).join("/ "));
 }
 
-function echo(...args: string[]) {
+async function echo(...args: string[]) {
 	console.log(args);
 	printTermLine(args.join(" "));
 }
 
-function cat(file: string) {
+async function cat(file: string) {
 	if (files[file]) {
 		printTermLine(files[file]);
 	} else {
@@ -37,7 +38,7 @@ function cat(file: string) {
 	}
 }
 
-function cd(dir: string) {
+async function cd(dir: string) {
 	if (dirs.includes(dir)) {
 		window.location.href = `/${dir}`;
 	} else {
@@ -45,15 +46,40 @@ function cd(dir: string) {
 	}
 }
 
-function pwd() {
+async function pwd() {
 	printTermLine("/home/autumn");
 }
 
-function clear() {
+async function clear() {
 	terminal.innerHTML = "";
 }
 
-function help() {
+async function ping(address: string) {
+	printTermLine(`PING ${address} 56 data bytes`);
+	let failed = false;
+
+	for (let i = 0; i < 5; i++) {
+		if (failed) break;
+
+		const start = performance.now();
+		await fetch(`https://${address}`, { mode: "no-cors" })
+			.then(() => {
+				const end = performance.now();
+				printTermLine(
+					`64 bytes from ${address}: icmp_seq=${i + 1} time=${end - start} ms`
+				);
+			})
+			.catch((e) => {
+				console.error(e);
+				printTermLine(`ping: ${address}: Address not reachable`);
+				failed = true;
+			});
+
+		if (!failed) await new Promise((resolve) => setTimeout(resolve, 1000));
+	}
+}
+
+async function help() {
 	let helpText = "Available commands:\n";
 	for (const [command, { desc }] of Object.entries(commands)) {
 		helpText += `${command} - ${desc}\n`;
@@ -62,11 +88,11 @@ function help() {
 	printTermLine(helpText);
 }
 
-function whoAmI() {
+async function whoAmI() {
 	terminal.appendChild(fetchInfoCopy.cloneNode(true));
 }
 
-function fetchMusic() {
+async function fetchMusic() {
 	const musicDisplay = document.createElement("music-display");
 
 	musicDisplay.setAttribute(
