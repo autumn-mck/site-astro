@@ -1,4 +1,4 @@
-import { files, dirs } from "./data";
+import { files, dirs, envVars } from "./data";
 const terminal = document.getElementById("terminalContent")!;
 const fetchInfoCopy = document.getElementById("fetch-row")!.cloneNode(true);
 
@@ -12,28 +12,49 @@ export const commands = {
 	clear: { fn: clear, desc: "clear the terminal" },
 	ping: { fn: ping, desc: "ping a server" },
 	whoami: { fn: whoAmI, desc: "about me" },
+	steam: { fn: steam, desc: "steam" },
+	tree: { fn: tree, desc: "list directory tree" },
+	env: { fn: env, desc: "print environment variables" },
 	"fetch-music": { fn: fetchMusic, desc: "what I'm listening to" },
 } as Record<string, { fn: (...args: string[]) => Promise<void>; desc: string }>;
 
 export function printTermLine(text: string) {
 	const pre = document.createElement("pre");
-	pre.textContent = text;
+	pre.innerHTML = text;
 	terminal.appendChild(pre);
 	terminal.scrollTop = terminal.scrollHeight;
 }
 
 async function ls() {
-	printTermLine(dirs.join("/ ") + "/ " + Object.keys(files).join("/ "));
+	printTermLine(dirs.join("/ ") + "/ " + Object.keys(files).join(" "));
 }
 
 async function echo(...args: string[]) {
-	console.log(args);
-	printTermLine(args.join(" "));
+	let text = args.join(" ");
+	// Replace environment variables
+	text = text.replace(/\$([A-Z_]+)/g, (_, key) => envVars[key] || "");
+	printTermLine(text);
+}
+
+async function env() {
+	let vars = "";
+	for (const [key, value] of Object.entries(envVars)) {
+		vars += `${key}=${value}\n`;
+	}
+	printTermLine(vars);
 }
 
 async function cat(file: string) {
+	const imageExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
 	if (files[file]) {
-		printTermLine(files[file]);
+		if (imageExtensions.includes(file.split(".").pop()!)) {
+			const img = document.createElement("img");
+			img.src = files[file];
+			img.style.maxWidth = "16rem";
+			terminal.appendChild(img);
+		} else {
+			printTermLine(files[file]);
+		}
 	} else {
 		printTermLine(`cat: ${file}: No such file or directory`);
 	}
@@ -78,6 +99,34 @@ async function ping(address: string) {
 
 		if (!failed) await new Promise((resolve) => setTimeout(resolve, 1000));
 	}
+}
+
+async function steam() {
+	const url = "https://steamcommunity.com/id/_weird_autumn_";
+	window.location.href = `steam://openurl/${url}`;
+	printTermLine(`Opening <a href="${url}" target="_blank">Steam profile</a>`);
+}
+
+async function tree() {
+	let tree = `.\n`;
+	for (let i = 0; i < dirs.length; i++) {
+		if (i === dirs.length - 1 && Object.keys(files).length === 0) {
+			tree += `└── ${dirs[i]}\n`;
+		} else {
+			tree += `├── ${dirs[i]}\n`;
+		}
+	}
+
+	for (let i = 0; i < Object.keys(files).length; i++) {
+		const file = Object.keys(files)[i];
+		if (i === Object.keys(files).length - 1) {
+			tree += `└── ${file}\n`;
+		} else {
+			tree += `├── ${file}\n`;
+		}
+	}
+
+	printTermLine(tree);
 }
 
 async function help() {
