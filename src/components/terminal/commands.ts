@@ -1,4 +1,10 @@
-import { files, dirs, envVars } from "./data";
+import {
+	envVars,
+	filesystem,
+	type Directory,
+	type DirectoryItem,
+} from "./data";
+let currentDir = "/home/autumn";
 const terminal = document.getElementById("terminalContent")!;
 const fetchInfoCopy = document.getElementById("fetch-row")!.cloneNode(true);
 
@@ -28,8 +34,33 @@ export function printTermLine(text: string) {
 	terminal.scrollTop = terminal.scrollHeight;
 }
 
-async function ls() {
-	printTermLine(dirs.join("/ ") + "/ " + Object.keys(files).join(" "));
+function getObjAtPath(path: string) {
+	const parts = path.split("/");
+	let obj: DirectoryItem = filesystem;
+
+	for (let i = 0; i < parts.length; i++) {
+		if (parts[i] === "") continue;
+		if (typeof obj === "object") obj = obj[parts[i]];
+		if (i < parts.length - 1 && typeof obj !== "object") return null;
+	}
+
+	return obj;
+}
+
+async function ls(path: string | undefined) {
+	if (!path) path = currentDir;
+	if (!path.startsWith("/")) path = `${currentDir}/${path}`;
+	const obj = getObjAtPath(path) as Directory;
+
+	const dirs = Object.keys(obj).filter((key) => typeof obj[key] === "object");
+	const files = Object.keys(obj).filter((key) => typeof obj[key] !== "object");
+
+	let contents = "";
+	if (dirs.length > 0) contents += dirs.join("/ ") + "/ ";
+	contents += files.join(" ");
+
+	printTermLine(contents);
+
 	return 0;
 }
 
@@ -50,37 +81,74 @@ async function env() {
 	return 0;
 }
 
-async function cat(file: string) {
+export async function cat(file: string) {
 	const imageExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
-	if (files[file]) {
-		if (imageExtensions.includes(file.split(".").pop()!)) {
-			const img = document.createElement("img");
-			img.src = files[file];
-			img.style.maxWidth = "16rem";
-			terminal.appendChild(img);
-		} else {
-			printTermLine(files[file]);
-		}
+	const fullFilePath = file.startsWith("/") ? file : `${currentDir}/${file}`;
 
-		return 0;
-	} else {
+	const obj = getObjAtPath(fullFilePath);
+
+	if (!obj) {
 		printTermLine(`cat: ${file}: No such file or directory`);
 		return 1;
 	}
-}
 
-async function cd(dir: string) {
-	if (dirs.includes(dir)) {
-		window.location.href = `/${dir}`;
-		return 0;
-	} else {
-		printTermLine(`cd: The directory '${dir}' does not exist`); // not accurate to bash, but i use fish
+	if (typeof obj === "object") {
+		printTermLine(`cat: ${file}: Is a directory`);
 		return 1;
 	}
+
+	if (typeof obj === "function") {
+		printTermLine(obj.toString());
+	} else if (typeof obj === "string") {
+		const extenstion = file.split(".")?.pop()!;
+
+		if (imageExtensions.includes(extenstion)) {
+			const img = document.createElement("img");
+			img.src = obj;
+			img.style.maxWidth = "16rem";
+			terminal.appendChild(img);
+		} else {
+			printTermLine(obj);
+		}
+	} else {
+		printTermLine("File type not supported!");
+	}
+
+	return 0;
+}
+
+async function cd(path: string) {
+	if (!path) path = currentDir;
+	if (!path.startsWith("/")) path = `${currentDir}/${path}`;
+	path = path.replace(/\/+/g, "/");
+
+	const obj = getObjAtPath(path);
+
+	if (!obj) {
+		printTermLine(`cd: The directory ${path} does not exist`);
+		return 1;
+	}
+
+	if (typeof obj !== "object") {
+		printTermLine(`cd: ${path} is not a directory`);
+		return 1;
+	}
+
+	currentDir = path;
+
+	const magicDirs = {
+		"/home/autumn/projects": "/projects",
+		"/home/autumn/blog": "/blog",
+		"/home/autumn/uses": "/uses",
+	} as Record<string, string>;
+
+	if (magicDirs[path]) window.location.href = magicDirs[path];
+
+	return 0;
 }
 
 async function pwd() {
-	printTermLine("/home/autumn");
+	printTermLine(currentDir);
 	return 0;
 }
 
@@ -123,28 +191,44 @@ async function steam() {
 	return 0;
 }
 
-async function tree() {
-	let tree = `.\n`;
-	for (let i = 0; i < dirs.length; i++) {
-		if (i === dirs.length - 1 && Object.keys(files).length === 0) {
-			tree += `└── ${dirs[i]}\n`;
-		} else {
-			tree += `├── ${dirs[i]}\n`;
-		}
-	}
+async function tree(path: string | undefined) {
+	if (!path) path = currentDir;
+	if (!path.startsWith("/")) path = `${currentDir}/${path}`;
 
-	for (let i = 0; i < Object.keys(files).length; i++) {
-		const file = Object.keys(files)[i];
-		if (i === Object.keys(files).length - 1) {
-			tree += `└── ${file}\n`;
-		} else {
-			tree += `├── ${file}\n`;
-		}
-	}
-
-	printTermLine(tree);
+	printTermLine(`.${await treeDir(path)}`);
 
 	return 0;
+}
+
+async function treeDir(path: string) {
+	const obj = getObjAtPath(path);
+	if (!obj || typeof obj !== "object") return "";
+
+	const items = Object.keys(obj);
+
+	let tree = "";
+	for (let i = 0; i < items.length; i++) {
+		const item = items[i];
+		const isLast = i === items.length - 1;
+		const connector = isLast ? "└──" : "├──";
+		tree += `\n${connector} ${item}`;
+
+		if (typeof obj[item] === "object" && Object.keys(obj[item]).length > 0) {
+			const newPath = `${path}/${item}`;
+			const isLastDir = i === items.length - 1;
+			const indented = await indentTree(await treeDir(newPath), isLastDir);
+			tree += `\n${indented}`;
+		}
+	}
+
+	return tree;
+}
+
+async function indentTree(tree: string, isLast: boolean) {
+	const lines = tree.split("\n").filter((line) => line.trim() !== "");
+	const indent = isLast ? "    " : "│   ";
+	const indented = lines.map((line) => `${indent}${line}`).join("\n");
+	return `${indented}`;
 }
 
 async function help() {

@@ -1,9 +1,6 @@
+import { cat } from "./commands";
+
 export const user = document.getElementById("terminal")!.dataset.user;
-export const dirs = ["projects", "blog", "uses"];
-export const files = {
-	"secret.txt": ":3",
-	"me.webp": (document.getElementById("img")! as HTMLImageElement).src,
-} as Record<string, string>;
 
 export const envVars = {
 	HOME: "/home/autumn",
@@ -14,3 +11,30 @@ export const envVars = {
 		navigator.userAgent.includes("Firefox") ? "firefox" : "chromium"
 	}`,
 } as Record<string, string>;
+
+export const filesystem = {
+	home: {
+		autumn: {
+			"secret.txt": ":3",
+			"me.webp": (document.getElementById("img")! as HTMLImageElement).src,
+			projects: {},
+			blog: {},
+			uses: {},
+		},
+	},
+	usr: {
+		bin: {
+			bash: "",
+			cat: cat,
+		},
+	},
+} as Directory;
+
+export type Directory = {
+	[key: string]: DirectoryItem;
+};
+
+export type DirectoryItem =
+	| Directory
+	| string
+	| ((...args: string[]) => Promise<number>);
