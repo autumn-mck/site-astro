@@ -1,16 +1,24 @@
-import { commands, printTermLine } from "./commands";
+import { printTermLine, getObjAtPath, tryGetCommandPath } from "./commands";
 import { user } from "./data";
 
 async function tryRunCommand(command: string) {
 	const [cmd, ...args] = command.split(" ");
-	if (commands[cmd]) {
-		return await commands[cmd].fn(...args);
-	} else {
+	const path = tryGetCommandPath(cmd);
+
+	if (!path) {
 		printTermLine(
 			`bash: ${cmd}: command not found.\nRun 'help' for a list of available commands.`
 		);
+
 		return 1;
 	}
+
+	const obj = getObjAtPath(path);
+	if (typeof obj === "function") {
+		return await obj(...args);
+	}
+
+	return 1; // should never reach here
 }
 
 async function parseLine(line: string) {

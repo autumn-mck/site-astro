@@ -4,28 +4,10 @@ import {
 	type Directory,
 	type DirectoryItem,
 } from "./data";
+
 let currentDir = "/home/autumn";
 const terminal = document.getElementById("terminalContent")!;
 const fetchInfoCopy = document.getElementById("fetch-row")!.cloneNode(true);
-
-export const commands = {
-	ls: { fn: ls, desc: "list available directories" },
-	echo: { fn: echo, desc: "print text" },
-	cat: { fn: cat, desc: "print file contents" },
-	cd: { fn: cd, desc: "change directory" },
-	pwd: { fn: pwd, desc: "print working directory" },
-	help: { fn: help, desc: "display this message" },
-	clear: { fn: clear, desc: "clear the terminal" },
-	ping: { fn: ping, desc: "ping a server" },
-	whoami: { fn: whoAmI, desc: "about me" },
-	steam: { fn: steam, desc: "steam" },
-	tree: { fn: tree, desc: "list directory tree" },
-	env: { fn: env, desc: "print environment variables" },
-	"fetch-music": { fn: fetchMusic, desc: "what I'm listening to" },
-} as Record<
-	string,
-	{ fn: (...args: string[]) => Promise<number>; desc: string }
->;
 
 export function printTermLine(text: string) {
 	const pre = document.createElement("pre");
@@ -34,7 +16,7 @@ export function printTermLine(text: string) {
 	terminal.scrollTop = terminal.scrollHeight;
 }
 
-function getObjAtPath(path: string) {
+export function getObjAtPath(path: string) {
 	const parts = path.split("/");
 	let obj: DirectoryItem = filesystem;
 
@@ -45,6 +27,29 @@ function getObjAtPath(path: string) {
 	}
 
 	return obj;
+}
+
+async function which(command: string) {
+	const path = tryGetCommandPath(command);
+
+	if (!path) {
+		printTermLine(`which: ${command}: command not found`);
+		return 1;
+	}
+
+	printTermLine(path);
+	return 0;
+}
+
+export function tryGetCommandPath(command: string) {
+	const PATHs = envVars.PATH.split(":");
+
+	for (let i = 0; i < PATHs.length; i++) {
+		const obj = getObjAtPath(`${PATHs[i]}/${command}`);
+		if (typeof obj === "function") return `${PATHs[i]}/${command}`;
+	}
+
+	return null;
 }
 
 async function ls(path: string | undefined) {
@@ -81,7 +86,7 @@ async function env() {
 	return 0;
 }
 
-export async function cat(file: string) {
+async function cat(file: string) {
 	const imageExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
 	const fullFilePath = file.startsWith("/") ? file : `${currentDir}/${file}`;
 
@@ -261,3 +266,40 @@ async function fetchMusic() {
 	terminal.appendChild(musicDisplay);
 	return 0;
 }
+
+export const commands = {
+	ls: { fn: ls, desc: "list available directories" },
+	echo: { fn: echo, desc: "print text" },
+	cat: { fn: cat, desc: "print file contents" },
+	cd: { fn: cd, desc: "change directory" },
+	pwd: { fn: pwd, desc: "print working directory" },
+	help: { fn: help, desc: "display this message" },
+	clear: { fn: clear, desc: "clear the terminal" },
+	ping: { fn: ping, desc: "ping a server" },
+	whoami: { fn: whoAmI, desc: "about me" },
+	steam: { fn: steam, desc: "steam" },
+	tree: { fn: tree, desc: "list directory tree" },
+	env: { fn: env, desc: "print environment variables" },
+	which: { fn: which, desc: "locate a command" },
+	"fetch-music": { fn: fetchMusic, desc: "what I'm listening to" },
+} as Record<
+	string,
+	{ fn: (...args: string[]) => Promise<number>; desc: string }
+>;
+
+export {
+	ls,
+	echo,
+	cat,
+	cd,
+	pwd,
+	help,
+	clear,
+	ping,
+	whoAmI,
+	steam,
+	tree,
+	env,
+	fetchMusic,
+	which,
+};

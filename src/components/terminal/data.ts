@@ -1,8 +1,24 @@
-import { cat } from "./commands";
+import {
+	ls,
+	cd,
+	cat,
+	echo,
+	pwd,
+	help,
+	clear,
+	ping,
+	whoAmI,
+	steam,
+	tree,
+	env,
+	which,
+	fetchMusic,
+} from "./commands";
 
 export const user = document.getElementById("terminal")!.dataset.user;
 
 export const envVars = {
+	PATH: "/usr/bin:/bin",
 	HOME: "/home/autumn",
 	SHELL: "/bin/bash",
 	LANG: "en_GB.UTF-8",
@@ -22,10 +38,24 @@ export const filesystem = {
 			uses: {},
 		},
 	},
+	bin: {
+		ls: ls,
+		cd: cd,
+		cat: cat,
+	},
 	usr: {
 		bin: {
-			bash: "",
-			cat: cat,
+			echo: echo,
+			pwd: pwd,
+			help: help,
+			clear: clear,
+			ping: ping,
+			whoami: whoAmI,
+			steam: steam,
+			tree: tree,
+			env: env,
+			which: which,
+			"fetch-music": fetchMusic,
 		},
 	},
 } as Directory;
