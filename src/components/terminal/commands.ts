@@ -16,7 +16,10 @@ export const commands = {
 	tree: { fn: tree, desc: "list directory tree" },
 	env: { fn: env, desc: "print environment variables" },
 	"fetch-music": { fn: fetchMusic, desc: "what I'm listening to" },
-} as Record<string, { fn: (...args: string[]) => Promise<void>; desc: string }>;
+} as Record<
+	string,
+	{ fn: (...args: string[]) => Promise<number>; desc: string }
+>;
 
 export function printTermLine(text: string) {
 	const pre = document.createElement("pre");
@@ -27,6 +30,7 @@ export function printTermLine(text: string) {
 
 async function ls() {
 	printTermLine(dirs.join("/ ") + "/ " + Object.keys(files).join(" "));
+	return 0;
 }
 
 async function echo(...args: string[]) {
@@ -34,6 +38,7 @@ async function echo(...args: string[]) {
 	// Replace environment variables
 	text = text.replace(/\$([A-Z_]+)/g, (_, key) => envVars[key] || "");
 	printTermLine(text);
+	return 0;
 }
 
 async function env() {
@@ -42,6 +47,7 @@ async function env() {
 		vars += `${key}=${value}\n`;
 	}
 	printTermLine(vars);
+	return 0;
 }
 
 async function cat(file: string) {
@@ -55,25 +61,32 @@ async function cat(file: string) {
 		} else {
 			printTermLine(files[file]);
 		}
+
+		return 0;
 	} else {
 		printTermLine(`cat: ${file}: No such file or directory`);
+		return 1;
 	}
 }
 
 async function cd(dir: string) {
 	if (dirs.includes(dir)) {
 		window.location.href = `/${dir}`;
+		return 0;
 	} else {
 		printTermLine(`cd: The directory '${dir}' does not exist`); // not accurate to bash, but i use fish
+		return 1;
 	}
 }
 
 async function pwd() {
 	printTermLine("/home/autumn");
+	return 0;
 }
 
 async function clear() {
 	terminal.innerHTML = "";
+	return 0;
 }
 
 async function ping(address: string) {
@@ -81,7 +94,7 @@ async function ping(address: string) {
 	let failed = false;
 
 	for (let i = 0; i < 5; i++) {
-		if (failed) break;
+		if (failed) return 1;
 
 		const start = performance.now();
 		await fetch(`https://${address}`, { mode: "no-cors" })
@@ -99,12 +112,15 @@ async function ping(address: string) {
 
 		if (!failed) await new Promise((resolve) => setTimeout(resolve, 1000));
 	}
+
+	return 0;
 }
 
 async function steam() {
 	const url = "https://steamcommunity.com/id/_weird_autumn_";
 	window.location.href = `steam://openurl/${url}`;
 	printTermLine(`Opening <a href="${url}" target="_blank">Steam profile</a>`);
+	return 0;
 }
 
 async function tree() {
@@ -127,6 +143,8 @@ async function tree() {
 	}
 
 	printTermLine(tree);
+
+	return 0;
 }
 
 async function help() {
@@ -136,10 +154,13 @@ async function help() {
 	}
 
 	printTermLine(helpText);
+
+	return 0;
 }
 
 async function whoAmI() {
 	terminal.appendChild(fetchInfoCopy.cloneNode(true));
+	return 0;
 }
 
 async function fetchMusic() {
@@ -154,4 +175,5 @@ async function fetchMusic() {
 		"wss://music-display.mck.is/now-playing-ws"
 	);
 	terminal.appendChild(musicDisplay);
+	return 0;
 }
