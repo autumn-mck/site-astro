@@ -29,7 +29,7 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 
 <div id="terminal" data-user={user}>
 	<div id="terminalContent">
-		<pre>[{user}]$ whoami</pre>
+		<pre>[{user} ~]$ whoami</pre>
 		<div id="fetch-row">
 			<Image id="img" src={image.src} alt={image.alt} />
 			<pre>
@@ -39,34 +39,58 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 	<p>{item.name}:{" ".repeat(maxLength - item.name.length + extraSpaces)}{item.href && <a href={item.href} rel="noopener" target="_blank">{item.textContent}</a>}{!item.href && <span>{item.textContent}</span>}</p>
 )}</pre>
 		</div>
-		<pre>[{user}]$ fetch-music</pre>
+		<pre>[{user} ~]$ fetch-music</pre>
 		<music-display
 			nowPlayingApi="https://music-display.mck.is/now-playing"
 			websocketUrl="wss://music-display.mck.is/now-playing-ws"></music-display>
 	</div>
-	<pre id="input">[{user}]$ <span id="typed" /><span id="caret">_</span></pre>
+	<pre
+		id="input">[{user} <span id="currentDir">~</span>]$ <span id="typed" /><span id="caret">_</span></pre>
 </div>
 
 <script>
 	import { onEnterKey } from "./terminal/terminal.ts";
 
+	const history = [""];
+	let historyIndex = 0;
+
 	function onKeyPressed(event: KeyboardEvent) {
+		if (
+			["Enter", "Backspace", "ArrowUp", "ArrowDown", " "].includes(event.key)
+		) {
+			event.preventDefault();
+		}
+
 		const typed = document.getElementById("typed")!;
 		const caret = document.getElementById("caret")!;
 		if (event.key === "Enter") {
+			if (typed.textContent) {
+				history.unshift(typed.textContent);
+				historyIndex = 0;
+				history[0] = "";
+			}
 			onEnterKey(typed.textContent!);
 		} else if (event.key === "Backspace") {
 			typed.textContent = typed.textContent!.slice(0, -1);
 		} else {
 			if (event.key.length === 1 && event.key.charCodeAt(0) >= 32) {
 				typed.textContent += event.key;
-
-				// on space, prevent scrolling
-				if (event.key === " ") {
-					event.preventDefault();
-				}
+				history[0] = typed.textContent!;
 			}
 		}
+
+		if (event.key === "ArrowUp") {
+			if (historyIndex < history.length - 1) {
+				historyIndex++;
+				typed.textContent = history[historyIndex];
+			}
+		} else if (event.key === "ArrowDown") {
+			if (historyIndex > 0) {
+				historyIndex--;
+				typed.textContent = history[historyIndex];
+			}
+		}
+
 		caret.style.opacity = "1";
 	}
 

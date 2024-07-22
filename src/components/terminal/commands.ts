@@ -267,6 +267,14 @@ async function fetchMusic() {
 	return 0;
 }
 
+export function getDirForPrompt() {
+	if (currentDir === "/home/autumn") return "~";
+	if (currentDir === "/") return "/";
+
+	const parts = currentDir.split("/");
+	return parts[parts.length - 1];
+}
+
 export const commands = {
 	ls: { fn: ls, desc: "list available directories" },
 	echo: { fn: echo, desc: "print text" },
