@@ -16,6 +16,13 @@ export function printTermLine(text: string) {
 	terminal.scrollTop = terminal.scrollHeight;
 }
 
+function printImage(src: string) {
+	const img = document.createElement("img");
+	img.src = src;
+	img.style.maxWidth = "16rem";
+	terminal.appendChild(img);
+}
+
 export function getObjAtPath(path: string) {
 	const parts = path.split("/");
 	let obj: DirectoryItem = filesystem;
@@ -108,10 +115,7 @@ async function cat(file: string) {
 		const extenstion = file.split(".")?.pop()!;
 
 		if (imageExtensions.includes(extenstion)) {
-			const img = document.createElement("img");
-			img.src = obj;
-			img.style.maxWidth = "16rem";
-			terminal.appendChild(img);
+			printImage(obj);
 		} else {
 			printTermLine(obj);
 		}
