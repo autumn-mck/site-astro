@@ -2,9 +2,8 @@ import {
 	printTermLine,
 	getObjAtPath,
 	tryGetCommandPath,
-	getDirForPrompt,
+	getPrompt,
 } from "./commands";
-import { user } from "./data";
 
 async function tryRunCommand(command: string) {
 	const [cmd, ...args] = command.split(" ");
@@ -39,16 +38,16 @@ export async function onEnterKey(command: string) {
 	const typed = document.getElementById("typed")!;
 	const caret = document.getElementById("caret")!;
 	const input = document.getElementById("input")!;
-	const promptDir = document.getElementById("currentDir")!;
+	const prompt = document.getElementById("prompt")!;
 	input.style.display = "none";
 
-	printTermLine(`[${user} ${getDirForPrompt()}]$ ${command}`);
+	printTermLine(`${getPrompt()} ${command}`);
 
 	if (command.trim() !== "") {
 		await parseLine(command);
 	}
 
-	promptDir.innerText = getDirForPrompt();
+	prompt.innerText = getPrompt();
 	const terminal = document.getElementById("terminalContent")!;
 	terminal.scrollTop = terminal.scrollHeight;
 

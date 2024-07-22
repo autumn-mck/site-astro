@@ -19,7 +19,9 @@ export const user = document.getElementById("terminal")!.dataset.user;
 
 export const envVars = {
 	PATH: "/usr/bin:/bin",
+	USER: user?.split("@")[0] ?? "autumn",
 	HOME: "/home/autumn",
+	hostname: user?.split("@")[1] ?? "mck",
 	SHELL: "/bin/bash",
 	LANG: "en_GB.UTF-8",
 	DISPLAY: ":0",

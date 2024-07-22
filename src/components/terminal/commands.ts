@@ -267,7 +267,11 @@ async function fetchMusic() {
 	return 0;
 }
 
-export function getDirForPrompt() {
+export function getPrompt() {
+	return `[${envVars.USER}@${envVars.hostname} ${getDirForPrompt()}]$`;
+}
+
+function getDirForPrompt() {
 	if (currentDir === "/home/autumn") return "~";
 	if (currentDir === "/") return "/";
 
