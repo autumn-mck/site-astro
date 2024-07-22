@@ -17,6 +17,14 @@ import {
 
 export const user = document.getElementById("terminal")!.dataset.user;
 
+let currentDir = "/home/autumn";
+export function setCurrentDir(dir: string) {
+	currentDir = dir;
+}
+export function getCurrentDir() {
+	return currentDir;
+}
+
 export const envVars = {
 	PATH: "/usr/bin:/bin",
 	USER: user?.split("@")[0] ?? "autumn",

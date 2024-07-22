@@ -1,27 +1,15 @@
 import {
 	envVars,
 	filesystem,
+	getCurrentDir,
+	setCurrentDir,
 	type Directory,
 	type DirectoryItem,
 } from "./data";
 
-let currentDir = "/home/autumn";
-const terminal = document.getElementById("terminalContent")!;
+import { printTermLine, printRawHTML, printImage, terminal } from "./terminal";
+
 const fetchInfoCopy = document.getElementById("fetch-row")!.cloneNode(true);
-
-export function printTermLine(text: string) {
-	const pre = document.createElement("pre");
-	pre.innerHTML = text;
-	terminal.appendChild(pre);
-	terminal.scrollTop = terminal.scrollHeight;
-}
-
-function printImage(src: string) {
-	const img = document.createElement("img");
-	img.src = src;
-	img.style.maxWidth = "16rem";
-	terminal.appendChild(img);
-}
 
 export function getObjAtPath(path: string) {
 	const parts = path.split("/");
@@ -60,8 +48,8 @@ export function tryGetCommandPath(command: string) {
 }
 
 async function ls(path: string | undefined) {
-	if (!path) path = currentDir;
-	if (!path.startsWith("/")) path = `${currentDir}/${path}`;
+	if (!path) path = getCurrentDir();
+	if (!path.startsWith("/")) path = `${getCurrentDir()}/${path}`;
 	const obj = getObjAtPath(path) as Directory;
 
 	const dirs = Object.keys(obj).filter((key) => typeof obj[key] === "object");
@@ -95,7 +83,9 @@ async function env() {
 
 async function cat(file: string) {
 	const imageExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
-	const fullFilePath = file.startsWith("/") ? file : `${currentDir}/${file}`;
+	const fullFilePath = file.startsWith("/")
+		? file
+		: `${getCurrentDir()}/${file}`;
 
 	const obj = getObjAtPath(fullFilePath);
 
@@ -127,8 +117,8 @@ async function cat(file: string) {
 }
 
 async function cd(path: string) {
-	if (!path) path = currentDir;
-	if (!path.startsWith("/")) path = `${currentDir}/${path}`;
+	if (!path) path = getCurrentDir();
+	if (!path.startsWith("/")) path = `${getCurrentDir()}/${path}`;
 	path = path.replace(/\/+/g, "/");
 
 	const obj = getObjAtPath(path);
@@ -143,7 +133,7 @@ async function cd(path: string) {
 		return 1;
 	}
 
-	currentDir = path;
+	setCurrentDir(path);
 
 	const magicDirs = {
 		"/home/autumn/projects": "/projects",
@@ -157,7 +147,7 @@ async function cd(path: string) {
 }
 
 async function pwd() {
-	printTermLine(currentDir);
+	printTermLine(getCurrentDir());
 	return 0;
 }
 
@@ -201,8 +191,8 @@ async function steam() {
 }
 
 async function tree(path: string | undefined) {
-	if (!path) path = currentDir;
-	if (!path.startsWith("/")) path = `${currentDir}/${path}`;
+	if (!path) path = getCurrentDir();
+	if (!path.startsWith("/")) path = `${getCurrentDir()}/${path}`;
 
 	printTermLine(`.${await treeDir(path)}`);
 
@@ -257,30 +247,14 @@ async function whoAmI() {
 }
 
 async function fetchMusic() {
-	const musicDisplay = document.createElement("music-display");
+	printRawHTML(
+		`<music-display
+			nowPlayingApi="https://music-display.mck.is/now-playing"
+			websocketUrl="wss://music-display.mck.is/now-playing-ws">
+		</music-display>`
+	);
 
-	musicDisplay.setAttribute(
-		"nowPlayingApi",
-		"https://music-display.mck.is/now-playing"
-	);
-	musicDisplay.setAttribute(
-		"websocketUrl",
-		"wss://music-display.mck.is/now-playing-ws"
-	);
-	terminal.appendChild(musicDisplay);
 	return 0;
-}
-
-export function getPrompt() {
-	return `[${envVars.USER}@${envVars.hostname} ${getDirForPrompt()}]$`;
-}
-
-function getDirForPrompt() {
-	if (currentDir === "/home/autumn") return "~";
-	if (currentDir === "/") return "/";
-
-	const parts = currentDir.split("/");
-	return parts[parts.length - 1];
 }
 
 export const commands = {

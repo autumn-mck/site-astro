@@ -1,9 +1,42 @@
-import {
-	printTermLine,
-	getObjAtPath,
-	tryGetCommandPath,
-	getPrompt,
-} from "./commands";
+import { getObjAtPath, tryGetCommandPath } from "./commands";
+import { envVars, getCurrentDir } from "./data";
+
+export const terminal = document.getElementById("terminalContent")!;
+
+export function printTermLine(text: string) {
+	const pre = document.createElement("pre");
+	pre.innerHTML = text;
+	terminal.appendChild(pre);
+	terminal.scrollTop = terminal.scrollHeight;
+}
+
+/**
+ * only use this one if you're sure, printTermLine already sets the innerHTML
+ */
+export function printRawHTML(html: string) {
+	const div = document.createElement("div");
+	div.innerHTML = html;
+	terminal.appendChild(div);
+}
+
+export function printImage(src: string) {
+	const img = document.createElement("img");
+	img.src = src;
+	img.style.maxWidth = "16rem";
+	terminal.appendChild(img);
+}
+
+export function getPrompt() {
+	return `[${envVars.USER}@${envVars.hostname} ${getDirForPrompt()}]$`;
+}
+
+function getDirForPrompt() {
+	if (getCurrentDir() === "/home/autumn") return "~";
+	if (getCurrentDir() === "/") return "/";
+
+	const parts = getCurrentDir().split("/");
+	return parts[parts.length - 1];
+}
 
 async function tryRunCommand(command: string) {
 	const [cmd, ...args] = command.split(" ");
