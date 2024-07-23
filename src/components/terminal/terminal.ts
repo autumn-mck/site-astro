@@ -39,6 +39,7 @@ function getDirForPrompt() {
 }
 
 async function tryRunCommand(command: string) {
+	command = command.replace(/\$([a-zA-Z_]+)/g, (_, key) => envVars[key] || "");
 	const [cmd, ...args] = command.split(" ");
 	const path = tryGetCommandPath(cmd);
 

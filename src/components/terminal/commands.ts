@@ -55,7 +55,11 @@ async function which(command: string) {
 }
 
 export function tryGetCommandPath(command: string) {
-	if (command.startsWith("/") || command.startsWith(".")) {
+	if (
+		command.startsWith("/") ||
+		command.startsWith(".") ||
+		command.startsWith("~")
+	) {
 		return tryParsePath(command);
 	}
 
@@ -87,8 +91,6 @@ async function ls(path: string | undefined) {
 
 async function echo(...args: string[]) {
 	let text = args.join(" ");
-	// Replace environment variables
-	text = text.replace(/\$([a-zA-Z_]+)/g, (_, key) => envVars[key] || "");
 	printTermLine(text);
 	return 0;
 }
