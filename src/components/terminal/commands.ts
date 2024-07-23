@@ -11,6 +11,22 @@ import { printTermLine, printRawHTML, printImage, terminal } from "./terminal";
 
 const fetchInfoCopy = document.getElementById("fetch-row")!.cloneNode(true);
 
+function tryParsePath(path: string | undefined) {
+	if (!path) path = getCurrentDir();
+	if (!path.startsWith("/")) path = `${getCurrentDir()}/${path}`;
+
+	// replace /abc/def/.. with /abc
+	path = path.replace(/\/[^/]+\/\.\./g, "");
+
+	// replace /abc/./def with /abc/def
+	path = path.replace(/\/\.\//g, "/");
+
+	// replace /+ with /
+	path = path.replace(/\/+/g, "/");
+
+	return path;
+}
+
 export function getObjAtPath(path: string) {
 	const parts = path.split("/");
 	let obj: DirectoryItem = filesystem;
@@ -48,8 +64,7 @@ export function tryGetCommandPath(command: string) {
 }
 
 async function ls(path: string | undefined) {
-	if (!path) path = getCurrentDir();
-	if (!path.startsWith("/")) path = `${getCurrentDir()}/${path}`;
+	path = tryParsePath(path);
 	const obj = getObjAtPath(path) as Directory;
 
 	const dirs = Object.keys(obj).filter((key) => typeof obj[key] === "object");
@@ -83,9 +98,7 @@ async function env() {
 
 async function cat(file: string) {
 	const imageExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
-	const fullFilePath = file.startsWith("/")
-		? file
-		: `${getCurrentDir()}/${file}`;
+	const fullFilePath = tryParsePath(file);
 
 	const obj = getObjAtPath(fullFilePath);
 
@@ -117,9 +130,10 @@ async function cat(file: string) {
 }
 
 async function cd(path: string) {
-	if (!path) path = getCurrentDir();
-	if (!path.startsWith("/")) path = `${getCurrentDir()}/${path}`;
-	path = path.replace(/\/+/g, "/");
+	// special case for cd with no arguments, go to home
+	if (!path) path = "/home/autumn";
+
+	path = tryParsePath(path);
 
 	const obj = getObjAtPath(path);
 
@@ -191,8 +205,7 @@ async function steam() {
 }
 
 async function tree(path: string | undefined) {
-	if (!path) path = getCurrentDir();
-	if (!path.startsWith("/")) path = `${getCurrentDir()}/${path}`;
+	path = tryParsePath(path);
 
 	printTermLine(`.${await treeDir(path)}`);
 
@@ -200,6 +213,7 @@ async function tree(path: string | undefined) {
 }
 
 async function treeDir(path: string) {
+	path = tryParsePath(path);
 	const obj = getObjAtPath(path);
 	if (!obj || typeof obj !== "object") return "";
 
