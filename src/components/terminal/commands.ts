@@ -54,6 +54,10 @@ async function which(command: string) {
 }
 
 export function tryGetCommandPath(command: string) {
+	if (command.startsWith("/") || command.startsWith(".")) {
+		return tryParsePath(command);
+	}
+
 	const PATHs = envVars.PATH.split(":");
 
 	for (let i = 0; i < PATHs.length; i++) {
