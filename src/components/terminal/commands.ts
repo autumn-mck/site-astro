@@ -15,16 +15,17 @@ function tryParsePath(path: string | undefined) {
 	if (!path) path = getCurrentDir();
 	if (!path.startsWith("/")) path = `${getCurrentDir()}/${path}`;
 
-	// replace /abc/def/.. with /abc
-	path = path.replace(/\/[^/]+\/\.\./g, "");
+	const parts = path.split("/");
+	const parsedParts = [];
 
-	// replace /abc/./def with /abc/def
-	path = path.replace(/\/\.\//g, "/");
+	for (let i = 0; i < parts.length; i++) {
+		if (parts[i] === "") continue;
+		if (parts[i] === ".") continue;
+		if (parts[i] === "..") parsedParts.pop();
+		else parsedParts.push(parts[i]);
+	}
 
-	// replace /+ with /
-	path = path.replace(/\/+/g, "/");
-
-	return path;
+	return `/${parsedParts.join("/")}`;
 }
 
 export function getObjAtPath(path: string) {
