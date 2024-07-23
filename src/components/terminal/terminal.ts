@@ -53,12 +53,16 @@ async function tryRunCommand(command: string) {
 	const obj = getObjAtPath(path);
 	if (typeof obj === "function") {
 		return await obj(...args);
+	} else if (typeof obj === "string") {
+		runScript(obj);
+		return 0;
 	}
 
 	return 1; // should never reach here
 }
 
 async function parseLine(line: string) {
+	if (line.trim() === "") return;
 	let commands = line.split("&&");
 
 	for (let i = 0; i < commands.length; i++) {
@@ -87,4 +91,12 @@ export async function onEnterKey(command: string) {
 	typed.textContent = "";
 	caret.style.opacity = "1";
 	input.style.display = "block";
+}
+
+function runScript(script: string) {
+	const lines = script.split("\n");
+
+	for (let i = 0; i < lines.length; i++) {
+		parseLine(lines[i]);
+	}
 }
