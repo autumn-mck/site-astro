@@ -46,6 +46,11 @@ export const filesystem = {
 			projects: {},
 			blog: {},
 			uses: {},
+			"startup.sh": `
+echo [$USER@$hostname ~]$ whoami
+whoami
+echo [$USER@$hostname ~]$ fetch-music
+fetch-music`,
 		},
 	},
 	bin: {
