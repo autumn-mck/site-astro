@@ -13,6 +13,7 @@ const fetchInfoCopy = document.getElementById("fetch-row")!.cloneNode(true);
 
 function tryParsePath(path: string | undefined) {
 	if (!path) path = getCurrentDir();
+	if (path.startsWith("~")) path = `/home/autumn/${path.slice(1)}`;
 	if (!path.startsWith("/")) path = `${getCurrentDir()}/${path}`;
 
 	const parts = path.split("/");
