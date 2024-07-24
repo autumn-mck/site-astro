@@ -71,7 +71,12 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 			}
 			onEnterKey(typed.textContent!);
 		} else if (event.key === "Backspace") {
-			typed.textContent = typed.textContent!.slice(0, -1);
+			if (event.ctrlKey) {
+				// if ctrl + backspace, delete the whole word
+				typed.textContent = typed.textContent!.replace(/\S+\s*$/, "");
+			} else {
+				typed.textContent = typed.textContent!.slice(0, -1);
+			}
 		} else {
 			if (event.key.length === 1 && event.key.charCodeAt(0) >= 32) {
 				typed.textContent += event.key;
