@@ -17,7 +17,19 @@ accuracy.
 Includes several pre-set situations, including a fictional but nice-looking system (shown below), a stable 3-body figure-8
 system, a binary star system, and our solar system to scale (with and without moons)
 
-![Video showing some planets orbiting a star from a 2d top-down view, with the planets leaving a trail behind them](./imgs/planets.gif)
+<p>
+<video autoplay loop muted controls>
+  <source src="/videos/solar_new.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</p>
+
+<!-- <p>
+<video autoplay loop muted controls>
+  <source src="/videos/eight.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</p> -->
 
 [PlanetPhysics code](https://github.com/James-McK/PlanetPhysics)
 
