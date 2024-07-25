@@ -155,7 +155,12 @@ The website you're currently browsing! Currently built using [Astro](https://ast
 A small particle/powder toy simulator. Very basic - its flaws are definitely noticable if you're looking for them - but I still
 enjoyed messing around with this kind of cellular automaton
 
-![A video showing two piles of sand being created to form a well shape, with water raining from above, flowing over the edges](./imgs/powdertoy.gif)
+<p>
+<video autoplay loop muted controls>
+  <source src="/videos/powdertoy.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</p>
 
 [PowderSim code](https://github.com/James-McK/ParticleSim)
 
