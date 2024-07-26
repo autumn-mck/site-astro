@@ -31,7 +31,7 @@ system, a binary star system, and our solar system to scale (with and without mo
 </video>
 </p> -->
 
-[PlanetPhysics code](https://github.com/James-McK/PlanetPhysics)
+[PlanetPhysics code](https://github.com/autumn-mck/PlanetPhysics)
 
 ## weird-fe
 
@@ -51,7 +51,7 @@ Supports:
 
 ![Screenshot of a thread of replies to a post](./imgs/weird-fe.png)
 
-[weird-fe code](https://github.com/James-McK/weird-fe)
+[weird-fe code](https://github.com/autumn-mck/weird-fe)
 
 ## CSC1028
 
@@ -59,7 +59,7 @@ The project I created for the CSC1028 module I opted to do, providing all sorts 
 
 ![UI showing several data sources, including a SimilarWeb rank, DNS lookup, phishing/malware data, earliest archive date, and all subdomains](./imgs/1028.png)
 
-[CSC1028 code](https://github.com/James-McK/CSC1028)
+[CSC1028 code](https://github.com/autumn-mck/CSC1028)
 
 ## Last Stand Text Adventure
 
@@ -69,7 +69,7 @@ timer systems also used throughout the game. We worked great as a group, and stu
 
 ![A game in-progess, showing the player several choices for how to proceed, and an image of where they are](./imgs/last-stand.webp)
 
-[Last Stand Code](https://github.com/James-McK/LastStand), or [play The Last Stand here](https://last-stand.mck.is/)!
+[Last Stand Code](https://github.com/autumn-mck/LastStand), or [play The Last Stand here](https://last-stand.mck.is/)!
 
 ## Catppuccin-MusicBee
 
@@ -79,7 +79,7 @@ Uses a combination of `bash`, `imagemagick`, `xdotool`, `wine`, and `Xvfb` (X vi
 
 ![Screenshot of several versions of the theme, with a range of accent colours and background colours](./imgs/catppuccin-musicbee.webp)
 
-[Catppuccin-MusicBee code and releases](https://github.com/James-McK/Catppuccin-MusicBee)
+[Catppuccin-MusicBee code and releases](https://github.com/autumn-mck/Catppuccin-MusicBee)
 
 ## SiteMusicDisplay
 
@@ -107,9 +107,9 @@ See the [blog post](/blog/2024/small-projects-for-fun/) I wrote for more details
 
 ![Autumn's back again by northh](../blog/blog/2024/small-projects-for-fun/autumns-back-again.png)
 
-- [MusicBee plugin code](https://github.com/James-McK/MusicDisplayMusicBeePlugin)
-- [Poweramp plugin code](https://github.com/James-McK/MusicDisplayPowerampPlugin)
-- [Server & web component code](https://github.com/James-McK/MusicDisplayServer)
+- [MusicBee plugin code](https://github.com/autumn-mck/MusicDisplayMusicBeePlugin)
+- [Poweramp plugin code](https://github.com/autumn-mck/MusicDisplayPowerampPlugin)
+- [Server & web component code](https://github.com/autumn-mck/MusicDisplayServer)
 
 ## Driver
 
@@ -124,7 +124,7 @@ of the track at different angles)
 
 ![Video showing several hundred cars driving around the 2d track, with some colliding into the edges and stopping](./imgs/driver.gif)
 
-[Driver code](https://github.com/James-McK/MonoGameDriver)
+[Driver code](https://github.com/autumn-mck/MonoGameDriver)
 
 ## CPU-based raytracer
 
@@ -140,7 +140,7 @@ was still a very fun project to work on
 
 ![Example output of the program, showing spheres of different sizes and different materials](./imgs/rtWeekend.webp)
 
-[Raytracer code](https://github.com/James-McK/RTWeekend)
+[Raytracer code](https://github.com/autumn-mck/RTWeekend)
 
 ## Personal website
 
@@ -148,7 +148,7 @@ The website you're currently browsing! Currently built using [Astro](https://ast
 
 ![A screenshot of the home page of this website](../changelog/v2-index.png)
 
-[Website code](https://github.com/james-mck/site-astro)
+[Website code](https://github.com/autumn-mck/site-astro)
 
 ## Particle/powder toy simulator
 
@@ -162,7 +162,7 @@ enjoyed messing around with this kind of cellular automaton
 </video>
 </p>
 
-[PowderSim code](https://github.com/James-McK/ParticleSim)
+[PowderSim code](https://github.com/autumn-mck/ParticleSim)
 
 ## Authorised markov fetch
 
@@ -170,7 +170,7 @@ A script to create a database of posts compatible with the [mstdn-ebooks](https:
 
 Rather than using ActivityPub outboxes and pretending to be an instance, which [authorised fetch breaks](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch), this script relies on the bot's instance's API to fetch copies of posts.
 
-[Authorised-markov-fetch code](https://github.com/James-McK/authorised-markov-fetch)
+[Authorised-markov-fetch code](https://github.com/autumn-mck/authorised-markov-fetch)
 
 ## MusicBee installation script for Linux
 
@@ -184,14 +184,14 @@ A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows 
 - Downloads settings so they don't have to be changed from defaults after launching
 - Installs Discordbee and Wine-Discord IPC bridge to allow the song you're currently listening to to be displayed as a status on Discord
 
-[MusicBee install script here](https://gist.github.com/James-McK/6d7fcbbc08f5d18be09f2cc219084675)
+[MusicBee install script here](https://gist.github.com/autumn-mck/6d7fcbbc08f5d18be09f2cc219084675)
 
 ![Screenshot of MusicBee running on linux](./imgs/musicbee-linux.png)
 
 ## A2 Project
 
 This application was my A2 coursework project for Software Systems Development, written between 10/11/2020 and 14/03/2021 using
-C# and WPF. See the [git repo](https://github.com/James-McK/A2-Project) for more details and features
+C# and WPF. See the [git repo](https://github.com/autumn-mck/A2-Project) for more details and features
 
 This is still a project I'm very proud of - It's got a few minor flaws, but it has some features I put a lot of work into and
 I'm very happy with the end result.
@@ -199,7 +199,7 @@ I'm very happy with the end result.
 ![The appointment calendar view](./imgs/a2-cal.webp)
 ![Some graphs in the statistics view](./imgs/a2-stats.webp)
 
-[A2 Project Code](https://github.com/James-McK/A2-Project)
+[A2 Project Code](https://github.com/autumn-mck/A2-Project)
 
 ## 2048 fork
 
@@ -215,7 +215,7 @@ Made for fun to improve on an existing project and gain some more experience wit
 
 ![2048 with a 3 by 5 grid, and the settings open showing where this is configured](./imgs/2048.webp)
 
-[2048 code](https://github.com/James-McK/2048), and [playable here](https://2048.mck.is/)!
+[2048 code](https://github.com/autumn-mck/2048), and [playable here](https://2048.mck.is/)!
 
 ## WebGenJava
 
@@ -223,4 +223,4 @@ The program I wrote to convert markdown to HTML for a previous version of this w
 offer this sort of functionality (eg [pandoc](https://pandoc.org/)), I wanted something that gave me slightly more
 control over the result.
 
-[WebGenJava code](https://github.com/James-McK/WebGenJava) (Please, don't use it)
+[WebGenJava code](https://github.com/autumn-mck/WebGenJava) (Please, don't use it)

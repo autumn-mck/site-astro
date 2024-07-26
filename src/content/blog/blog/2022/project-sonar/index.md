@@ -60,7 +60,7 @@ Contains data on certificates used for securing HTTPS connections.
 
 ## Setup
 
-To start, you're going to want to be using an IDE - I'd recommend [Visual Studio Code](https://code.visualstudio.com/). This guide is written assuming you're using VS Code, but everything will still work if you choose a different IDE. It's also assuming you've not used Node.js before - if you have, you might want to skip to [Start Programming](#start-programming). Finally, all the code for this guide is also [available here](https://github.com/James-McK/ProjectSonarTutorial)!
+To start, you're going to want to be using an IDE - I'd recommend [Visual Studio Code](https://code.visualstudio.com/). This guide is written assuming you're using VS Code, but everything will still work if you choose a different IDE. It's also assuming you've not used Node.js before - if you have, you might want to skip to [Start Programming](#start-programming). Finally, all the code for this guide is also [available here](https://github.com/autumn-mck/ProjectSonarTutorial)!
 
 Start by making a new folder to hold your project - I called mine ProjectSonarTutorial - and open it in VS Code. We're going to need to install Node.js too - a convenient way to do so is using a version manager like [nvm](https://github.com/nvm-sh/nvm) for Linux and MacOS, or [nvm-windows](https://github.com/coreybutler/nvm-windows) for Windows.
 

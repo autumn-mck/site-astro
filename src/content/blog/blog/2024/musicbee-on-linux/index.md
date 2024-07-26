@@ -10,7 +10,7 @@ tags:
   - programming
 ---
 
-**If you're just wanting a script to install musicbee, see this [installation script](https://gist.github.com/James-McK/6d7fcbbc08f5d18be09f2cc219084675)!** The rest of this blog post is on how I wrote this script.
+**If you're just wanting a script to install musicbee, see this [installation script](https://gist.github.com/autumn-mck/6d7fcbbc08f5d18be09f2cc219084675)!** The rest of this blog post is on how I wrote this script.
 
 When I was using Windows, [MusicBee](https://getmusicbee.com/) was easily my favourite music player - for its customizability, how feature-rich it felt, and for me to as easily as possible play music the way I want to play it (either by artist or by album).
 
@@ -163,6 +163,6 @@ chmod +x ./launch.sh
 
 ## Ok, we're finally done (for now)
 
-You can see the [script for installing MusicBee, the DLLs to play `.m4a` files, and an improved desktop file](https://gist.github.com/James-McK/6d7fcbbc08f5d18be09f2cc219084675), or a [script that does that, plus install DiscordBee, a couple of skins, and downloads the settings I use](https://gist.github.com/James-McK/ef1fba379cb2429083cf76369d0b032a) - the latter isn't really useful to anybody other than me, but it's available if you want to customise it yourself!
+You can see the [script for installing MusicBee, the DLLs to play `.m4a` files, and an improved desktop file](https://gist.github.com/autumn-mck/6d7fcbbc08f5d18be09f2cc219084675), or a [script that does that, plus install DiscordBee, a couple of skins, and downloads the settings I use](https://gist.github.com/autumn-mck/ef1fba379cb2429083cf76369d0b032a) - the latter isn't really useful to anybody other than me, but it's available if you want to customise it yourself!
 
 I'm hardly the first person to do most of this stuff, but it was still a lot of fun! I enjoy doing things with computers and software that weren't exactly originally intended, and figuring out how I can solve problems.
