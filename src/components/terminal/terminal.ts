@@ -40,8 +40,8 @@ function getDirForPrompt() {
 
 async function tryRunCommand(command: string) {
 	command = command.replace(/\$([a-zA-Z_]+)/g, (_, key) => envVars[key] || "");
-	const [cmd, ...args] = command.split(" ");
-	const path = tryGetCommandPath(cmd);
+	const [cmdEnvVars, cmd, ...args] = parseCommand(command);
+	const path = tryGetCommandPath(cmd as string);
 
 	if (!path) {
 		printTermLine(
@@ -53,13 +53,33 @@ async function tryRunCommand(command: string) {
 
 	const obj = getObjAtPath(path);
 	if (typeof obj === "function") {
-		return await obj(...args);
+		return await obj(...(args as string[]));
 	} else if (typeof obj === "string") {
 		runScript(obj);
 		return 0;
 	}
 
 	return 1; // should never reach here
+}
+
+function parseCommand(command: string) {
+	// parse out env vars being set at the start (eg. VAR=value TEST=123 command arg1 arg2)
+	const envVars = {} as Record<string, string>;
+	const parts = command.split(" "); // todo handle quotes
+
+	for (let i = 0; i < parts.length; i++) {
+		const [key, value] = parts[i].split("=");
+		if (key && value) {
+			envVars[key] = value;
+		} else {
+			break;
+		}
+	}
+
+	const cmd = parts[Object.keys(envVars).length];
+	const args = parts.slice(Object.keys(envVars).length + 1);
+
+	return [envVars, cmd, ...args];
 }
 
 async function parseLine(line: string) {
