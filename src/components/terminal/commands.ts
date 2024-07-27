@@ -205,13 +205,6 @@ async function ping(address: string) {
 	return 0;
 }
 
-async function steam() {
-	const url = "https://steamcommunity.com/id/_weird_autumn_";
-	window.location.href = `steam://openurl/${url}`;
-	printTermLine(`Opening <a href="${url}" target="_blank">Steam profile</a>`);
-	return 0;
-}
-
 async function tree(path: string | undefined) {
 	path = tryParsePath(path);
 
@@ -289,7 +282,6 @@ export const commands = {
 	clear: { fn: clear, desc: "clear the terminal" },
 	ping: { fn: ping, desc: "ping a server" },
 	whoami: { fn: whoAmI, desc: "about me" },
-	steam: { fn: steam, desc: "steam" },
 	tree: { fn: tree, desc: "list directory tree" },
 	env: { fn: env, desc: "print environment variables" },
 	which: { fn: which, desc: "locate a command" },
@@ -309,7 +301,6 @@ export {
 	clear,
 	ping,
 	whoAmI,
-	steam,
 	tree,
 	env,
 	fetchMusic,
