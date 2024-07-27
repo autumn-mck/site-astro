@@ -5,19 +5,20 @@ import meImage from "../images/me.webp";
 import { SITE_DOMAIN } from "../consts";
 
 let name = "James McKee";
+let firstName = name.split(" ")[0].toLowerCase();
 ---
 
 <Layout title="Home">
 	<main transition:animate="fade">
 		<section id="left-col">
 			<AboutTerminal
-				user="james@mck"
+				user=`${firstName}@mck`
 				name={name}
 				items={[
 					{
 						name: "email",
-						textContent: `james at ${SITE_DOMAIN}`,
-						href: `mailto:james%40${SITE_DOMAIN}`,
+						textContent: `${firstName} at ${SITE_DOMAIN}`,
+						href: `mailto:${firstName}%40${SITE_DOMAIN}`,
 					},
 					{
 						name: "github",
