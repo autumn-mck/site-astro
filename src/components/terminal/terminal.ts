@@ -41,7 +41,13 @@ function getDirForPrompt() {
 async function tryRunCommand(command: string) {
 	command = command.replace(/\$([a-zA-Z_]+)/g, (_, key) => envVars[key] || "");
 	const [cmdEnvVars, cmd, ...args] = parseCommand(command);
-	const path = tryGetCommandPath(cmd as string);
+
+	const commandEnvVars = {
+		...envVars,
+		...(cmdEnvVars as Record<string, string>),
+	};
+
+	const path = tryGetCommandPath(commandEnvVars, cmd as string);
 
 	if (!path) {
 		printTermLine(
@@ -53,7 +59,7 @@ async function tryRunCommand(command: string) {
 
 	const obj = getObjAtPath(path);
 	if (typeof obj === "function") {
-		return await obj(...(args as string[]));
+		return await obj(commandEnvVars, ...(args as string[]));
 	} else if (typeof obj === "string") {
 		runScript(obj);
 		return 0;

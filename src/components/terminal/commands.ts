@@ -1,10 +1,10 @@
 import {
-	envVars,
 	filesystem,
 	getCurrentDir,
 	setCurrentDir,
 	type Directory,
 	type DirectoryItem,
+	type envType,
 } from "./data";
 
 import { printTermLine, printRawHTML, printImage, terminal } from "./terminal";
@@ -42,8 +42,8 @@ export function getObjAtPath(path: string) {
 	return obj;
 }
 
-async function which(command: string) {
-	const path = tryGetCommandPath(command);
+async function which(env: envType, command: string) {
+	const path = tryGetCommandPath(env, command);
 
 	if (!path) {
 		printTermLine(`which: ${command}: command not found`);
@@ -54,7 +54,7 @@ async function which(command: string) {
 	return 0;
 }
 
-export function tryGetCommandPath(command: string) {
+export function tryGetCommandPath(env: envType, command: string) {
 	if (
 		command.startsWith("/") ||
 		command.startsWith(".") ||
@@ -63,7 +63,7 @@ export function tryGetCommandPath(command: string) {
 		return tryParsePath(command);
 	}
 
-	const PATHs = envVars.PATH.split(":");
+	const PATHs = env.PATH.split(":");
 
 	for (let i = 0; i < PATHs.length; i++) {
 		const obj = getObjAtPath(`${PATHs[i]}/${command}`);
@@ -73,7 +73,7 @@ export function tryGetCommandPath(command: string) {
 	return null;
 }
 
-async function ls(path: string | undefined) {
+async function ls(env: envType, path: string | undefined) {
 	path = tryParsePath(path);
 	const obj = getObjAtPath(path) as Directory;
 
@@ -89,22 +89,22 @@ async function ls(path: string | undefined) {
 	return 0;
 }
 
-async function echo(...args: string[]) {
+async function echo(env: envType, ...args: string[]) {
 	let text = args.join(" ");
 	printTermLine(text);
 	return 0;
 }
 
-async function env() {
+async function env(env: envType) {
 	let vars = "";
-	for (const [key, value] of Object.entries(envVars)) {
+	for (const [key, value] of Object.entries(env)) {
 		vars += `${key}=${value}\n`;
 	}
 	printTermLine(vars);
 	return 0;
 }
 
-async function cat(file: string) {
+async function cat(env: envType, file: string) {
 	const imageExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
 	const fullFilePath = tryParsePath(file);
 
@@ -137,7 +137,7 @@ async function cat(file: string) {
 	return 0;
 }
 
-async function cd(path: string) {
+async function cd(env: envType, path: string) {
 	// special case for cd with no arguments, go to home
 	if (!path) path = "/home/autumn";
 
@@ -168,17 +168,17 @@ async function cd(path: string) {
 	return 0;
 }
 
-async function pwd() {
+async function pwd(env: envType) {
 	printTermLine(getCurrentDir());
 	return 0;
 }
 
-async function clear() {
+async function clear(env: envType) {
 	terminal.innerHTML = "";
 	return 0;
 }
 
-async function ping(address: string) {
+async function ping(env: envType, address: string) {
 	printTermLine(`PING ${address} 56 data bytes`);
 	let failed = false;
 
@@ -205,7 +205,7 @@ async function ping(address: string) {
 	return 0;
 }
 
-async function tree(path: string | undefined) {
+async function tree(env: envType, path: string | undefined) {
 	path = tryParsePath(path);
 
 	printTermLine(`.${await treeDir(path)}`);
@@ -245,7 +245,7 @@ async function indentTree(tree: string, isLast: boolean) {
 	return `${indented}`;
 }
 
-async function help() {
+async function help(env: envType) {
 	let helpText = "Available commands:\n";
 	for (const [command, { desc }] of Object.entries(commands)) {
 		helpText += `${command} - ${desc}\n`;
@@ -256,12 +256,12 @@ async function help() {
 	return 0;
 }
 
-async function whoAmI() {
+async function whoAmI(env: envType) {
 	terminal.appendChild(fetchInfoCopy.cloneNode(true));
 	return 0;
 }
 
-async function fetchMusic() {
+async function fetchMusic(env: envType) {
 	printRawHTML(
 		`<music-display
 			nowPlayingApi="https://music-display.mck.is/now-playing"
@@ -288,7 +288,10 @@ export const commands = {
 	"fetch-music": { fn: fetchMusic, desc: "what I'm listening to" },
 } as Record<
 	string,
-	{ fn: (...args: string[]) => Promise<number>; desc: string }
+	{
+		fn: (env: envType, ...args: string[]) => Promise<number>;
+		desc: string;
+	}
 >;
 
 export {

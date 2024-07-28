@@ -14,6 +14,8 @@ import {
 	fetchMusic,
 } from "./commands";
 
+export type envType = Record<string, string>;
+
 export const user = document.getElementById("terminal")!.dataset.user;
 
 let currentDir = "/home/autumn";
@@ -80,4 +82,4 @@ export type Directory = {
 export type DirectoryItem =
 	| Directory
 	| string
-	| ((...args: string[]) => Promise<number>);
+	| ((env: envType, ...args: string[]) => Promise<number>);
