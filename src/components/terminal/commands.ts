@@ -9,6 +9,13 @@ import {
 
 import { printTermLine, printRawHTML, printImage, terminal } from "./terminal";
 
+type optionType = {
+	name: string; // internal name
+	long: string | undefined;
+	short: string | undefined;
+	takesArg: boolean;
+};
+
 const fetchInfoCopy = document.getElementById("fetch-row")!.cloneNode(true);
 
 function tryParsePath(path: string | undefined) {
@@ -73,12 +80,50 @@ export function tryGetCommandPath(env: envType, command: string) {
 	return null;
 }
 
-async function ls(env: envType, path: string | undefined) {
-	path = tryParsePath(path);
-	const obj = getObjAtPath(path) as Directory;
+async function ls(env: envType, ...args: string[]) {
+	const availableOptions = [
+		{ name: "help", long: "--help", short: "", takesArg: false },
+		{ name: "version", long: "--version", short: "", takesArg: false },
+		{ name: "all", long: "--all", short: "-a", takesArg: false },
+		{ name: "almostAll", long: "--almost-all", short: "-A", takesArg: false },
+	] as optionType[];
 
-	const dirs = Object.keys(obj).filter((key) => typeof obj[key] === "object");
-	const files = Object.keys(obj).filter((key) => typeof obj[key] !== "object");
+	const options = await checkOptionsFromArgs(args, availableOptions, "ls");
+	if (!options) return 1;
+
+	if (options.help) {
+		printTermLine(`Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --help                 display this help and exit
+      --version              output version information and exit`);
+		return 0;
+	}
+
+	if (options.version) {
+		printTermLine(`ls (jsh) 1.0.0`);
+		return 0;
+	}
+
+	const path = tryParsePath(args.find((arg) => !arg.startsWith("-")));
+	let obj = getObjAtPath(path) as Directory;
+
+	let allContents = Object.keys(obj);
+
+	if (!options.all && !options.almostAll) {
+		allContents = allContents.filter((content) => content[0] !== ".");
+	}
+
+	let dirs = allContents.filter((key) => typeof obj[key] === "object");
+	let files = allContents.filter((key) => typeof obj[key] !== "object");
+
+	if (options.all) {
+		// add .. and . to the list of directories
+		dirs = [".", "..", ...dirs];
+	}
 
 	let contents = "";
 	if (dirs.length > 0) contents += dirs.join("/ ") + "/ ";
@@ -87,6 +132,52 @@ async function ls(env: envType, path: string | undefined) {
 	printTermLine(contents);
 
 	return 0;
+}
+
+async function checkOptionsFromArgs(
+	args: string[],
+	availableOptions: optionType[],
+	command: string
+) {
+	const options = {} as Record<string, string | boolean>;
+
+	// for long options (e.g. --all) they must be on their own
+	// while short options (e.g. -a) may (rfc 2119) be grouped together
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+
+		if (arg.startsWith("--")) {
+			const option = availableOptions.find((opt) => opt.long === arg);
+
+			if (!option) {
+				printTermLine(`${command}: unrecognized option '${arg}'`);
+				if (availableOptions.find((opt) => opt.long === "--help"))
+					printTermLine(`Try '${command} --help' for more information.`);
+				return null;
+			}
+
+			options[option.name] = true;
+		} else if (arg.startsWith("-")) {
+			const shortOptions = arg.slice(1).split("");
+			for (const shortOption of shortOptions) {
+				const option = availableOptions.find(
+					(opt) => opt.short === `-${shortOption}`
+				);
+
+				if (!option) {
+					printTermLine(`${command}: unrecognized option '-${shortOption}'`);
+					if (availableOptions.find((opt) => opt.long === "--help"))
+						printTermLine(`Try '${command} --help' for more information.`);
+					return null;
+				}
+
+				options[option.name] = true;
+			}
+		}
+	}
+
+	return options;
 }
 
 async function echo(env: envType, ...args: string[]) {
