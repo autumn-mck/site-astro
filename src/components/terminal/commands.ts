@@ -89,7 +89,7 @@ async function ls(env: envType, ...args: string[]) {
 	] as optionType[];
 
 	const options = await checkOptionsFromArgs(args, availableOptions, "ls");
-	if (!options) return 1;
+	if (!options) return 2;
 
 	if (options.help) {
 		printTermLine(`Usage: ls [OPTION]... [FILE]...
@@ -99,7 +99,12 @@ Mandatory arguments to long options are mandatory for short options too.
   -a, --all                  do not ignore entries starting with .
   -A, --almost-all           do not list implied . and ..
       --help                 display this help and exit
-      --version              output version information and exit`);
+      --version              output version information and exit
+			
+Exit status:
+ 0  if OK,
+ 1  if minor problems (e.g., cannot access subdirectory),
+ 2  if serious trouble (e.g., cannot access command-line argument).`);
 		return 0;
 	}
 
