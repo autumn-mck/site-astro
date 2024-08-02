@@ -42,7 +42,7 @@ export const envVars = {
 export const filesystem = {
 	home: {
 		autumn: {
-			"secret.txt": ":3",
+			".secret.txt": "you found a secret!",
 			"me.webp": (document.getElementById("img")! as HTMLImageElement).src,
 			projects: {},
 			blog: {},
