@@ -39,7 +39,7 @@ function getDirForPrompt() {
 }
 
 async function tryRunCommand(command: string) {
-	command = command.replace(/\$([a-zA-Z_]+)/g, (_, key) => envVars[key] || "");
+	command = command.replace(/\$([a-zA-Z_?]+)/g, (_, key) => envVars[key] || "");
 	const [cmdEnvVars, cmd, ...args] = parseCommand(command);
 
 	const commandEnvVars = {
@@ -54,7 +54,7 @@ async function tryRunCommand(command: string) {
 			`bash: ${cmd}: command not found.\nRun 'help' for a list of available commands.`
 		);
 
-		return 1;
+		return 127;
 	}
 
 	const obj = getObjAtPath(path);
@@ -94,6 +94,7 @@ async function parseLine(line: string) {
 
 	for (let i = 0; i < commands.length; i++) {
 		let result = await tryRunCommand(commands[i].trim());
+		envVars["?"] = result.toString();
 		if (result !== 0) return;
 	}
 }

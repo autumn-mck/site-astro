@@ -37,6 +37,7 @@ export const envVars = {
 	TERM: `xterm-${
 		navigator.userAgent.includes("Firefox") ? "firefox" : "chromium"
 	}`,
+	"?": "0",
 } as Record<string, string>;
 
 export const filesystem = {
