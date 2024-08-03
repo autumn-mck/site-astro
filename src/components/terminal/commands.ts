@@ -88,8 +88,12 @@ async function ls(env: envType, ...args: string[]) {
 		{ name: "almostAll", long: "--almost-all", short: "-A", takesArg: false },
 	] as optionType[];
 
-	const options = await checkOptionsFromArgs(args, availableOptions, "ls");
-	if (!options) return 2;
+	const parsedParts = await checkOptionsFromArgs(args, availableOptions, "ls");
+
+	if (!parsedParts) return 2;
+
+	const options = parsedParts.options;
+	args = parsedParts.nonOptionArgs;
 
 	if (options.help) {
 		printTermLine(`Usage: ls [OPTION]... [FILE]...
@@ -109,7 +113,7 @@ Exit status:
 	}
 
 	if (options.version) {
-		printTermLine(`ls (jsh) 1.0.0`);
+		printTermLine(`ls (jsh) 1.0.1`);
 		return 0;
 	}
 
@@ -145,6 +149,7 @@ async function checkOptionsFromArgs(
 	command: string
 ) {
 	const options = {} as Record<string, string | boolean>;
+	const nonOptionArgs = [] as string[];
 
 	// for long options (e.g. --all) they must be on their own
 	// while short options (e.g. -a) may (rfc 2119) be grouped together
@@ -159,10 +164,17 @@ async function checkOptionsFromArgs(
 				printTermLine(`${command}: unrecognized option '${arg}'`);
 				if (availableOptions.find((opt) => opt.long === "--help"))
 					printTermLine(`Try '${command} --help' for more information.`);
+				else if (availableOptions.find((opt) => opt.short === "-h"))
+					printTermLine(`Try '${command} -h' for more information.`);
 				return null;
 			}
 
-			options[option.name] = true;
+			if (option.takesArg) {
+				options[option.name] = args[i + 1];
+				i++;
+			} else {
+				options[option.name] = true;
+			}
 		} else if (arg.startsWith("-")) {
 			const shortOptions = arg.slice(1).split("");
 			for (const shortOption of shortOptions) {
@@ -174,15 +186,24 @@ async function checkOptionsFromArgs(
 					printTermLine(`${command}: unrecognized option '-${shortOption}'`);
 					if (availableOptions.find((opt) => opt.long === "--help"))
 						printTermLine(`Try '${command} --help' for more information.`);
+					else if (availableOptions.find((opt) => opt.short === "-h"))
+						printTermLine(`Try '${command} -h' for more information.`);
 					return null;
 				}
 
-				options[option.name] = true;
+				if (option.takesArg) {
+					options[option.name] = args[i + 1];
+					i++;
+				} else {
+					options[option.name] = true;
+				}
 			}
 		}
+
+		nonOptionArgs.push(arg);
 	}
 
-	return options;
+	return { options: options, nonOptionArgs: nonOptionArgs };
 }
 
 async function echo(env: envType, ...args: string[]) {
@@ -221,9 +242,12 @@ async function cat(env: envType, ...args: string[]) {
 		{ name: "ignored", long: "", short: "-u", takesArg: false }, // easiest feature to implement
 	] as optionType[];
 
-	const options = await checkOptionsFromArgs(args, availableOptions, "cat");
+	const parsedParts = await checkOptionsFromArgs(args, availableOptions, "cat");
 
-	if (!options) return 1;
+	if (!parsedParts) return 1;
+
+	const options = parsedParts.options;
+	args = parsedParts.nonOptionArgs;
 
 	if (options.help) {
 		printTermLine(`Usage: cat [OPTION]... [FILE]...
@@ -240,7 +264,7 @@ Concatenate FILE(s) to standard output.
 	}
 
 	if (options.version) {
-		printTermLine(`cat (jsh) 0.1.0`);
+		printTermLine(`cat (jsh) 0.1.1`);
 		return 0;
 	}
 
@@ -375,11 +399,53 @@ async function clear(env: envType) {
 	return 0;
 }
 
-async function ping(env: envType, address: string) {
+async function ping(env: envType, ...args: string[]) {
+	const availableOptions = [
+		{ name: "help", long: "", short: "-h", takesArg: false },
+		{ name: "version", long: "", short: "-V", takesArg: false },
+		{ name: "count", long: "", short: "-c", takesArg: true },
+	] as optionType[];
+
+	const parsedParts = await checkOptionsFromArgs(
+		args,
+		availableOptions,
+		"ping"
+	);
+
+	if (!parsedParts) return 2;
+
+	const options = parsedParts.options;
+	args = parsedParts.nonOptionArgs;
+
+	if (options.help) {
+		printTermLine(`Usage
+  ping [options] &lt;destination&gt;
+
+Options:
+  &lt;destination&gt;  DNS name
+  -c &lt;count&gt;     stop after &lt;count&gt; replies
+  -h             print help and exit
+  -V             print version and exit`);
+		return 0;
+	}
+
+	if (options.version) {
+		printTermLine(`ping (jsh) 0.1.0`);
+		return 0;
+	}
+
+	const address = args.find((arg) => !arg.startsWith("-"));
+	if (!address) {
+		printTermLine("ping: missing address");
+		return 1;
+	}
+
+	const count = options.count ? parseInt(options.count as string) : 5;
+
 	printTermLine(`PING ${address} 56 data bytes`);
 	let failed = false;
 
-	for (let i = 0; i < 5; i++) {
+	for (let i = 0; i < count; i++) {
 		if (failed) return 1;
 
 		const start = performance.now();
@@ -453,7 +519,39 @@ async function help(env: envType) {
 	return 0;
 }
 
-async function whoAmI(env: envType) {
+async function whoAmI(env: envType, ...args: string[]) {
+	const availableOptions = [
+		{ name: "help", long: "--help", short: "", takesArg: false },
+		{ name: "version", long: "--version", short: "", takesArg: false },
+	] as optionType[];
+
+	const parsedParts = await checkOptionsFromArgs(
+		args,
+		availableOptions,
+		"whoami"
+	);
+
+	if (!parsedParts) return 2;
+
+	const options = parsedParts.options;
+	args = parsedParts.nonOptionArgs;
+
+	if (options.help) {
+		printTermLine(`Usage: whoami [OPTION]...
+Print some information about the user.
+Note: This is not the standard whoami command.
+
+      --help        display this help and exit
+      --version     output version information and exit`);
+
+		return 0;
+	}
+
+	if (options.version) {
+		printTermLine(`whoami (jsh) 1.0.0`);
+		return 0;
+	}
+
 	terminal.appendChild(fetchInfoCopy.cloneNode(true));
 	return 0;
 }
