@@ -113,11 +113,11 @@ Exit status:
 	}
 
 	if (options.version) {
-		printTermLine(`ls (jsh) 1.0.1`);
+		printTermLine(`ls (jsh) 1.0.2`);
 		return 0;
 	}
 
-	const path = tryParsePath(args.find((arg) => !arg.startsWith("-")));
+	const path = tryParsePath(args[0]);
 	let obj = getObjAtPath(path) as Directory;
 
 	let allContents = Object.keys(obj);
@@ -198,9 +198,7 @@ async function checkOptionsFromArgs(
 					options[option.name] = true;
 				}
 			}
-		}
-
-		nonOptionArgs.push(arg);
+		} else nonOptionArgs.push(arg);
 	}
 
 	return { options: options, nonOptionArgs: nonOptionArgs };
@@ -264,11 +262,11 @@ Concatenate FILE(s) to standard output.
 	}
 
 	if (options.version) {
-		printTermLine(`cat (jsh) 0.1.1`);
+		printTermLine(`cat (jsh) 0.1.2`);
 		return 0;
 	}
 
-	const files = args.filter((arg) => !arg.startsWith("-"));
+	const files = args;
 	if (files.length === 0) {
 		printTermLine(
 			"cat: No files specified\n(will handle reading from stdin in the future)"
@@ -430,11 +428,11 @@ Options:
 	}
 
 	if (options.version) {
-		printTermLine(`ping (jsh) 0.1.0`);
+		printTermLine(`ping (jsh) 0.1.1`);
 		return 0;
 	}
 
-	const address = args.find((arg) => !arg.startsWith("-"));
+	const address = args[0];
 	if (!address) {
 		printTermLine("ping: missing address");
 		return 1;
@@ -473,16 +471,17 @@ async function tree(env: envType, ...args: string[]) {
 		{ name: "help", long: "--help", short: "", takesArg: false },
 		{ name: "version", long: "--version", short: "", takesArg: false },
 		// listing options
+		// { name: "includeHidden", long: "", short: "-a", takesArg: false }, // TODO includeHidden
 		{ name: "dirsOnly", long: "", short: "-d", takesArg: false },
 		{ name: "fullPathPrefix", long: "", short: "-f", takesArg: false },
 		{ name: "levelLimit", long: "", short: "-L", takesArg: true },
-		{ name: "rerunOnMaxDepth", long: "", short: "-R", takesArg: false },
+		// { name: "rerunOnMaxDepth", long: "", short: "-R", takesArg: false }, // TODO rerunOnMaxDepth
 		{ name: "pruneEmptyDirs", long: "--prune", short: "", takesArg: false },
 		// file options
 		{ name: "quoteFileNames", long: "", short: "-Q", takesArg: false },
-		// XML/JSON options
-		{ name: "xml", long: "", short: "-X", takesArg: false },
-		{ name: "json", long: "", short: "-J", takesArg: false },
+		// XML/JSON options (not implemented)
+		// { name: "xml", long: "", short: "-X", takesArg: false },
+		// { name: "json", long: "", short: "-J", takesArg: false },
 	] as optionType[];
 
 	const parsedParts = await checkOptionsFromArgs(
@@ -499,7 +498,17 @@ async function tree(env: envType, ...args: string[]) {
 	args = parsedParts.nonOptionArgs;
 
 	if (options.help) {
-		printTermLine(`Usage: tree [OPTION]... [DIRECTORY]...`);
+		printTermLine(`usage: tree [-dfQ] [-L level] [--prune] [directory ...]
+  ------- Listing options -------
+  -d         List directories only.
+  -f         Print the full path prefix for each file.
+  -L level   Descend only level directories deep.
+  --prune    Prune empty directories from the output.
+  ------- File options -------
+  -Q         Quote filenames with double quotes.
+  ------- Miscellaneous options -------
+  --version     Print version and exit.
+  --help        Print usage and this help message and exit.`);
 		return 0;
 	}
 
@@ -518,8 +527,10 @@ async function tree(env: envType, ...args: string[]) {
 
 async function treeDir(
 	path: string,
-	options: Record<string, string | boolean>
+	options: Record<string, string | boolean>,
+	level = 1
 ) {
+	const levelLimit = parseInt(options.levelLimit as string) || Infinity;
 	path = tryParsePath(path);
 	const obj = getObjAtPath(path);
 	if (!obj || typeof obj !== "object") return "";
@@ -528,21 +539,32 @@ async function treeDir(
 
 	let tree = "";
 	for (let i = 0; i < items.length; i++) {
-		let item = items[i];
-		if (options.dirsOnly && typeof obj[item] !== "object") continue;
+		const itemName = items[i];
+		const item = obj[itemName];
+		if (options.dirsOnly && typeof item !== "object") continue;
+		if (options.pruneEmptyDirs && typeof item === "object") {
+			const subItems = Object.keys(item);
+			if (subItems.length === 0) continue;
+		}
 		const isLast = i === items.length - 1;
 		const connector = isLast ? "└──" : "├──";
 		const pathPrefix = (options.fullPathPrefix ? `${path}/` : "").replace(
 			"//",
 			"/"
 		);
-		tree += `\n${connector} ${pathPrefix}${item}`;
+		let nameToPrint = `${pathPrefix}${itemName}`;
+		if (options.quoteFileNames) nameToPrint = `"${nameToPrint}"`;
+		tree += `\n${connector} ${nameToPrint}`;
 
-		if (typeof obj[item] === "object" && Object.keys(obj[item]).length > 0) {
-			const newPath = `${path}/${item}`;
+		if (
+			typeof item === "object" &&
+			Object.keys(item).length > 0 &&
+			level < levelLimit
+		) {
+			const newPath = `${path}/${itemName}`;
 			const isLastDir = i === items.length - 1;
 			const indented = await indentTree(
-				await treeDir(newPath, options),
+				await treeDir(newPath, options, level + 1),
 				isLastDir
 			);
 			tree += `\n${indented}`;
