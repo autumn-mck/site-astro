@@ -1,4 +1,4 @@
-import { getObjAtPath, tryGetCommandPath } from "./commands";
+import { getObjAtPath, tryGetCommandPath } from "./commands/jsh";
 import { envVars, getCurrentDir } from "./data";
 
 export const terminal = document.getElementById("terminalContent")!;
