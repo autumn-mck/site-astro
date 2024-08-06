@@ -33,8 +33,6 @@ export default async function tree(env: envType, ...args: string[]) {
 
 	if (!parsedParts) return 2;
 
-	console.log(parsedParts);
-
 	const options = parsedParts.options;
 	args = parsedParts.nonOptionArgs;
 

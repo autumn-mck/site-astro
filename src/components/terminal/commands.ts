@@ -14,8 +14,6 @@ import tree from "./commands/tree";
 import which from "./commands/which";
 import whoAmI from "./commands/whoami";
 
-import { printTermLine, printRawHTML, printImage, terminal } from "./terminal";
-
 export const commands = {
 	ls: { fn: ls, desc: "list available directories" },
 	echo: { fn: echo, desc: "print text" },
