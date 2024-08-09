@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import termIco from "./terminal/kitty-dark.png";
 
 interface Props {
 	user: string;
@@ -27,25 +28,51 @@ const extraSpaces = 3;
 const dashes = maxLength + textMaxLength + extraSpaces + 1;
 ---
 
-<div id="terminal" data-user={user}>
-	<div id="terminalContent">
-		<pre>[{user} ~]$ whoami</pre>
-		<div id="fetch-row">
-			<Image id="img" src={image.src} alt={image.alt} />
-			<pre>
+<div id="window">
+	<div id="titleBar">
+		<div id="titlebarLeft">
+			<Image src={termIco} alt="Terminal Icon" id="windowIcon" />
+		</div>
+		<div id="titlebarCenter"><span id="titlebarText">autumn@mck:~</span></div>
+		<div id="titlebarRight">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="var(--closeCircle)"
+				stroke="var(--closeX)"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				id="closeBtn">
+				<circle cx="12" cy="12" r="12" stroke-width="0"></circle>
+				<line x1="18" y1="6" x2="6" y2="18"></line>
+				<line x1="6" y1="6" x2="18" y2="18"></line>
+			</svg>
+			<div id="minimizeButton"></div>
+			<div id="maximizeButton"></div>
+		</div>
+	</div>
+	<div id="terminal" data-user={user}>
+		<div id="terminalContent">
+			<pre>[{user} ~]$ whoami</pre>
+			<div id="fetch-row">
+				<Image id="img" src={image.src} alt={image.alt} />
+				<pre>
 {name}
 {"-".repeat(dashes)}
 {items.map(item =>
 	<p>{item.name}:{" ".repeat(maxLength - item.name.length + extraSpaces)}{item.href && <a href={item.href} rel="noopener" target="_blank">{item.textContent}</a>}{!item.href && <span>{item.textContent}</span>}</p>
 )}</pre>
+			</div>
+			<pre>[{user} ~]$ fetch-music</pre>
+			<music-display
+				nowPlayingApi="https://music-display.mck.is/now-playing"
+				websocketUrl="wss://music-display.mck.is/now-playing-ws"
+			></music-display>
 		</div>
-		<pre>[{user} ~]$ fetch-music</pre>
-		<music-display
-			nowPlayingApi="https://music-display.mck.is/now-playing"
-			websocketUrl="wss://music-display.mck.is/now-playing-ws"></music-display>
+		<pre
+			id="input"><span id="prompt">[{user} ~]$</span> <span id="typed" /><span id="caret">_</span></pre>
 	</div>
-	<pre
-		id="input"><span id="prompt">[{user} ~]$</span> <span id="typed" /><span id="caret">_</span></pre>
 </div>
 
 <script>
@@ -107,11 +134,64 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 		margin: 0 auto;
 	}
 
+	#window {
+		border: 2px solid var(--base-below-below);
+		border-radius: 0.5rem;
+		transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+		overflow: hidden;
+
+		&:hover {
+			border: 2px solid var(--accent);
+		}
+	}
+
+	#titleBar {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		background: var(--base-below-below);
+		display: none;
+
+		img {
+			width: 1.25rem;
+			height: 1.25rem;
+		}
+
+		#titlebarText,
+		#windowIcon {
+			pointer-events: none;
+			user-select: none;
+		}
+
+		#closeBtn {
+			width: 1.25rem;
+			height: 1.25rem;
+			cursor: pointer;
+
+			transition: all 0.3s ease;
+
+			--closeCircle: transparent;
+			--closeX: var(--text);
+
+			&:hover {
+				--closeCircle: #ed8796;
+				--closeX: var(--base-below-below);
+			}
+		}
+
+		#titlebarLeft,
+		#titlebarCenter,
+		#titlebarRight {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+
 	#terminal {
 		background: #24273a7a;
 		padding: 1rem;
-		border: 2px solid var(--base-below-below);
-		border-radius: 0.5rem;
+
 		font-size: 1.1rem;
 		display: flex;
 		flex-direction: column;

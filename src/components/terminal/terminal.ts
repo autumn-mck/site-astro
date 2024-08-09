@@ -26,7 +26,7 @@ export function printImage(src: string) {
 	terminal.appendChild(img);
 }
 
-export function getPrompt() {
+function getPrompt() {
 	return `[${envVars.USER}@${envVars.hostname} ${getDirForPrompt()}]$`;
 }
 
@@ -36,6 +36,19 @@ function getDirForPrompt() {
 
 	const parts = getCurrentDir().split("/");
 	return parts[parts.length - 1];
+}
+
+function getWindowTitle() {
+	return `${envVars.USER}@${envVars.hostname}:${getDirForTitle()}`;
+}
+
+function getDirForTitle() {
+	let currentDir = getCurrentDir();
+	if (currentDir.startsWith("/home/autumn"))
+		currentDir = currentDir.replace("/home/autumn", "~");
+	if (currentDir === "/") return "/";
+
+	return currentDir;
 }
 
 async function tryRunCommand(command: string) {
@@ -104,6 +117,7 @@ export async function onEnterKey(command: string) {
 	const caret = document.getElementById("caret")!;
 	const input = document.getElementById("input")!;
 	const prompt = document.getElementById("prompt")!;
+	const windowTitle = document.getElementById("titlebarText")!;
 	input.style.display = "none";
 
 	printTermLine(`${getPrompt()} ${command}`);
@@ -113,6 +127,7 @@ export async function onEnterKey(command: string) {
 	}
 
 	prompt.innerText = getPrompt();
+	windowTitle.innerText = getWindowTitle();
 	const terminal = document.getElementById("terminalContent")!;
 	terminal.scrollTop = terminal.scrollHeight;
 
