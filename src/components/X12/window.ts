@@ -56,9 +56,14 @@ const style = /*css*/ `
 	justify-content: space-between;
 	background: var(--base-below-below);
 
-	img {
+	#windowIcon {
 		width: 1.25rem;
 		height: 1.25rem;
+	}
+
+	/* when the window has an empty src, hide */
+	#windowIcon[src=""] {
+		display: none;
 	}
 
 	#titlebarText,
