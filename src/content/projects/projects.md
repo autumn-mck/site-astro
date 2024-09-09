@@ -10,30 +10,35 @@ A list of most of the projects I've worked on - mostly personal projects, with a
 
 ## PlanetPhysics
 
-An [n-body](https://en.wikipedia.org/wiki/N-body_problem) physics simulator built for fun as a side project.  
-Currently uses the rather inaccurate [Euler method](https://en.wikipedia.org/wiki/Euler_method) for integration (this
-is mostly mitigated by using very small step sizes), but ideally it should use something like the Runge-kutta methods for better
-accuracy.  
-Includes several pre-set situations, including a fictional but nice-looking system (shown below), a stable 3-body figure-8
-system, a binary star system, and our solar system to scale (with and without moons)
+<div class="project">
+  <div class="preview">
+    <video autoplay loop muted controls>
+      <source src="/videos/solar_new.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video autoplay loop muted controls>
+      <source src="/videos/eight.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-<p>
-<video autoplay loop muted controls>
-  <source src="/videos/solar_new.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</p>
+  <div class="description">
 
-<!-- <p>
-<video autoplay loop muted controls>
-  <source src="/videos/eight.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</p> -->
+An [n-body](https://en.wikipedia.org/wiki/N-body_problem) physics simulator built for fun as a side project.
+
+Currently uses the rather inaccurate [Euler method](https://en.wikipedia.org/wiki/Euler_method) for integration (this is mostly mitigated by using very small step sizes), but ideally it should use something like the Runge-kutta methods for better accuracy.
+
+Includes several pre-set situations, including a fictional but nice-looking system (shown below), a stable 3-body figure-8 system, a binary star system, and our solar system to scale (with and without moons)
 
 [PlanetPhysics code](https://github.com/autumn-mck/PlanetPhysics)
 
+  </div>
+</div>
+
 ## weird-fe
+
+<div class="project">
+  <div class="description">
 
 This was a very experimental attempt to write my own frontend for akkoma(/anything else supporting the mastodon API)
 
@@ -49,37 +54,72 @@ Supports:
 - Quote posts
 - Akkoma's subset of MFM
 
+[weird-fe code](https://github.com/autumn-mck/weird-fe)
+
+  </div>
+<div class="preview">
+
 ![Screenshot of a thread of replies to a post](./imgs/weird-fe.png)
 
-[weird-fe code](https://github.com/autumn-mck/weird-fe)
+  </div>
+</div>
 
 ## CSC1028
 
-The project I created for the CSC1028 module I opted to do, providing all sorts of metadata on a given URL. See my [blog post for CSC1028](/CSC1028/) for a lot more info.
+<div class="project">
+  <div class="preview">
 
 ![UI showing several data sources, including a SimilarWeb rank, DNS lookup, phishing/malware data, earliest archive date, and all subdomains](./imgs/1028.png)
 
+  </div>
+  <div class="description">
+
+The project I created for the CSC1028 module I opted to do, providing all sorts of metadata on a given URL. See my [blog post for CSC1028](/CSC1028/) for a lot more info.
+
 [CSC1028 code](https://github.com/autumn-mck/CSC1028)
+
+  </div>
+</div>
 
 ## Last Stand Text Adventure
 
-A text adventure made as a group project for out CSC1030 module. I created the majority of the CSS for the layout, along with
-the temperature and typewriter systems used by all other group members. I also worked with them to create the inventory and
-timer systems also used throughout the game. We worked great as a group, and stuck together for several group projects after this one.
+<div class="project">
+  <div class="description">
 
-![A game in-progess, showing the player several choices for how to proceed, and an image of where they are](./imgs/last-stand.webp)
+A text adventure made as a group project for out CSC1030 module.
+
+I created the majority of the CSS for the layout, along with the temperature and typewriter systems used by all other group members. I also worked with them to create the inventory and timer systems also used throughout the game.
+
+We worked great as a group, and stuck together for several group projects after this one.
 
 [Last Stand Code](https://github.com/autumn-mck/LastStand), or [play The Last Stand here](https://last-stand.mck.is/)!
 
+  </div>
+  <div class="preview">
+
+![A game in-progess, showing the player several choices for how to proceed, and an image of where they are](./imgs/last-stand.webp)
+
+  </div>
+</div>
+
 ## Catppuccin-MusicBee
+
+<div class="project">
+  <div class="preview">
+
+![Screenshot of several versions of the theme, with a range of accent colours and background colours](./imgs/catppuccin-musicbee.webp)
+
+  </div>
+  <div class="description">
 
 A theme for the MusicBee music player based on the very nice [Catppuccin](https://github.com/catppuccin/catppuccin) colour palette. Less impressive than most of the other things here, but the one I use most regularly!
 
 Uses a combination of `bash`, `imagemagick`, `xdotool`, `wine`, and `Xvfb` (X virtual framebuffer) to automate creating the 112 different variations of the theme.
 
-![Screenshot of several versions of the theme, with a range of accent colours and background colours](./imgs/catppuccin-musicbee.webp)
-
 [Catppuccin-MusicBee code and releases](https://github.com/autumn-mck/Catppuccin-MusicBee)
+
+  </div>
+</div>
 
 ## SiteMusicDisplay
 
@@ -113,6 +153,9 @@ See the [blog post](/blog/2024/small-projects-for-fun/) I wrote for more details
 
 ## Driver
 
+<div class="project">
+  <div class="description">
+
 An application I wrote from scratch with several parts:
 
 - A 2D driving simulation that actually feels fun to drive around in
@@ -122,11 +165,25 @@ An application I wrote from scratch with several parts:
 ... the end result of which is networks which can drive a car pretty well based on only a few sensors (5 distances to the edge
 of the track at different angles)
 
-![Video showing several hundred cars driving around the 2d track, with some colliding into the edges and stopping](./imgs/driver.gif)
-
 [Driver code](https://github.com/autumn-mck/MonoGameDriver)
 
+  </div>
+  <div class="preview">
+
+![Video showing several hundred cars driving around the 2d track, with some colliding into the edges and stopping](./imgs/driver.gif)
+
+  </div>
+</div>
+
 ## CPU-based raytracer
+
+<div class="project">
+  <div class="preview">
+
+![Example output of the program, showing spheres of different sizes and different materials](./imgs/rtWeekend.webp)
+
+  </div>
+  <div class="description">
 
 A multithreaded CPU ray tracer written in C#. Based on the "Ray Tracing in One Weekend" book. Features:
 
@@ -138,31 +195,46 @@ A multithreaded CPU ray tracer written in C#. Based on the "Ray Tracing in One W
 Although performance could significantly be improved by offloading the GPU (Which is better suited for that kind of workload) it
 was still a very fun project to work on
 
-![Example output of the program, showing spheres of different sizes and different materials](./imgs/rtWeekend.webp)
-
 [Raytracer code](https://github.com/autumn-mck/RTWeekend)
+
+  </div>
+</div>
 
 ## Personal website
 
-The website you're currently browsing! Currently built using [Astro](https://astro.build/). You can [read why I picked Astro](/blog/2024/new-site), or [look at how this site has changed over time](/changelog)!
+<div class="project">
+  <div class="description">
 
-![A screenshot of the home page of this website](../changelog/v2-index.png)
+The website you're currently browsing! Currently built using [Astro](https://astro.build/). You can [read why I picked Astro](/blog/2024/new-site), or [look at how this site has changed over time](/changelog)!
 
 [Website code](https://github.com/autumn-mck/site-astro)
 
+  </div>
+  <div class="preview">
+
+![A screenshot of the home page of this website](../changelog/v2-index.png)
+
+  </div>
+</div>
+
 ## Particle/powder toy simulator
+
+<div class="project">
+  <div class="preview">
+    <video autoplay loop muted controls>
+      <source src="/videos/powdertoy.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="description">
 
 A small particle/powder toy simulator. Very basic - its flaws are definitely noticable if you're looking for them - but I still
 enjoyed messing around with this kind of cellular automaton
 
-<p>
-<video autoplay loop muted controls>
-  <source src="/videos/powdertoy.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</p>
-
 [PowderSim code](https://github.com/autumn-mck/ParticleSim)
+
+  </div>
+</div>
 
 ## Authorised markov fetch
 
@@ -174,21 +246,37 @@ Rather than using ActivityPub outboxes and pretending to be an instance, which [
 
 ## MusicBee installation script for Linux
 
+<div class="project">
+  <div class="description">
+
 A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows application) on linux. I wrote a whole [blog post](/blog/2024/musicbee-on-linux/) on this!
 
 - Automatically sets up a wineprefix with the required libraries
 - Downloads and installs the specified version of MusicBee
 - Downloads the DLLs required for playing AAC/M4A files
-- Installs a set of skins
 - Creates an improved XDG Desktop entry
-- Downloads settings so they don't have to be changed from defaults after launching
 - Installs Discordbee and Wine-Discord IPC bridge to allow the song you're currently listening to to be displayed as a status on Discord
 
 [MusicBee install script here](https://gist.github.com/autumn-mck/6d7fcbbc08f5d18be09f2cc219084675)
 
+  </div>
+  <div class="preview">
+
 ![Screenshot of MusicBee running on linux](./imgs/musicbee-linux.png)
 
+  </div>
+</div>
+
 ## A2 Project
+
+<div class="project">
+  <div class="preview">
+
+![The appointment calendar view](./imgs/a2-cal.webp)
+![Some graphs in the statistics view](./imgs/a2-stats.webp)
+
+  </div>
+  <div class="description">
 
 This application was my A2 coursework project for Software Systems Development, written between 10/11/2020 and 14/03/2021 using
 C# and WPF. See the [git repo](https://github.com/autumn-mck/A2-Project) for more details and features
@@ -196,10 +284,10 @@ C# and WPF. See the [git repo](https://github.com/autumn-mck/A2-Project) for mor
 This is still a project I'm very proud of - It's got a few minor flaws, but it has some features I put a lot of work into and
 I'm very happy with the end result.
 
-![The appointment calendar view](./imgs/a2-cal.webp)
-![Some graphs in the statistics view](./imgs/a2-stats.webp)
-
 [A2 Project Code](https://github.com/autumn-mck/A2-Project)
+
+  </div>
+</div>
 
 ## 2048 fork
 
@@ -224,3 +312,9 @@ offer this sort of functionality (eg [pandoc](https://pandoc.org/)), I wanted so
 control over the result.
 
 [WebGenJava code](https://github.com/autumn-mck/WebGenJava) (Please, don't use it)
+
+<style>
+main {
+  width: 120ch;
+}
+</style>
