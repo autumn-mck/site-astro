@@ -13,12 +13,12 @@ I always enjoy hearing other people talk about what hardware/software they use, 
 ### Desktop (Built Summer 2019)
 
 **CPU**: Ryzen 5 3600x - it's been a great! I should have just gone for the non-X version and saved £50 though  
-**GPU**: RTX 2060 - More than good enough for playing indie games, which is most of what I use it for  
+**GPU**: 7800XT - Recently upgraded from a RTX 2060 - partly to allow me to run whatever I need at 4k, partly to avoid nvidia's drivers that didn't properly support wayland  
 **RAM**: 16gb at 3466MT/s, not much to comment on - the only times I run out of RAM are when I accidentally write a loop that eats up gigabytes of RAM  
 **Motherboard**: B450 Tomahawk - Enough I/O, works well! Mostly picked because it supports updating its BIOS from a USB stick, which was needed because I built this system only days after the 3600x released.  
-**Case**: Fractal Meshify C. High airflow gives me a quiet PC, and it looks good! (Although there's been some better looking cases released since like the Fractal North)
+**Case**: A Fractal North case. High airflow gives me a quiet PC, and in my opinion it's easily the best looking ATX case in the last few years!
 
-Overall I love it! It's been fantastic, and I plan to keep it until I really need to upgrade.
+Overall I love it! It's been fantastic, and although it's been upgraded somewhat, it's lasted extremely well over the last 5 years.
 
 ### Peripherals
 
@@ -51,7 +51,7 @@ I'm currently using Linux on both my desktop and laptop (with a backup Windows i
 
 I'm really happy with my current setup - It gets out of the way when I'm wanting to get some work done, but still allows me to mess around and tweak stuff when I feel like it.
 
-Most of it is pretty standard, but there's a few extras like using [bismuth](https://github.com/Bismuth-Forge/bismuth) for tiling windows and [Lightly Shaders](https://github.com/a-parhom/LightlyShaders) for nice rounded window corners.
+Most of it is pretty standard, but there's a few extras like using [polonium](https://github.com/zeroxoneafour/polonium) for tiling windows and [Lightly Shaders](https://github.com/a-parhom/LightlyShaders) for nice rounded window corners.
 
 ![3 windows tiled with 2 on the left, 1 on the right](./imgs/desktop-kde-bromite.png)
 
@@ -80,6 +80,3 @@ I also have more screenshots of other previous setups lying around:
 ![Screenshot of my previous Windows 10 desktop setup showing some of the software mentioned above - Wallpaper Engine is used for an animated rocket/space-themed background, Rainmeter used to display currently playing music and hardware usage, and the OpenShell menu open.](./imgs/desktop-win10.webp)
 
 ![The same Windows 10 desktop as above, showing the output of winfetch, and file explorer using a custom theme.](./imgs/desktop-win10-fetch.png)
-
-Here's some of the software I ran when I was using Windows:  
-Wallpaper Engine, Rainmeter, Open-Shell (Fluent-Metro skin), Microsoft PowerToys, Notepad++, MusicBee, f.lux, Everything (Voidtools)
