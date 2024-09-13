@@ -179,7 +179,7 @@ async function readFromFile(client) {
 }
 ```
 
-`sonarDataLocation` should be wherever you saved the data to - either a relative path, in the current case (`fdns_a.json` is in the same folder as `fetchData.js`), or an absolute path, like `C:\\Users\\James\\Downloads\\fdns_a.json.gz`. We then create a [read stream](https://nodejs.org/api/stream.html#stream) - not the actual data itself - that we can later read through and parse. `fs` is Node.js's filesystem module, allowing us to interact with local files. We then pass this stream, and the MongoClient passed into the function, to a function that does not yet exist - it's next for us to make.
+`sonarDataLocation` should be wherever you saved the data to - either a relative path, in the current case (`fdns_a.json` is in the same folder as `fetchData.js`), or an absolute path, like `C:\\Users\\autumn\\Downloads\\fdns_a.json.gz`. We then create a [read stream](https://nodejs.org/api/stream.html#stream) - not the actual data itself - that we can later read through and parse. `fs` is Node.js's filesystem module, allowing us to interact with local files. We then pass this stream, and the MongoClient passed into the function, to a function that does not yet exist - it's next for us to make.
 
 Finally, let's call this method from the main function with `readFromFile(client);`
 
