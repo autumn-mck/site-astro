@@ -8,6 +8,8 @@ noHeader: true
 
 A list of most of the projects I've worked on - mostly personal projects, with a few from university.
 
+<!-- nothing makes sense, so i might as well make nonsense -->
+
 ## PlanetPhysics
 
 <div class="project">
