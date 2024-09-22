@@ -1,9 +1,10 @@
 ---
 import "../styles/global.css";
 import Header from "../components/Header.astro";
-import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
+
+import * as consts from "../consts.js";
 
 interface Props {
 	title: string;
@@ -16,7 +17,12 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="en-GB">
 	<head>
-		<BaseHead title={title} description={description} />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+
+		<title>{title} | {consts.SITE_DOMAIN}</title>
+		<meta name="description" content={description} />
 		<ViewTransitions />
 	</head>
 	<body>
