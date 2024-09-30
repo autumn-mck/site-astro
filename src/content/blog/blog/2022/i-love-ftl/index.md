@@ -3,22 +3,24 @@ title: "I love FTL: Faster Than Light"
 description: I ramble about a game I like for too long
 published: 2022-01-29
 previewImage: ./FTL.png
-tags:
-	- games
-  - ftl
 ---
 
-This blog post was written to be the content of a page for one of my university modules where we were required to write about something we were interested in, and unlikely to be picked by anybody else. I've decided to stick it up here too, because why not?
-I had originally intended for this to be a list of some of my favourite indie games, but it quickly spiralled into just being about FTL. (Still might do that list later though)
+I originally wrote this blog post as the content of a page for one of my university modules, but I've decided to stick it here too!
+I had planned for this to be a list of some of my favourite indie games, but it quickly spiralled into just being about FTL.
+
+(I'm planning to get around to that list soon though!)
 
 ## FTL: Faster Than Light
 
 ![](./FTL.png)
-I should probably have put out those fires... Genre: indie, rogue-like, strategy
 
-FTL was a first in several ways for me. It was my first PC game (Now the only platform I play on), my first indie game (Now the vast majority of games that I play), and the first game I ever chose to buy myself, instead of having it bought for me. As a result, it's probably not possible for me to talk about it without looking through rose-tinted glasses to some extent, so take my opinion with a grain of salt.
+<center><i>I should probably have put out those fires...</i></center>
 
-You play as the captain of a ship, belonging to the federation. You must manage your crew and energy usage and make decisions on how to survive throughout your journey and help defend the federation against the rebels.
+FTL was a completely new experience to me in several ways. It was the first PC game I bought (now the only platform I play on), the first indie game I played (now the vast majority of the games I play), and the first game I ever chose to buy myself, instead of having it bought for me.
+
+As a result, it's probably not possible for me to talk about it without looking through rose-tinted glasses to some extent, so take my opinion with a grain of salt.
+
+For an overview: You play as the captain of a ship, belonging to the federation. You must manage your crew and energy usage and make decisions on how to survive throughout your journey and help defend the federation against the rebels.
 
 FTL is a "rougelike" game, meaning on each playthrough you start from scratch. Weak and with little to defend yourself, you must upgrade your ship and take on new crewmembers to hope to survive the many dangers you find as you explore the universe. With a wide range of weapons, from laser machine guns that take time to start up but are deadly once unleashed, to fire beams to kill your enemy ship's crew while leaving their ship (mostly) intact, and systems like hacking to take over a ship's navigation or teleporters to form boarding crews, there are many ways to play the game. Unfortunately for you, enemy ships also have access to the same arsenal of systems, and they aren't willing to go down without a fight.
 
@@ -29,25 +31,25 @@ To make each run more different, the game also has unlockable ships (8 ships wit
 ## Choices
 
 ![](./FTLChoice.jpg)
-Choices in FTL
+
+<center><i>Choices in FTL</i></center>
 
 Extra options you have access to are highlighted in blue
 
 Another one of my favourite things about FTL is the choices it gives you. As an example:
 
-"You arrive at the distress beacon near a small asteroid belt and find a ship with pirate markings partially crushed between two large rocks. It must have been illegally mining the belt without proper equipment."
+"You arrive at the distress beacon near a small asteroid belt and find a ship with pirate markings partially crushed between two large rocks. It must have been illegally mining the belt without proper equipment."  
 Your choices to respond to this are:
-"Try to dislodge the pirates by shooting at the rocks." - Will you damage their ship by doing this? What if they think you're trying to attack them, or since they're pirates, decide to attack you anyway? However, they may also reward you for your assistance.
-"Destroy and loot the ship. They're just pirates." - You might get some scrap (The game's currency) from destroying them, but what if they have friends around that see you?
-However, if you have a beam weapon or beam drone, you can "(Beam Weapon) Carefully cut the ship out." - Guaranteed to work, and you'll get your scrap reward, however it requires having specific equipment on your ship.
+
+- "Try to dislodge the pirates by shooting at the rocks." - Will you damage their ship by doing this? What if they think you're trying to attack them, or since they're pirates, decide to attack you anyway? However, they may also reward you for your assistance.
+- "Destroy and loot the ship. They're just pirates." - You might get some scrap (The game's currency) from destroying them, but what if they have friends around that see you?
+- However, if you have a beam weapon or beam drone, you can "(Beam Weapon) Carefully cut the ship out." - Guaranteed to work, and you'll get your scrap reward, however it requires having specific equipment on your ship.
 
 This is just one single simple event that you can come across in your exploration, and even it has complexity in its choices. There never is a perfect choice, and you can only guess at what the outcome of your actions will be.
 
 The game costs £7, and regularly goes on sale for the incredibly low price of £1.74 - well worth the hundreds of hours of fun I've gotten from this game (Note: At the time of writing, it is 75% off on steam!). As a warning though - FTL is hard. You'll die. A lot. Easy mode is a must when starting out, and I'm still not convinced hard mode is actually beatable.
-Steam
-GOG (Although the Steam version is also DRM free)
-Humble
-And even iPad, although if you buy it here you'll miss out on what I'm next to talk about...
+
+FTL is one of the few games I've properly obsessed over - I can't recommend it enough.
 
 ## FTL: Multiverse
 
