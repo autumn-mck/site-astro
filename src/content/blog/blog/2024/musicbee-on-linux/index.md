@@ -166,3 +166,9 @@ chmod +x ./launch.sh
 You can see the [script for installing MusicBee, the DLLs to play `.m4a` files, and an improved desktop file](https://gist.github.com/autumn-mck/6d7fcbbc08f5d18be09f2cc219084675), or a [script that does that, plus install DiscordBee, a couple of skins, and downloads the settings I use](https://gist.github.com/autumn-mck/ef1fba379cb2429083cf76369d0b032a) - the latter isn't really useful to anybody other than me, but it's available if you want to customise it yourself!
 
 I'm hardly the first person to do most of this stuff, but it was still a lot of fun! I enjoy doing things with computers and software that weren't exactly originally intended, and figuring out how I can solve problems.
+
+I've heard that even ripping CDs works, but given that [it's apparently not legal in the UK](https://www.bbc.co.uk/news/newsbeat-33566933), I of course would never do so myself.
+
+![Screenshot of the MusicBee CD ripping user interface](./cd.png)
+
+Wine may not be an emulator, but as far as I'm concerned, it is magic.
