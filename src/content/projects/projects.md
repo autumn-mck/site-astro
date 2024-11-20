@@ -118,7 +118,7 @@ A theme for the MusicBee music player based on the very nice [Catppuccin](https:
 
 Uses a combination of `bash`, `imagemagick`, `xdotool`, `wine`, and `Xvfb` (X virtual framebuffer) to automate creating the 112 different variations of the theme.
 
-[Catppuccin-MusicBee code and releases](https://github.com/autumn-mck/Catppuccin-MusicBee)
+[Catppuccin-MusicBee code and releases](https://github.com/catppuccin/musicbee)
 
   </div>
 </div>
