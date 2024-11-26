@@ -1,6 +1,6 @@
 ---
 title: "Running a fediverse instance: The technical side is the easy bit"
-description: Then things get a lot more difficult
+description: People are a lot more difficult
 published: 2024-07-18
 updated: 2024-11-26
 previewImage: ./fediverse.png
@@ -16,7 +16,7 @@ There's not too much involved in the technical side, at least on the small scale
 
 Initially setting up fedi software confused me a bit, having never really hosted anything myself before, but following the documentation got me going fairly quickly, and as far as I know it's only gotten easier since then (some instance software seems to have added install scripts to make the setup as easy as possible, which is great for helping people get started!)
 
-Ongoing maintenance didn't involve much either. Updates are easy and only take a couple of minutes. Even when I chose to migrate the whole instance to a dedicated machine (hosting people who are popular and post *hard* means a noticable spike in CPU usage every time they post), everything went smoothly and everything was back up and running within an hour.
+Ongoing maintenance didn't involve much either. Updates are easy and only take a couple of minutes. Even when I chose to migrate the whole instance to a dedicated machine (hosting others who are popular and post *hard* means a noticable spike in CPU usage every time they post), everything went smoothly and everything was back up and running within an hour.
 
 There were some mysterious ongoing issues even the developers seemed to have no clue what to do about (nobody seems to be sure if pleroma/akkoma database "rot" is real or not, and it is only spoken about with superstition and in hushed tones, in case it might overhear), but everything still kept working.
 
@@ -33,7 +33,7 @@ As I see it, handling a fediverse instance has 2 parts:
 
 ### On your instance
 
-Managing an instance well can be a lot of work, so I tried to keep things as easy as I could for the first part by limiting the number of people on the instance, and only accepting people I already knew and trusted on to the instance (mostly it was people asking if they could join the instance after we got to know each other, and a few being people I invited myself)
+Managing an instance well can be a lot of work, so I tried to keep things as easy as I could for the first part by limiting the number of people on the instance, and only accepting others I already knew and trusted on to the instance (mostly it was folk asking if they could join the instance after we got to know each other, and a few being ones I invited myself)
 
 This meant a few things:
 
@@ -43,7 +43,7 @@ This meant a few things:
   - I was happy backing the person on my instance, and try to talk with the other instance's admin to resolve the issue
   - or it was some minor issue that I could send a quick message to the the admin of the other issue to resolve
 
-However it also comes with the fairly significant downside that when there is a legitimate issue or drama, it's been caused by somebody you're close friends with. Depending on the scale of the issue, it can be *very* emotionally draining to deal with.
+However it also comes with the fairly significant downside that when there is a legitimate issue or drama, it's been caused by somebody you're close friends with. Depending on the scale of the issue, it can be emotionally exhausting to navigate and deal with.
 
 Building a community is also part of it - a good instance feels like it's more than just a collection of accounts that happen to share the same server. I think it was the most important thing that made my instance so special, to me and others. Leading by example as what you want to see in other people seemed to work for me.
 
@@ -61,7 +61,7 @@ I also put the work into maintaining and verifying my own blocklist for the inst
 - rely on the blocklist of another instance/group of people you trust (not my preferred option, as I had bad experiences with my instance ending up on some trusted blocklists, and even the managers of the blocklist being unsure as to the reason, although if it works for you then great)
 - acknowledge that your moderation will be reactive rather than proactive (if the people on your instance like this approach then great, I've seen it work really well on other instances)
 
-I'd also recommend being as transparent as you can about moderation decisions to everybody on your instance - I understand wanting to keep your instance's blocklist private to avoid scrutiny, but being transparent to the people on your instance about the moderation decisions you're making, why you're making them, and being open to disagreement is not only the right thing to do in my opinion, but it also shows to everybody on your instance the work you're putting in to keep everything running, and helps them trust you running the instance.
+I'd also recommend being as transparent as you can about moderation decisions to everybody on your instance - I understand wanting to keep your instance's blocklist private to avoid scrutiny, but being transparent to the people on your instance about the moderation decisions you're making, why you're making them, and being open to disagreement is not only the right thing to do in my opinion, but it also shows them the work you're putting in to keep everything running, and helps them trust you running the instance.
 
 ## Did my approach work?
 
