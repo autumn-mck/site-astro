@@ -1,6 +1,6 @@
 ---
 title: Bodging Python venv on NixOS
-description: When nothing works the way it's supposed to.
+description: Using computers in a non-intended way is always more fun!
 previewImage: ./distrobox.png
 published: 2024-11-21
 ---
@@ -36,7 +36,7 @@ pkgs.mkShell {
 }
 ```
 
-This _almost_ entirely works! Except. Because it's a nix shell and doesn't create a venv, VSCode doesn't know where to look for the packages, and constantly complains about missing imports. While absolutely not essential, I like type hinting and auto-completion within my IDE. Starting VSCode from within the shell didn't seem to work either, alas.
+It's pretty easy to manage, and _almost_ entirely works! Except. Because it's a nix shell and doesn't create a venv, VSCode doesn't know where to look for the packages, and constantly complains about missing imports. While absolutely not essential, I like type hinting and auto-completion within my IDE. Starting VSCode from within the shell didn't seem to work either, alas.
 
 ## What else can I try?
 
@@ -44,7 +44,7 @@ Does creating a venv with the system python work? Sort of, until you need to use
 
 The NixOS wiki suggests a few solution, the first of which is a script called "[fix-python](https://github.com/GuillaumeDesforges/fix-python/)", which attempts to patch the binary files in the venv to use the correct paths. An extremely cool idea! Unfortunately after running it, I was still getting the same error. The `libstdc++.so.6` file it was failing to fetch is part of one of the packages `fix-python` patches so it should have worked - it's possible it's related to [this issue](https://github.com/GuillaumeDesforges/fix-python/issues/6), however I don't have time to debug (yet), I have a project I need to work on.
 
-I know the other solutions on the wiki are likely to work, but would take more time for me to learn than I have right now. So what else do I already know that I can bodge into a working solution?
+I know the other solutions on the wiki are likely to work, but would take more time for me to learn than I have right now - I need to get working on my project so I have something to demo in a few days! So what else do I already know that I can bodge into a working solution?
 
 ## The bodged way
 
@@ -76,4 +76,4 @@ distrobox-export --app /usr/share/applications/code-oss.desktop # from within th
 
 ![Screenshot showing VSCode with a working venv, thinking it's in an Arch Linux system, alongside a display showing the system is running NixOS](distrobox.png)
 
-Was there some other way to solve this? Probably. But I didn't have time to find it, and this works for now. And that's it! A bodged and janky, but working, solution.
+Was there some other way to solve this? Almost certainly. But I didn't have time to find it, and this works for now. And that's it! A bodged and janky, but working, solution.
