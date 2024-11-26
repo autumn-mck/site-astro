@@ -8,7 +8,7 @@ previewImage: ./fediverse.png
 
 This blog post is a couple of thoughts on running a fediverse instance after growing one from a single user instance to a community of about 20 friends over a year and a half - a few things I think went well, what I could've done better, and a caution that it's not as easy as it seems.
 
-This isn't a blog post to explain the fediverse - if you've not heard of it before, then unfortunately you're not the target audience for this post. In short, it's a social network that on the backend functions similarly to email, where people can be on different providers (gmail, icloud, etc) and still talk to each other. (Although the fediverse is a lot less centralised than email, with thousands of instances of all sizes)
+This isn't a blog post to explain the fediverse - if you've not heard of it before, then unfortunately you're not the target audience for this post. In short, it's a social network that on the backend functions similarly to email, in that people can be on different providers (gmail, icloud, etc) and still talk to each other. (Although the fediverse is a lot less centralised than email, with thousands of instances of all sizes)
 
 ## The easy bit
 
@@ -40,7 +40,7 @@ This meant a few things:
 - I could trust them to not cause too many issues for me - not having to worry much about getting and handling reports is great
 - Everybody there shared me as a friend - people I get on well with seem to get on well with each other, even when they're very different, so it minimised drama within the instance. As a whole, it was a comfy and cosy space
 - If an issue with another instance did occur, it usually meant either:
-  - I was happy to defend the person on my instance, and try to talk with the other instance's admin to resolve the issue
+  - I was happy backing the person on my instance, and try to talk with the other instance's admin to resolve the issue
   - or it was some minor issue that I could send a quick message to the the admin of the other issue to resolve
 
 However it also comes with the fairly significant downside that when there is a legitimate issue or drama, it's been caused by somebody you're close friends with. Depending on the scale of the issue, it can be *very* emotionally draining to deal with.
@@ -83,4 +83,4 @@ Not really much more to say here. Managing to create a space that got these post
 
 Looking back, the main thing I now think I could've done better is to get help from others. I tried to run everything by myself, and although I did it well, it completely exhausted me and burnt me out, taking many months to recover. Having other people to help would've allowed me to feel like I could take breaks, and made running the instance sustainable. I hope I've learnt from this.
 
-I've tried to write something about fedi a couple of times now, but not managed to get something that feels right and fully contains my thoughts. I'm happy enough with this post, covering a small aspect of the whole thing at least. Rest in peace, [0w0.is](https://0w0.is/).
+I've tried to write something about fedi a couple of times now, but not managed to get something that feels right and fully contains my thoughts on something that took quite a bit of my time for a year or so to run. I'm happy enough with this post, covering a small aspect of the whole thing at least. Rest in peace, [0w0.is](https://0w0.is/).
