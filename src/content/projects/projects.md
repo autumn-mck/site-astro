@@ -18,19 +18,15 @@ A list of most of the projects I've worked on - mostly personal projects, with a
       <source src="/videos/solar_new.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <video autoplay loop muted controls>
-      <source src="/videos/eight.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
   </div>
 
   <div class="description">
 
-An [n-body](https://en.wikipedia.org/wiki/N-body_problem) physics simulator built for fun as a side project.
+An [n-body](https://en.wikipedia.org/wiki/N-body_problem) planetary gravitational simulator built for fun as a side project.
 
-Currently uses the rather inaccurate [Euler method](https://en.wikipedia.org/wiki/Euler_method) for integration (this is mostly mitigated by using very small step sizes), but ideally it should use something like the Runge-kutta methods for better accuracy.
+Uses the less accurate [Euler method](https://en.wikipedia.org/wiki/Euler_method) for integration (this is mostly mitigated by using very small step sizes), but ideally in future it should use something like the Runge-kutta methods for better accuracy.
 
-Includes several pre-set situations, including a fictional but nice-looking system (shown below), a stable 3-body figure-8 system, a binary star system, and our solar system to scale (with and without moons)
+Includes several pre-set situations, including a fictional but nice-looking system (shown), a stable 3-body figure-8 system, a binary star system, and our solar system to scale (with and without moons)
 
 [PlanetPhysics code](https://github.com/autumn-mck/PlanetPhysics)
 
@@ -42,19 +38,19 @@ Includes several pre-set situations, including a fictional but nice-looking syst
 <div class="project">
   <div class="description">
 
-This was a very experimental attempt to write my own frontend for akkoma(/anything else supporting the mastodon API)
+An experimental attempt to write my own frontend for [Akkoma](https://akkoma.social/) (and anything else supporting the [Mastodon API](https://docs.joinmastodon.org/))
 
-Made mostly to experiment with whatever ideas I found interesting, which is why the frontend is served as a completely static site, and heavily uses [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) for rendering the UI, and is written almost entirely from scratch, relying on as few other libraries as possible
+Written partly to experiment with whatever ideas I found interesting at the time, meaning the frontend is served as a completely static site, and heavily uses [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) for rendering the UI. Written almost entirely from scratch to gain more experience working with a limited set of tools and see how things work as low a level is possible for a web app.
 
 Supports:
 
 - Viewing posts (with attatchments, content warnings, etc)
 - Viewing replies to a post in a threaded view
-- Viewing a user's posts
+- Viewing a user's posts, bio, etc.
 - Viewing an instance's federated timeline
-- Emoji reactions
+- Emoji reactions, including custom emojis
 - Quote posts
-- Akkoma's subset of MFM
+- Akkoma's subset of [MFM](https://misskey-hub.net/en/docs/for-users/features/mfm/)
 
 [weird-fe code](https://github.com/autumn-mck/weird-fe)
 
@@ -66,66 +62,9 @@ Supports:
   </div>
 </div>
 
-## CSC1028
-
-<div class="project">
-  <div class="preview">
-
-![UI showing several data sources, including a SimilarWeb rank, DNS lookup, phishing/malware data, earliest archive date, and all subdomains](./imgs/1028.png)
-
-  </div>
-  <div class="description">
-
-The project I created for the CSC1028 module I opted to do, providing all sorts of metadata on a given URL. See my [blog post for CSC1028](/CSC1028/) for a lot more info.
-
-[CSC1028 code](https://github.com/autumn-mck/CSC1028)
-
-  </div>
-</div>
-
-## Last Stand Text Adventure
-
-<div class="project">
-  <div class="description">
-
-A text adventure made as a group project for out CSC1030 module.
-
-I created the majority of the CSS for the layout, along with the temperature and typewriter systems used by all other group members. I also worked with them to create the inventory and timer systems also used throughout the game.
-
-We worked great as a group, and stuck together for several group projects after this one.
-
-[Last Stand Code](https://github.com/autumn-mck/LastStand), or [play The Last Stand here](https://last-stand.mck.is/)!
-
-  </div>
-  <div class="preview">
-
-![A game in-progess, showing the player several choices for how to proceed, and an image of where they are](./imgs/last-stand.webp)
-
-  </div>
-</div>
-
-## Catppuccin-MusicBee
-
-<div class="project">
-  <div class="preview">
-
-![Screenshot of several versions of the theme, with a range of accent colours and background colours](./imgs/catppuccin-musicbee.webp)
-
-  </div>
-  <div class="description">
-
-A theme for the MusicBee music player based on the very nice [Catppuccin](https://github.com/catppuccin/catppuccin) colour palette. Less impressive than most of the other things here, but the one I use most regularly!
-
-Uses a combination of `bash`, `imagemagick`, `xdotool`, `wine`, and `Xvfb` (X virtual framebuffer) to automate creating the 112 different variations of the theme.
-
-[Catppuccin-MusicBee code and releases](https://github.com/catppuccin/musicbee)
-
-  </div>
-</div>
-
 ## SiteMusicDisplay
 
-A project to display what music I'm currently listening to on my website. Has 4 parts:
+A project to display the music I'm currently listening to on my website. Has 4 parts:
 
 - A MusicBee plugin written in C# to send the currently playing song to a server (Desktop)
 - A Poweramp plugin/Android app to send the currently playing song to a server (Android)
@@ -133,6 +72,10 @@ A project to display what music I'm currently listening to on my website. Has 4 
 - A web component written with vanilla JS and CSS to display the currently playing song (Client)
 
 See the [blog post](/blog/2024/small-projects-for-fun/) I wrote for more details on this!
+
+- [MusicBee plugin code](https://github.com/autumn-mck/MusicDisplayMusicBeePlugin)
+- [Poweramp plugin code](https://github.com/autumn-mck/MusicDisplayPowerampPlugin)
+- [Server & web component code](https://github.com/autumn-mck/MusicDisplayServer)
 
 <style>
   music-display {
@@ -149,23 +92,74 @@ See the [blog post](/blog/2024/small-projects-for-fun/) I wrote for more details
 
 ![Autumn's back again by northh](../blog/blog/2024/small-projects-for-fun/autumns-back-again.png)
 
-- [MusicBee plugin code](https://github.com/autumn-mck/MusicDisplayMusicBeePlugin)
-- [Poweramp plugin code](https://github.com/autumn-mck/MusicDisplayPowerampPlugin)
-- [Server & web component code](https://github.com/autumn-mck/MusicDisplayServer)
+## Catppuccin-MusicBee
+
+<div class="project">
+  <div class="preview">
+
+![Screenshot of several versions of the theme, with a range of accent colours and background colours](./imgs/catppuccin-musicbee.webp)
+
+  </div>
+  <div class="description">
+
+A theme for the [MusicBee](https://www.getmusicbee.com/) music player based on the very nice [Catppuccin](https://github.com/catppuccin/catppuccin) colour palettes. The project of mine I use most regularly!
+
+Uses a combination of `bash`, `imagemagick`, `xdotool`, `wine`, and `Xvfb` (X virtual framebuffer) to automate creating the 112 different variations of the theme for every combination of theme/accent colour.
+
+[Catppuccin-MusicBee code and releases](https://github.com/catppuccin/musicbee)
+
+  </div>
+</div>
+
+## CSC1028
+
+<div class="project">
+  <div class="description">
+
+My project for the "Compute Science Challenges" (CSC1028) module I opted to do at university, providing all sorts of metadata on a given URL. See my [blog post for CSC1028](/CSC1028/) for a lot more info.
+
+[CSC1028 code](https://github.com/autumn-mck/CSC1028)
+
+  </div>
+  <div class="preview">
+
+![UI showing several data sources, including a SimilarWeb rank, DNS lookup, phishing/malware data, earliest archive date, and all subdomains](./imgs/1028.png)
+
+  </div>
+</div>
+
+## Last Stand Text Adventure
+
+<div class="project">
+  <div class="preview">
+
+![A game in-progess, showing the player several choices for how to proceed, and an image of where they are](./imgs/last-stand.webp)
+
+  </div>
+  <div class="description">
+
+A text adventure made as a group project for our "Web Technologies" (CSC1030) module.
+
+I designed and wrote the majority of the CSS for the layout, along with the temperature and typewriter systems used by all other group members. I also worked with them to create the inventory and timer systems also used throughout the game.
+
+We worked great as a group, and stuck together for several group projects after this one.
+
+[Last Stand Code](https://github.com/autumn-mck/LastStand), or [play The Last Stand here](https://last-stand.mck.is/)!
+
+  </div>
+</div>
 
 ## Driver
 
 <div class="project">
   <div class="description">
 
-An application I wrote from scratch with several parts:
+A from-scratch application with several parts:
 
-- A 2D driving simulation that actually feels fun to drive around in
-- A system for creating and improving genetic neural networks written entirely from scratch to allow me to better understand how
-  simple networks like that actually function
+- A 2D arcade-style driving simulation that feels fun to drive around in
+- A system for creating and improving genetic neural networks written entirely from scratch to allow me to better understand how simple networks function, the maths behind them, and how they can perform surprisingly well!
 
-... the end result of which is networks which can drive a car pretty well based on only a few sensors (5 distances to the edge
-of the track at different angles)
+The end result of which is networks which can drive a car pretty well based on only a handful of sensors (5 distances to the edge of the track at different angles by default)
 
 [Driver code](https://github.com/autumn-mck/MonoGameDriver)
 
@@ -194,8 +188,7 @@ A multithreaded CPU ray tracer written in C#. Based on the "Ray Tracing in One W
 - Depth of field
 - Multithreaded for significantly increaded performance
 
-Although performance could significantly be improved by offloading the GPU (Which is better suited for that kind of workload) it
-was still a very fun project to work on
+Although performance could significantly be improved by instead performing the processing on the GPU (Which is better suited for that kind of workload) it was still a very fun project to work on
 
 [Raytracer code](https://github.com/autumn-mck/RTWeekend)
 
@@ -230,8 +223,7 @@ The website you're currently browsing! Currently built using [Astro](https://ast
   </div>
   <div class="description">
 
-A small particle/powder toy simulator. Very basic - its flaws are definitely noticable if you're looking for them - but I still
-enjoyed messing around with this kind of cellular automaton
+A small particle/powder toy simulator. Very basic - its flaws are definitely noticable if you're looking for them - but I still enjoyed messing around with this kind of cellular automaton
 
 [PowderSim code](https://github.com/autumn-mck/ParticleSim)
 
@@ -240,7 +232,7 @@ enjoyed messing around with this kind of cellular automaton
 
 ## Authorised markov fetch
 
-A script to create a database of posts compatible with the [mstdn-ebooks](https://github.com/Lynnesbian/mstdn-ebooks) or [pleroma-ebooks](https://github.com/ioistired/pleroma-ebooks) -based [markov](https://en.wikipedia.org/wiki/Markov_chain) bots, that supports instances using secure/authorised fetch.
+A script to create a database of posts compatible with the [mstdn-ebooks](https://github.com/Lynnesbian/mstdn-ebooks) or [pleroma-ebooks](https://github.com/ioistired/pleroma-ebooks)-based [markov](https://en.wikipedia.org/wiki/Markov_chain) bots, that supports instances using secure/authorised fetch.
 
 Rather than using ActivityPub outboxes and pretending to be an instance, which [authorised fetch breaks](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch), this script relies on the bot's instance's API to fetch copies of posts.
 
