@@ -2,7 +2,7 @@
 title: Lenovo ideapad 5 14are05 review
 description: Because why not review a 4 year old laptop that nobody can buy anymore?
 published: 2024-07-12
-previewImage: ./picture.jpg
+previewImage: ./picture.avif
 ---
 
 # What?

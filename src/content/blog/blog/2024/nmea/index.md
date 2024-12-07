@@ -1,7 +1,7 @@
 ---
 title: Quick! It's an emergency and I need to read NMEA sentences from the ArduSimple simpleGNSS!
 description: A guide for that highly specific scenario.
-previewImage: ./receiver.jpg
+previewImage: ./receiver.avif
 published: 2024-11-20
 ---
 
@@ -57,6 +57,8 @@ NMEA (0183): The standard communication specification for GNSS receivers, among 
 SMA: A type of coaxial connector, used to connect the antenna to the receiver.
 
 ArduSimple simpleGNSS: The receiver I'm using for this guide and my final year project, as it's cheap and easy to use. Other products are available.
+
+![Photo of the receiver](./receiver.jpg)
 
 Baud rate: The rate at which bits are expected to be transmitted over a serial connection.
 
