@@ -1,7 +1,7 @@
 ---
 title: Bodging Python venv on NixOS
 description: Using computers in a non-intended way is always more fun!
-previewImage: ./distrobox.png
+previewImage: ./distrobox.avif
 published: 2024-11-21
 ---
 
