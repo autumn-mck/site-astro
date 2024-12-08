@@ -32,7 +32,7 @@ import { SITE_TITLE, SITE_TITLE_SHORT } from "../consts";
 		{
 			places.map((place) => (
 				<a href={place.path} rel="prefetch-intent" aria-label={place.name}>
-					{`${place.emoji} ~${place.path}`}
+						<div class="location">{`${place.emoji} ~${place.path}`}</div>
 				</a>
 			))
 		}
@@ -69,23 +69,26 @@ import { SITE_TITLE, SITE_TITLE_SHORT } from "../consts";
 	}
 
 	nav a {
-		background: var(--base-above-above);
-		padding: 0.5rem 1rem;
-		border-radius: 0.5rem;
 		color: var(--text);
 		text-decoration: none;
 		white-space: nowrap;
+	}
+
+	.location {
+		background: var(--base-above-above);
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
 		transition-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
 		transition:
 			filter 0.2s,
 			transform 0.15s;
 	}
 
-	a:hover {
+	a:hover .location {
 		filter: brightness(1.1);
 	}
 
-	nav a:active {
+	a:active .location {
 		transform: scale(0.88);
 	}
 
