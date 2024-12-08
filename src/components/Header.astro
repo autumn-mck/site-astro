@@ -21,42 +21,30 @@ const places = [
 		emoji: "💻",
 	},
 ];
-
-import { SITE_TITLE, SITE_TITLE_SHORT } from "../consts";
 ---
 
 <header>
-	<h1 id="site-title">{SITE_TITLE}</h1>
-	<h1 id="site-title-short">{SITE_TITLE_SHORT}</h1>
-	<nav>
-		{
-			places.map((place) => (
-				<a href={place.path} rel="prefetch-intent" aria-label={place.name}>
-						<div class="location">{`${place.emoji} ~${place.path}`}</div>
-				</a>
-			))
-		}
-	</nav>
+	<div id="nav-container">
+		<nav>
+			{
+				places.map((place) => (
+					<a href={place.path} rel="prefetch-intent" aria-label={place.name}>
+						<div class="location">
+							<span class="emoji">{`${place.emoji}`}</span>
+							{`~${place.path}`}
+						</div>
+					</a>
+				))
+			}
+		</nav>
+	</div>
 </header>
 
 <style>
 	header {
 		width: 100%;
-		background: var(--base-above);
 		display: flex;
-		justify-content: space-between;
-		padding: 1rem;
-		border-bottom: 1px solid var(--accent);
-	}
-
-	h1 {
-		margin: auto 0;
-		font-size: 2rem;
-		line-height: 1;
-	}
-
-	#site-title-short {
-		display: none;
+		justify-content: center;
 	}
 
 	nav {
@@ -64,8 +52,13 @@ import { SITE_TITLE, SITE_TITLE_SHORT } from "../consts";
 		flex-wrap: wrap;
 		justify-content: right;
 		align-items: center;
-		padding: 0 2rem;
+		padding: 1rem 1rem;
 		gap: 1rem;
+		background: var(--base-above);
+		border-bottom-left-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+		border: 1px solid var(--accent);
+		border-top: none;
 	}
 
 	nav a {
@@ -82,6 +75,10 @@ import { SITE_TITLE, SITE_TITLE_SHORT } from "../consts";
 		transition:
 			filter 0.2s,
 			transform 0.15s;
+	}
+
+	.emoji {
+		display: none;
 	}
 
 	a:hover .location {
@@ -102,21 +99,22 @@ import { SITE_TITLE, SITE_TITLE_SHORT } from "../consts";
 		h1 {
 			text-align: center;
 		}
-
-		nav {
-			padding: 0 0.5rem;
-			justify-content: center;
-		}
 	}
 
-	/* I think I prefer the longer title for now, keeping this if I want it to be swapped out later */
-	/* @media (max-width: 40ch) {
-		#site-title {
-			display: none;
+	@media (max-width: 50ch) {
+		nav {
+			border-radius: 0;
+			border-left: none;
+			border-right: none;
+			justify-content: center;
 		}
 
-		#site-title-short {
-			display: block;
+		#nav-container {
+			width: 100%;
 		}
-	} */
+
+		.emoji {
+			display: inline;
+		}
+	}
 </style>
