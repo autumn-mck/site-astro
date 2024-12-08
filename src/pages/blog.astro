@@ -4,20 +4,28 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/text.css";
 import PostPreview from "../components/PostPreview.astro";
 
-const posts = (await getCollection("markdownPosts")).sort(
-	(a, b) =>
-		(b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0)
+const posts = (await getCollection("markdownPosts")).sort((a, b) =>
+	compareByPublishDate(a, b)
 );
 
 const years: number[] = [];
 posts.forEach((post) => {
-	if (
-		post.data.published &&
-		!years.includes(post.data.published.getFullYear())
-	) {
+	if (yearNotYetAdded(years, post)) {
 		years.push(post.data.published.getFullYear());
 	}
 });
+
+function compareByPublishDate(a, b) {
+	return (
+		(b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0)
+	);
+}
+
+function yearNotYetAdded(years: number[], post: any) {
+	return (
+		post.data.published && !years.includes(post.data.published.getFullYear())
+	);
+}
 ---
 
 <Layout title="Blog" description="Blog posts">

@@ -1,33 +1,38 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import AboutTerminal from "../components/AboutTerminal.astro";
-import meImage from "../images/purplekitty.avif";
 import { SITE_DOMAIN, NAME } from "../consts";
 
-let firstName = NAME.split(" ")[0].toLowerCase();
+import Layout from "../layouts/Layout.astro";
+import AboutTerminal from "../components/AboutTerminal.astro";
+
+import profilePicture from "../images/purplekitty.avif";
+
+const firstName = NAME.split(" ")[0];
+const firstNameLower = firstName.toLowerCase();
+
+const githubUsername = "autumn-mck";
 ---
 
 <Layout title="Home">
 	<main>
 		<section id="left-col">
 			<AboutTerminal
-				user=`${firstName}@mck`
+				user=`${firstNameLower}@mck`
 				name={NAME}
 				items={[
 					{
 						name: "email",
-						textContent: `${firstName} at ${SITE_DOMAIN}`,
-						href: `mailto:${firstName}%40${SITE_DOMAIN}`,
+						textContent: `${firstNameLower} at ${SITE_DOMAIN}`,
+						href: `mailto:${firstNameLower}%40${SITE_DOMAIN}`,
 					},
 					{
 						name: "github",
-						textContent: "github.com/autumn-mck",
-						href: "https://github.com/autumn-mck",
+						textContent: `github.com/${githubUsername}`,
+						href: `https://github.com/${githubUsername}`,
 					},
 				]}
 				image={{
-					src: meImage,
-					alt: "Me wearing a red fleece and bycicle helmet, standing in front of a field at sunset.",
+					src: profilePicture,
+					alt: "A profile picture depicting a purple cat, from an old MacOS 7 wallpaper",
 				}}
 			/>
 		</section>
@@ -36,7 +41,7 @@ let firstName = NAME.split(" ")[0].toLowerCase();
 			<h1>About</h1>
 			<p>
 				Hey 👋<br />
-				I'm {NAME.split(" ")[0]}, and thanks for visiting my website!
+				I'm {firstName}, and thanks for visiting my website!
 				<br />
 				I'm a Computer Science at Queen's University Belfast, currently busy enjoying
 				my final year, having just completed my placement.
