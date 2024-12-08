@@ -2,10 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import AboutTerminal from "../components/AboutTerminal.astro";
 import meImage from "../images/purplekitty.avif";
-import { SITE_DOMAIN } from "../consts";
+import { SITE_DOMAIN, NAME } from "../consts";
 
-let name = "James McKee";
-let firstName = name.split(" ")[0].toLowerCase();
+let firstName = NAME.split(" ")[0].toLowerCase();
 ---
 
 <Layout title="Home">
@@ -13,7 +12,7 @@ let firstName = name.split(" ")[0].toLowerCase();
 		<section id="left-col">
 			<AboutTerminal
 				user=`${firstName}@mck`
-				name={name}
+				name={NAME}
 				items={[
 					{
 						name: "email",
@@ -37,7 +36,7 @@ let firstName = name.split(" ")[0].toLowerCase();
 			<h1>About</h1>
 			<p>
 				Hey 👋<br />
-				I'm {name.split(" ")[0]}, and thanks for visiting my website!
+				I'm {NAME.split(" ")[0]}, and thanks for visiting my website!
 				<br />
 				I'm a Computer Science at Queen's University Belfast, currently busy enjoying
 				my final year, having just completed my placement.
