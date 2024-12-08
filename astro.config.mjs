@@ -11,6 +11,9 @@ vscodeCatppuccinMacchiato.colors["editor.background"] = "#181926";
 export default defineConfig({
 	site: "https://mck.is",
 	compressHTML: false,
+	prefetch: {
+		prefetchAll: true,
+	},
 	integrations: [sitemap(), htmlBeautifier()],
 	build: {
 		inlineStylesheets: "never",
