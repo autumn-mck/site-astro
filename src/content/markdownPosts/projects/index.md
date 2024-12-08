@@ -90,7 +90,7 @@ See the [blog post](/blog/2024/small-projects-for-fun/) I wrote for more details
 
 <script src="https://music-display.mck.is/musicDisplayComponent.js" is:inline></script>
 
-![Autumn's back again by northh](../blog/blog/2024/small-projects-for-fun/autumns-back-again.png)
+![Autumn's back again by northh](../blog/2024/small-projects-for-fun/autumns-back-again.png)
 
 ## Catppuccin-MusicBee
 

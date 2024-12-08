@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import FormattedDate from "../components/FormattedDate.astro";
 import { getCollection } from "astro:content";
 
-let test = (await getCollection("blog"))[0];
+let test = (await getCollection("markdownPosts"))[0];
 interface Props {
 	post: typeof test;
 }

@@ -3,7 +3,7 @@ title: Hello World!
 description: What is this blog?
 published: 2022-01-23
 tags:
-	- meta
+  - meta
 ---
 
 Hello world! This is just a short blog post to say that I'm starting to make some blog posts.

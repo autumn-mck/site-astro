@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/text.css";
 import PostPreview from "../components/PostPreview.astro";
 
-const posts = (await getCollection("blog")).sort(
+const posts = (await getCollection("markdownPosts")).sort(
 	(a, b) =>
 		(b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0)
 );
