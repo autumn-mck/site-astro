@@ -40,14 +40,9 @@ const githubUsername = "autumn-mck";
 		<section id="right-col">
 			<h1>About</h1>
 			<p>
-				Hey 👋<br />
-				I'm {firstName}, and thanks for visiting my website!
-				<br />
-				I'm a Computer Science at Queen's University Belfast, currently busy enjoying
-				my final year, having just completed my placement.
-				<br />
-				However, I'm still occasionally finding time to make things and put them
-				online.
+				Hey <span aria-hidden="true">o<span id="arm">/</span></span><br />
+				I'm {firstName}, a Computer Science at Queen's University Belfast,
+				currently busy enjoying my final year.
 			</p>
 			<p>
 				<br />
@@ -57,17 +52,9 @@ const githubUsername = "autumn-mck";
 			</p>
 
 			<!-- 
-If you're wanting to hire me:
-
 "Try me! Try me!
 Cause I bet I've got what you really need
-I'm quick to learn and I can work with people in a team
-Try me! Try me!
-Did you know I can do anything?
-I'm seeking a position in our fine society
-Try me!"
-
-("Try Me" by Kero Kero Bonito - https://www.youtube.com/watch?v=7go-2MMeILY)
+I'm quick to learn and I can work with people in a team"
 			-->
 		</section>
 	</main>
@@ -116,7 +103,7 @@ Try me!"
 	#left-col {
 		display: flex;
 		justify-content: center;
-		width: 50%;
+		width: 56%;
 		height: 100%;
 	}
 
@@ -124,9 +111,44 @@ Try me!"
 		display: flex;
 		flex-direction: column;
 		width: 75%;
-		max-width: 85ch;
+		max-width: 50ch;
 		margin-right: auto;
 		padding: 1rem;
+	}
+
+	#arm {
+		animation-name: wave;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		transform-origin: 0 90%;
+		display: inline-block;
+	}
+
+	@keyframes wave {
+		0% {
+			transform: rotate(0deg);
+		}
+		10% {
+			transform: rotate(14deg);
+		}
+		20% {
+			transform: rotate(-8deg);
+		}
+		30% {
+			transform: rotate(14deg);
+		}
+		40% {
+			transform: rotate(-4deg);
+		}
+		50% {
+			transform: rotate(10deg);
+		}
+		60% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(0deg);
+		}
 	}
 
 	@media (max-width: 1300px) {
