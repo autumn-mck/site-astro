@@ -4,6 +4,12 @@ description: A list of most of the projects I've worked on
 noHeader: true
 ---
 
+<style>
+main {
+  width: 120ch;
+}
+</style>
+
 # Projects
 
 A list of most of the projects I've worked on - mostly personal projects, with a few from university.
@@ -306,9 +312,3 @@ offer this sort of functionality (eg [pandoc](https://pandoc.org/)), I wanted so
 control over the result.
 
 [WebGenJava code](https://github.com/autumn-mck/WebGenJava) (Please, don't use it)
-
-<style>
-main {
-  width: 120ch;
-}
-</style>
