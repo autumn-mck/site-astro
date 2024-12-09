@@ -144,6 +144,10 @@ aside h6 {
 	}
 }
 
+section h1:first-child {
+	margin-top: 2rem;
+}
+
 article h2:first-child,
 section h2:first-child {
 	margin-top: 1rem;

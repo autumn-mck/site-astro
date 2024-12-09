@@ -8,6 +8,8 @@ noHeader: true
 
 I always enjoy hearing other people talk about what hardware/software they use, so here's my current setup and some thoughts on it! It's also interesting for me to look back and see how what I use has changed over time.
 
+---
+
 ## Hardware
 
 ### Desktop (Built Summer 2019)
@@ -42,6 +44,8 @@ Currently using a Samsung Z Flip 4 I received from a family member who was switc
 Previously I was using a OnePlus 7t. It was a really nice phone in a lot of ways, but the quality of support from OnePlus wasn't great, and it became buggier over time with some features, like running two apps side by side on the top and bottom of the screen, breaking completely after an update and never being fixed after a year or two. I've since installed LineageOS and keep it around and set up in case I need it as a backup phone.
 
 I used to use iOS, but after using Android for a few years now I don't think I can ever go back. The extra freedom and customisation android gives is perfect for me.
+
+---
 
 ## Software
 
