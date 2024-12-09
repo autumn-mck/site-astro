@@ -30,37 +30,36 @@ function yearNotYetAdded(years: number[], post: any) {
 
 <Layout title="Blog" description="Blog posts">
 	<main>
-		<section>
-			{
-				years.map((year) => (
-					<>
-						<h2>{year}'s posts</h2>
-						<ul>
-							{posts
-								.filter((post) => post.data.published?.getFullYear() === year)
-								.map((post) => (
-									<li>
-										<PostPreview post={post} />
-									</li>
-								))}
-						</ul>
-					</>
-				))
-			}
+		{
+			years.map((year) => (
+				<>
+					<h1>{year}'s posts</h1>
+					<ul>
+						{posts
+							.filter((post) => post.data.published?.getFullYear() === year)
+							.map((post) => (
+								<li>
+									<PostPreview post={post} />
+								</li>
+							))}
+					</ul>
+					<hr />
+				</>
+			))
+		}
 
-			<h2>Other posts</h2>
-			<ul>
-				{
-					posts
-						.filter((post) => !post.data.published)
-						.map((post) => (
-							<li>
-								<PostPreview post={post} />
-							</li>
-						))
-				}
-			</ul>
-		</section>
+		<h1>Other posts</h1>
+		<ul>
+			{
+				posts
+					.filter((post) => !post.data.published)
+					.map((post) => (
+						<li>
+							<PostPreview post={post} />
+						</li>
+					))
+			}
+		</ul>
 	</main>
 
 	<style>
