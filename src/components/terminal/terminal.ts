@@ -74,7 +74,7 @@ async function tryRunCommand(command: string) {
 	if (typeof obj === "function") {
 		return await obj(commandEnvVars, ...(args as string[]));
 	} else if (typeof obj === "string") {
-		runScript(obj);
+		await runScript(obj);
 		return 0;
 	}
 
@@ -136,10 +136,10 @@ export async function onEnterKey(command: string) {
 	input.style.display = "block";
 }
 
-function runScript(script: string) {
+async function runScript(script: string) {
 	const lines = script.split("\n");
 
 	for (let i = 0; i < lines.length; i++) {
-		parseLine(lines[i]);
+		await parseLine(lines[i]);
 	}
 }
