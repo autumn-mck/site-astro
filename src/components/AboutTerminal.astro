@@ -126,7 +126,45 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 		caret.style.opacity = "1";
 	}
 
+	function closeWindow() {
+		const window = document.getElementById("window")!;
+		window.style.opacity = "0";
+		window.style.pointerEvents = "none";
+	}
+
+	function mouseDownOnTitleBar(event: MouseEvent) {
+		if (event.button !== 0) return;
+
+		event.preventDefault();
+
+		const window = document.getElementById("window")!;
+
+		const mouseInitialX = event.clientX;
+		const mouseInitialY = event.clientY;
+
+		const windowInitialX = window.style.left ? parseInt(window.style.left) : 0;
+		const windowInitialY = window.style.top ? parseInt(window.style.top) : 0;
+
+		function moveWindow(event: MouseEvent) {
+			const deltaX = event.clientX - mouseInitialX;
+			const deltaY = event.clientY - mouseInitialY;
+
+			window.style.left = `${windowInitialX + deltaX}px`;
+			window.style.top = `${windowInitialY + deltaY}px`;
+		}
+
+		document.addEventListener("mousemove", moveWindow);
+
+		document.addEventListener("mouseup", () => {
+			document.removeEventListener("mousemove", moveWindow);
+		});
+	}
+
 	document.addEventListener("keydown", onKeyPressed);
+	document.getElementById("closeBtn")!.addEventListener("click", closeWindow);
+	document
+		.getElementById("titleBar")!
+		.addEventListener("mousedown", mouseDownOnTitleBar);
 </script>
 
 <style>
