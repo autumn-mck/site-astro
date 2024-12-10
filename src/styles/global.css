@@ -34,7 +34,7 @@ body::before {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-image: url("/images/autumn.webp");
+	background-image: url("/images/autumn.avif");
 	filter: brightness(0.5) contrast(1.05) blur(5px);
 	background-position: center;
 	background-repeat: no-repeat;
