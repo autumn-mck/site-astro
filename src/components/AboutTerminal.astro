@@ -64,9 +64,9 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 	<p>{item.name}:{" ".repeat(maxLength - item.name.length + extraSpaces)}{item.href && <a href={item.href} rel="noopener" target="_blank">{item.textContent}</a>}{!item.href && <span>{item.textContent}</span>}</p>
 )}</pre>
 			</div>
-			<div id="noscript-hide">
-			<pre>[{user} ~]$ fetch-music</pre>
+			<pre class="noscript-hide">[{user} ~]$ fetch-music</pre>
 			<music-display
+				class="noscript-hide"
 				nowPlayingApi="https://music-display.mck.is/now-playing"
 				websocketUrl="wss://music-display.mck.is/now-playing-ws"
 			></music-display>
@@ -171,7 +171,7 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 
 <noscript>
 	<style>
-		#noscript-hide {
+		.noscript-hide {
 			display: none;
 		}
 	</style>
