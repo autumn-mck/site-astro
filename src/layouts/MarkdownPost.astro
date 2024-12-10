@@ -10,50 +10,6 @@ const { body, data } = Astro.props;
 const post = data;
 ---
 
-<Layout title={post.title} description={post.description}>
-	<main>
-		{
-			!post.noHeader && (
-				<div class="title">
-					<h1>{post.title}</h1>
-
-					<p>
-						{post.description && <i>{post.description}</i>}
-						<br />
-						{post.published && (
-							<>
-								Published on <FormattedDate date={post.published} />.
-							</>
-						)}
-						{post.updated && (
-							<>
-								Last updated on
-								<FormattedDate date={post.updated} />.
-							</>
-						)}
-						{body.split(/\s+/).length} words.
-						<br />
-						{post.tags && (
-							<>
-								Tags:
-								{post.tags.map((tag, i) => (
-									<>
-										<a href={`/tags/${tag}`}>{tag}</a>
-										{i < post.tags!.length - 1 && " | "}
-									</>
-								))}
-							</>
-						)}
-					</p>
-					<hr />
-				</div>
-			)
-		}
-
-		<slot />
-	</main>
-</Layout>
-
 <style is:global>
 	main {
 		margin: 1rem auto;
@@ -118,3 +74,47 @@ const post = data;
 		}
 	}
 </style>
+
+<Layout title={post.title} description={post.description}>
+	<main>
+		{
+			!post.noHeader && (
+				<div class="title">
+					<h1>{post.title}</h1>
+
+					<p>
+						{post.description && <i>{post.description}</i>}
+						<br />
+						{post.published && (
+							<>
+								Published on <FormattedDate date={post.published} />.
+							</>
+						)}
+						{post.updated && (
+							<>
+								Last updated on
+								<FormattedDate date={post.updated} />.
+							</>
+						)}
+						{body.split(/\s+/).length} words.
+						<br />
+						{post.tags && (
+							<>
+								Tags:
+								{post.tags.map((tag, i) => (
+									<>
+										<a href={`/tags/${tag}`}>{tag}</a>
+										{i < post.tags!.length - 1 && " | "}
+									</>
+								))}
+							</>
+						)}
+					</p>
+					<hr />
+				</div>
+			)
+		}
+
+		<slot />
+	</main>
+</Layout>
