@@ -20,6 +20,8 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
 
+		<link rel="preload" href="/images/autumn.avif" as="image" />
+
 		<title>{title} | {consts.SITE_DOMAIN}</title>
 		<meta name="description" content={description} />
 
