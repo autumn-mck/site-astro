@@ -11,11 +11,11 @@ const posts = (await getCollection("markdownPosts")).sort((a, b) =>
 const years: number[] = [];
 posts.forEach((post) => {
 	if (yearNotYetAdded(years, post)) {
-		years.push(post.data.published.getFullYear());
+		years.push(post.data.published!.getFullYear());
 	}
 });
 
-function compareByPublishDate(a, b) {
+function compareByPublishDate(a: any, b: any) {
 	return (
 		(b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0)
 	);
