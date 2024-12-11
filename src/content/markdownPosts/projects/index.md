@@ -6,43 +6,23 @@ noHeader: true
 
 <style>
 main {
-  width: 120ch;
+  width: 140ch;
+}
+
+h2 {
+  margin-top: 0rem;
 }
 </style>
 
 # Projects
 
-A list of most of the projects I've worked on - mostly personal projects, with a few from university.
+I've made a whole bunch of projects for fun in the last few years, and have a few from university too. Here's a list of most of them!
 
 <!-- nothing makes sense, so i might as well make nonsense -->
 
-## PlanetPhysics
-
-<div class="project">
-  <div class="preview">
-    <video autoplay loop muted controls>
-      <source src="/videos/solar_new.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <div class="description">
-
-An [n-body](https://en.wikipedia.org/wiki/N-body_problem) planetary gravitational simulator built for fun as a side project.
-
-Uses the less accurate [Euler method](https://en.wikipedia.org/wiki/Euler_method) for integration (this is mostly mitigated by using very small step sizes), but ideally in future it should use something like the Runge-kutta methods for better accuracy.
-
-Includes several pre-set situations, including a fictional but nice-looking system (shown), a stable 3-body figure-8 system, a binary star system, and our solar system to scale (with and without moons)
-
-[PlanetPhysics code](https://github.com/autumn-mck/PlanetPhysics)
-
-  </div>
-</div>
-
-## weird-fe
-
 <div class="project">
   <div class="description">
+    <h2 id="weird-fe">weird-fe</h2>
 
 An experimental attempt to write my own frontend for [Akkoma](https://akkoma.social/) (and anything else supporting the [Mastodon API](https://docs.joinmastodon.org/))
 
@@ -68,26 +48,8 @@ Supports:
   </div>
 </div>
 
-## SiteMusicDisplay
-
-A project to display the music I'm currently listening to on my website. Has 4 parts:
-
-- A MusicBee plugin written in C# to send the currently playing song to a server (Desktop)
-- A Poweramp plugin/Android app to send the currently playing song to a server (Android)
-- A server written in TypeScript with Bun to receive the currently playing song, and provide an API and/or websocket for the client (Server)
-- A web component written with vanilla JS and CSS to display the currently playing song (Client)
-
-See the [blog post](/blog/2024/small-projects-for-fun/) I wrote for more details on this!
-
-- [MusicBee plugin code](https://github.com/autumn-mck/MusicDisplayMusicBeePlugin)
-- [Poweramp plugin code](https://github.com/autumn-mck/MusicDisplayPowerampPlugin)
-- [Server & web component code](https://github.com/autumn-mck/MusicDisplayServer)
-
-<style>
-  music-display {
-    --base: #181926;
-  }
-</style>
+<div class="project">
+<div class="preview less-wide">
 
 <music-display
   nowPlayingApi="https://music-display.mck.is/now-playing"
@@ -98,7 +60,36 @@ See the [blog post](/blog/2024/small-projects-for-fun/) I wrote for more details
 
 ![Autumn's back again by northh](../blog/2024/small-projects-for-fun/autumns-back-again.png)
 
-## Catppuccin-MusicBee
+</div>
+
+<div class="description">
+<h2 id="musicdisplay">MusicDisplay</h2>
+
+The widget on my site's homepage that displays the music I'm currently listening to, that I also wrote a [blog post](/blog/2024/small-projects-for-fun/) on. Has 4 parts:
+
+- A MusicBee plugin written in C# to send the currently playing song to a server (Desktop)
+- A Poweramp plugin/Android app to send the currently playing song to a server (Android)
+- A server written in TypeScript with Bun to receive the currently playing song, and provide an API and/or websocket for the client (Server)
+- A web component written with vanilla JS and CSS to display the currently playing song (Client)
+
+</div>
+</div>
+
+<div class="project">
+  <div class="description">
+  <h2 id="markov-fetch">Markov Fetch</h2>
+
+A script to create a database of posts compatible with the [mstdn-ebooks](https://github.com/Lynnesbian/mstdn-ebooks) or [pleroma-ebooks](https://github.com/ioistired/pleroma-ebooks)-based [markov](https://en.wikipedia.org/wiki/Markov_chain) bots, that supports instances using secure/authorised fetch. Rather than using ActivityPub outboxes and pretending to be an instance, which [authorised fetch breaks](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch), this script relies on the bot's instance's API to fetch copies of posts.
+
+[Authorised-markov-fetch code](https://github.com/autumn-mck/authorised-markov-fetch)
+
+  </div>
+  <div class="preview">
+
+![Screenshot of code](./imgs/markov.png)
+
+  </div>
+</div>
 
 <div class="project">
   <div class="preview">
@@ -107,6 +98,7 @@ See the [blog post](/blog/2024/small-projects-for-fun/) I wrote for more details
 
   </div>
   <div class="description">
+  <h2 id="catppuccin-musicbee">Catppuccin<br />MusicBee</h2>
 
 A theme for the [MusicBee](https://www.getmusicbee.com/) music player based on the very nice [Catppuccin](https://github.com/catppuccin/catppuccin) colour palettes. The project of mine I use most regularly!
 
@@ -115,50 +107,38 @@ Uses a combination of `bash`, `imagemagick`, `xdotool`, `wine`, and `Xvfb` (X vi
 [Catppuccin-MusicBee code and releases](https://github.com/catppuccin/musicbee)
 
   </div>
-</div>
 
-## CSC1028
+</div>
 
 <div class="project">
   <div class="description">
+    <h2 id="planetphysics">PlanetPhysics</h2>
 
-My project for the "Compute Science Challenges" (CSC1028) module I opted to do at university, providing all sorts of metadata on a given URL. See my [blog post for CSC1028](/CSC1028/) for a lot more info.
+An [n-body](https://en.wikipedia.org/wiki/N-body_problem) planetary gravitational simulator built for fun as a side project.
 
-[CSC1028 code](https://github.com/autumn-mck/CSC1028)
+Uses the less accurate [Euler method](https://en.wikipedia.org/wiki/Euler_method) for integration (this is mostly mitigated by using very small step sizes), but ideally in future it should use something like the Runge-kutta methods for better accuracy.
+
+Includes several pre-set situations, including a fictional but nice-looking system (shown), a stable 3-body figure-8 system, a binary star system, and our solar system to scale (with and without moons)
+
+[PlanetPhysics code](https://github.com/autumn-mck/PlanetPhysics)
 
   </div>
   <div class="preview">
-
-![UI showing several data sources, including a SimilarWeb rank, DNS lookup, phishing/malware data, earliest archive date, and all subdomains](./imgs/1028.png)
-
+    <video autoplay loop muted controls>
+      <source src="/videos/solar_new.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </div>
 
-## Last Stand Text Adventure
-
 <div class="project">
-  <div class="preview">
+  <div class="preview mid-wide">
 
-![A game in-progess, showing the player several choices for how to proceed, and an image of where they are](./imgs/last-stand.webp)
+![Video showing several hundred cars driving around the 2d track, with some colliding into the edges and stopping](./imgs/driver.gif)
 
   </div>
   <div class="description">
-
-A text adventure made as a group project for our "Web Technologies" (CSC1030) module.
-
-I designed and wrote the majority of the CSS for the layout, along with the temperature and typewriter systems used by all other group members. I also worked with them to create the inventory and timer systems also used throughout the game.
-
-We worked great as a group, and stuck together for several group projects after this one.
-
-[Last Stand Code](https://github.com/autumn-mck/LastStand), or [play The Last Stand here](https://last-stand.mck.is/)!
-
-  </div>
-</div>
-
-## Driver
-
-<div class="project">
-  <div class="description">
+  <h2 id="driver">Driver</h2>
 
 A from-scratch application with several parts:
 
@@ -170,55 +150,71 @@ The end result of which is networks which can drive a car pretty well based on o
 [Driver code](https://github.com/autumn-mck/MonoGameDriver)
 
   </div>
-  <div class="preview">
-
-![Video showing several hundred cars driving around the 2d track, with some colliding into the edges and stopping](./imgs/driver.gif)
-
-  </div>
 </div>
 
-## CPU-based raytracer
-
 <div class="project">
-  <div class="preview">
-
-![Example output of the program, showing spheres of different sizes and different materials](./imgs/rtWeekend.webp)
-
-  </div>
   <div class="description">
+  <h2 id="rtweekend">RTWeekend</h2>
 
-A multithreaded CPU ray tracer written in C#. Based on the "Ray Tracing in One Weekend" book. Features:
+Multithreaded CPU raytracer written in C#. Based on the "Ray Tracing in One Weekend" book. Features:
 
 - Reflections (inc. reflections of reflections) - Refraction (e.g. light passing through glass spheres)
 - Accurate shadows
 - Depth of field
 - Multithreaded for significantly increaded performance
 
-Although performance could significantly be improved by instead performing the processing on the GPU (Which is better suited for that kind of workload) it was still a very fun project to work on
+Although performance could significantly be improved by running the processing on the GPU, it was still a very fun project!
 
 [Raytracer code](https://github.com/autumn-mck/RTWeekend)
 
   </div>
+  <div class="preview">
+
+![Example output of the program, showing spheres of different sizes and different materials](./imgs/rtWeekend.webp)
+
+  </div>
 </div>
 
-## Personal website
-
 <div class="project">
-  <div class="description">
+  <div class="preview">
 
-The website you're currently browsing! Currently built using [Astro](https://astro.build/). You can [read why I picked Astro](/blog/2024/new-site), or [look at how this site has changed over time](/changelog)!
+![A screenshot of the home page of this website](./imgs/website.avif)
+
+  </div>
+  <div class="description">
+  <h2 id="website">Personal<br />website</h2>
+
+The website you're currently browsing! Built using [Astro](https://astro.build/), which I'm using as a static site generator to combine my typescript, markdown, and vanilla CSS into a working site!
+
+Made to be as lightweight as possible, with the main page being only 40kb, images and everything, having both an FCP and LCP of 0.3s.
+
+You can [read why I picked Astro](/blog/2024/new-site), or [look at how this site has changed over time](/changelog)!
 
 [Website code](https://github.com/autumn-mck/site-astro)
 
   </div>
+
+</div>
+
+<div class="project">
+  <div class="description">
+<h2 id="the-last-stand">The Last Stand</h2>
+
+A text adventure made as a group project for our "Web Technologies" (CSC1030) module.
+
+I designed and wrote the majority of the CSS for the layout, along with the temperature and typewriter systems used by all other group members. I also worked with them to create the inventory and timer systems also used throughout the game.
+
+We worked great as a group, and stuck together for several group projects after this one.
+
+[Last Stand Code](https://github.com/autumn-mck/LastStand), or [play The Last Stand here](https://last-stand.mck.is/)!
+
+  </div>
   <div class="preview">
 
-![A screenshot of the home page of this website](../changelog/v2-index.png)
+![A game in-progess, showing the player several choices for how to proceed, and an image of where they are](./imgs/last-stand.webp)
 
   </div>
 </div>
-
-## Particle/powder toy simulator
 
 <div class="project">
   <div class="preview">
@@ -228,55 +224,46 @@ The website you're currently browsing! Currently built using [Astro](https://ast
     </video>
   </div>
   <div class="description">
+  <h2 id="powdertoy">SandSim</h2>
 
-A small particle/powder toy simulator. Very basic - its flaws are definitely noticable if you're looking for them - but I still enjoyed messing around with this kind of cellular automaton
+A small particle/powder toy simulator. Very basic - its flaws are definitely noticable if you're looking for them, however it's still a lot of fun to mess around with, seeing how much just a few simple rules can create!
+
+Will likely return to this one in the future to improve and expand on it, and see how I can increase performance.
 
 [PowderSim code](https://github.com/autumn-mck/ParticleSim)
 
   </div>
 </div>
 
-## Authorised markov fetch
-
-A script to create a database of posts compatible with the [mstdn-ebooks](https://github.com/Lynnesbian/mstdn-ebooks) or [pleroma-ebooks](https://github.com/ioistired/pleroma-ebooks)-based [markov](https://en.wikipedia.org/wiki/Markov_chain) bots, that supports instances using secure/authorised fetch.
-
-Rather than using ActivityPub outboxes and pretending to be an instance, which [authorised fetch breaks](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch), this script relies on the bot's instance's API to fetch copies of posts.
-
-[Authorised-markov-fetch code](https://github.com/autumn-mck/authorised-markov-fetch)
-
-## MusicBee installation script for Linux
-
 <div class="project">
   <div class="description">
+<h2 id="musicbee-install">MusicBee install script</h2>
 
 A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows application) on linux. I wrote a whole [blog post](/blog/2024/musicbee-on-linux/) on this!
 
 - Automatically sets up a wineprefix with the required libraries
 - Downloads and installs the specified version of MusicBee
-- Downloads the DLLs required for playing AAC/M4A files
 - Creates an improved XDG Desktop entry
-- Installs Discordbee and Wine-Discord IPC bridge to allow the song you're currently listening to to be displayed as a status on Discord
+- Installs Discordbee and Wine-Discord IPC bridge to allow the song you're currently listening to to be displayed as a status
 
 [MusicBee install script here](https://gist.github.com/autumn-mck/6d7fcbbc08f5d18be09f2cc219084675)
 
   </div>
   <div class="preview">
 
-![Screenshot of MusicBee running on linux](./imgs/musicbee-linux.png)
+![Screenshot of MusicBee running on linux](./imgs/musicbee-linux.avif)
 
   </div>
 </div>
 
-## A2 Project
-
 <div class="project">
   <div class="preview">
 
-![The appointment calendar view](./imgs/a2-cal.webp)
 ![Some graphs in the statistics view](./imgs/a2-stats.webp)
 
   </div>
   <div class="description">
+  <h2 id="a2-project">A2 Project</h2>
 
 This application was my A2 coursework project for Software Systems Development, written between 10/11/2020 and 14/03/2021 using
 C# and WPF. See the [git repo](https://github.com/autumn-mck/A2-Project) for more details and features
@@ -289,21 +276,22 @@ I'm very happy with the end result.
   </div>
 </div>
 
-## 2048 fork
+<div class="project">
+  <div class="description">
+<h2 id="csc1028">CSC1028</h2>
 
-A significantly modified version of the original 2048, with new features including:
+My project for the "Compute Science Challenges" (CSC1028) module I opted to do at university, providing all sorts of metadata on a given URL.
+See my [blog post for CSC1028](/CSC1028/) for a lot more info.
 
-- Allowing boards of any size
-- Support for theming, including a dark mode
-- Additional challenges, such as an extra tile being added every second
-- Slightly tidier code, making use of updates
-  to javascript and CSS since the release of the original version
+[CSC1028 code](https://github.com/autumn-mck/CSC1028APIs)
 
-Made for fun to improve on an existing project and gain some more experience with browser javascript
+  </div>
+  <div class="preview less-wide">
 
-![2048 with a 3 by 5 grid, and the settings open showing where this is configured](./imgs/2048.webp)
+![UI showing several data sources, including a SimilarWeb rank, DNS lookup, phishing/malware data, earliest archive date, and all subdomains](./imgs/1028.png)
 
-[2048 code](https://github.com/autumn-mck/2048), and [playable here](https://2048.mck.is/)!
+  </div>
+</div>
 
 ## WebGenJava
 

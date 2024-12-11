@@ -47,7 +47,15 @@ const post = data;
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		flex-basis: 400%;
+		flex-basis: 380%;
+
+		&.less-wide {
+			flex-basis: 100%;
+		}
+
+		&.mid-wide {
+			flex-basis: 240%;
+		}
 
 		p {
 			margin: 0;
