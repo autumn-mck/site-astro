@@ -12,6 +12,30 @@ main {
 h2 {
   margin-top: 0rem;
 }
+
+li > p {
+  margin: 0;
+}
+
+/* slide to the left */
+.even {
+  display: flex;
+  flex-direction: row;
+}
+
+/* slide to the right */
+.odd {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* criss cross */
+@media screen and (max-width: calc(95ch + 2rem)) {
+		.project {
+			flex-direction: column;
+      gap: 0;
+		}
+	}
 </style>
 
 # Projects
@@ -20,7 +44,7 @@ I've made a whole bunch of projects for fun in the last few years, and have a fe
 
 <!-- nothing makes sense, so i might as well make nonsense -->
 
-<div class="project">
+<div class="project even">
   <div class="description">
     <h2 id="weird-fe">weird-fe</h2>
 
@@ -48,22 +72,9 @@ Supports:
   </div>
 </div>
 
-<div class="project">
-<div class="preview less-wide">
-
-<music-display
-  nowPlayingApi="https://music-display.mck.is/now-playing"
-  websocketUrl="wss://music-display.mck.is/now-playing-ws">
-</music-display>
-
-<script src="https://music-display.mck.is/musicDisplayComponent.js" is:inline></script>
-
-![Autumn's back again by northh](../blog/2024/small-projects-for-fun/autumns-back-again.png)
-
-</div>
-
-<div class="description">
-<h2 id="musicdisplay">MusicDisplay</h2>
+<div class="project odd">
+  <div class="description">
+  <h2 id="musicdisplay">MusicDisplay</h2>
 
 The widget on my site's homepage that displays the music I'm currently listening to, that I also wrote a [blog post](/blog/2024/small-projects-for-fun/) on. Has 4 parts:
 
@@ -72,10 +83,22 @@ The widget on my site's homepage that displays the music I'm currently listening
 - A server written in TypeScript with Bun to receive the currently playing song, and provide an API and/or websocket for the client (Server)
 - A web component written with vanilla JS and CSS to display the currently playing song (Client)
 
-</div>
+  </div>
+  <div class="preview less-wide">
+
+  <music-display
+        nowPlayingApi="https://music-display.mck.is/now-playing"
+        websocketUrl="wss://music-display.mck.is/now-playing-ws">
+  </music-display>
+
+  <script src="https://music-display.mck.is/musicDisplayComponent.js" is:inline></script>
+
+![Autumn's back again by northh](../blog/2024/small-projects-for-fun/autumns-back-again.png)
+
+  </div>
 </div>
 
-<div class="project">
+<div class="project even">
   <div class="description">
   <h2 id="markov-fetch">Markov Fetch</h2>
 
@@ -91,12 +114,7 @@ A script to create a database of posts compatible with the [mstdn-ebooks](https:
   </div>
 </div>
 
-<div class="project">
-  <div class="preview">
-
-![Screenshot of several versions of the theme, with a range of accent colours and background colours](./imgs/catppuccin-musicbee.webp)
-
-  </div>
+<div class="project odd">
   <div class="description">
   <h2 id="catppuccin-musicbee">Catppuccin<br />MusicBee</h2>
 
@@ -107,10 +125,14 @@ Uses a combination of `bash`, `imagemagick`, `xdotool`, `wine`, and `Xvfb` (X vi
 [Catppuccin-MusicBee code and releases](https://github.com/catppuccin/musicbee)
 
   </div>
+  <div class="preview">
 
+![Screenshot of several versions of the theme, with a range of accent colours and background colours](./imgs/catppuccin-musicbee.webp)
+
+  </div>
 </div>
 
-<div class="project">
+<div class="project even">
   <div class="description">
     <h2 id="planetphysics">PlanetPhysics</h2>
 
@@ -131,12 +153,7 @@ Includes several pre-set situations, including a fictional but nice-looking syst
   </div>
 </div>
 
-<div class="project">
-  <div class="preview mid-wide">
-
-![Video showing several hundred cars driving around the 2d track, with some colliding into the edges and stopping](./imgs/driver.gif)
-
-  </div>
+<div class="project odd">
   <div class="description">
   <h2 id="driver">Driver</h2>
 
@@ -150,9 +167,14 @@ The end result of which is networks which can drive a car pretty well based on o
 [Driver code](https://github.com/autumn-mck/MonoGameDriver)
 
   </div>
+  <div class="preview mid-wide">
+
+![Video showing several hundred cars driving around the 2d track, with some colliding into the edges and stopping](./imgs/driver.gif)
+
+  </div>
 </div>
 
-<div class="project">
+<div class="project even">
   <div class="description">
   <h2 id="rtweekend">RTWeekend</h2>
 
@@ -175,12 +197,7 @@ Although performance could significantly be improved by running the processing o
   </div>
 </div>
 
-<div class="project">
-  <div class="preview">
-
-![A screenshot of the home page of this website](./imgs/website.avif)
-
-  </div>
+<div class="project odd">
   <div class="description">
   <h2 id="website">Personal<br />website</h2>
 
@@ -193,12 +210,16 @@ You can [read why I picked Astro](/blog/2024/new-site), or [look at how this sit
 [Website code](https://github.com/autumn-mck/site-astro)
 
   </div>
+  <div class="preview">
 
+![A screenshot of the home page of this website](./imgs/website.avif)
+
+  </div>
 </div>
 
-<div class="project">
+<div class="project even">
   <div class="description">
-<h2 id="the-last-stand">The Last Stand</h2>
+  <h2 id="the-last-stand">The Last Stand</h2>
 
 A text adventure made as a group project for our "Web Technologies" (CSC1030) module.
 
@@ -216,13 +237,7 @@ We worked great as a group, and stuck together for several group projects after 
   </div>
 </div>
 
-<div class="project">
-  <div class="preview">
-    <video autoplay loop muted controls>
-      <source src="/videos/powdertoy.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
+<div class="project odd">
   <div class="description">
   <h2 id="powdertoy">SandSim</h2>
 
@@ -233,11 +248,17 @@ Will likely return to this one in the future to improve and expand on it, and se
 [PowderSim code](https://github.com/autumn-mck/ParticleSim)
 
   </div>
+  <div class="preview">
+    <video autoplay loop muted controls>
+      <source src="/videos/powdertoy.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </div>
 
-<div class="project">
+<div class="project even">
   <div class="description">
-<h2 id="musicbee-install">MusicBee install script</h2>
+  <h2 id="musicbee-install">MusicBee install script</h2>
 
 A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows application) on linux. I wrote a whole [blog post](/blog/2024/musicbee-on-linux/) on this!
 
@@ -256,12 +277,7 @@ A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows 
   </div>
 </div>
 
-<div class="project">
-  <div class="preview">
-
-![Some graphs in the statistics view](./imgs/a2-stats.webp)
-
-  </div>
+<div class="project odd">
   <div class="description">
   <h2 id="a2-project">A2 Project</h2>
 
@@ -274,11 +290,16 @@ I'm very happy with the end result.
 [A2 Project Code](https://github.com/autumn-mck/A2-Project)
 
   </div>
+  <div class="preview">
+
+![Some graphs in the statistics view](./imgs/a2-stats.webp)
+
+  </div>
 </div>
 
-<div class="project">
+<div class="project even">
   <div class="description">
-<h2 id="csc1028">CSC1028</h2>
+  <h2 id="csc1028">CSC1028</h2>
 
 My project for the "Compute Science Challenges" (CSC1028) module I opted to do at university, providing all sorts of metadata on a given URL.
 See my [blog post for CSC1028](/CSC1028/) for a lot more info.
