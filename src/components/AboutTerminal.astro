@@ -168,17 +168,15 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 		.addEventListener("mousedown", mouseDownOnTitleBar);
 </script>
 
-<noscript>
-	<style>
-		.noscript-hide {
-			display: none;
-		}
-	</style>
-</noscript>
-
 <style>
 	music-display {
 		margin: 0 auto;
+	}
+
+	@container style(--noscript: true) {
+		.noscript-hide {
+			display: none;
+		}
 	}
 
 	#window {

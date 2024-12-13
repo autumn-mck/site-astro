@@ -32,9 +32,18 @@ const { title, description } = Astro.props;
 			but i'm working on making the whole website a bit more fun to mess around with
 		-->
 	</head>
+	<noscript>
+		<style>
+			:root {
+				--noscript: true;
+			}
+		</style>
+	</noscript>
+
 	<body>
 		<Header />
 		<slot />
 		<Footer />
 	</body>
+
 </html>
