@@ -73,6 +73,6 @@ The new Container Style Query allows you to combine CSS that should only be appl
 </p>
 ```
 
-I doubt there's any scenario where this is particularly useful, as support for Container Style Queries was only added to Chrome in 2023, Safari in 2024, and Firefox not at all at the time of writing. There's definitely a few people in the world who have the combination of an up to date browser and javascript disabled, but not many, and I don't know if any websites in the last decade actually make use of `<noscript>`.
+I doubt there's any scenario where this is particularly useful, as [support for Container Style Queries](https://caniuse.com/css-container-queries-style) was only added to Chrome in 2023, Safari in 2024, and Firefox not at all at the time of writing. There's definitely a few people in the world who have the combination of an up to date browser and javascript disabled, but not many, and I don't know if any websites in the last decade actually make use of `<noscript>`.
 
 Still, I think it's neat trick, I like staying up to date with what's supported in CSS, and I'm now using it on the main page of this site :D
