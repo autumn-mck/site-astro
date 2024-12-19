@@ -44,7 +44,7 @@ I've made a whole bunch of projects for fun in the last few years, and have a fe
 
 <!-- nothing makes sense, so i might as well make nonsense -->
 
-<div class="project even">
+<div class="project odd">
   <div class="description">
     <h2 id="weird-fe">weird-fe</h2>
 
@@ -72,7 +72,7 @@ Supports:
   </div>
 </div>
 
-<div class="project odd">
+<div class="project even">
   <div class="description">
   <h2 id="musicdisplay">MusicDisplay</h2>
 
@@ -98,6 +98,25 @@ The widget on my site's homepage that displays the music I'm currently listening
   </div>
 </div>
 
+<div class="project odd">
+  <div class="description">
+    <h2 id="gnss-war-room">GNSS War Room</h2>
+
+Work in progress - current final year project for my Computer Science degree, for displaying GNSS (Global Navigation Satellite System) data on a matrix of displays.
+
+The video is a snapshot of the current progress, showing 30mins of movement of satellites across earth at 60x speed. A lot more still to do!
+
+(The style and name are inspired by the 1983 film "WarGames", not any suggestion or desire for military use)
+
+  </div>
+  <div class="preview">
+    <video autoplay loop muted controls>
+      <source src="/videos/gnss-war-room.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
 <div class="project even">
   <div class="description">
   <h2 id="markov-fetch">Markov Fetch</h2>
@@ -116,7 +135,7 @@ A script to create a database of posts compatible with the [mstdn-ebooks](https:
 
 <div class="project odd">
   <div class="description">
-  <h2 id="catppuccin-musicbee">Catppuccin<br />MusicBee</h2>
+  <h2 id="catppuccin-musicbee">Catppuccin MusicBee</h2>
 
 A theme for the [MusicBee](https://www.getmusicbee.com/) music player based on the very nice [Catppuccin](https://github.com/catppuccin/catppuccin) colour palettes. The project of mine I use most regularly!
 
@@ -199,7 +218,7 @@ Although performance could significantly be improved by running the processing o
 
 <div class="project odd">
   <div class="description">
-  <h2 id="website">Personal<br />website</h2>
+  <h2 id="website">Personal website</h2>
 
 The website you're currently browsing! Built using [Astro](https://astro.build/), which I'm using as a static site generator to combine my typescript, markdown, and vanilla CSS into a working site!
 
