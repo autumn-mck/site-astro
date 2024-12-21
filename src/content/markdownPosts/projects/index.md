@@ -30,12 +30,20 @@ li > p {
 }
 
 /* criss cross */
-@media screen and (max-width: calc(95ch + 2rem)) {
-		.project {
-			flex-direction: column;
-      gap: 0;
-		}
-	}
+@media screen and (max-width: calc(120ch + 2rem)) {
+  .project {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: calc(140ch + 2rem)) {
+  main {
+    width: calc(100% - 4vw) !important;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
 </style>
 
 # Projects
