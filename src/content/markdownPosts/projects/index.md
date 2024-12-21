@@ -333,6 +333,25 @@ See my [blog post for CSC1028](/CSC1028/) for a lot more info.
   </div>
 </div>
 
+<div class="project odd">
+  <div class="description">
+    <h2>git-music-log</h2>
+
+A project written as a joke to see if it was possible to store a record of what music you're listening to as a list of git commits. Why? Because what's more commonly used for storing changes over time than version control software like git? (Databases, but that's not as funny)
+
+It seemingly is possible! And you shouldn't do it, because again, databases exist.
+
+[git-music-log code](https://github.com/autumn-mck/git-music-log)
+
+  </div>
+
+  <div class="preview">
+
+![A log of some music tracks being played](imgs/music-log.png)
+
+  </div>
+</div>
+
 ## WebGenJava
 
 The program I wrote to convert markdown to HTML for a previous version of this website. Although there are already existing solutions that
