@@ -105,18 +105,6 @@ const post = data;
 							</>
 						)}
 						{body.split(/\s+/).length} words.
-						<br />
-						{post.tags && (
-							<>
-								Tags:
-								{post.tags.map((tag, i) => (
-									<>
-										<a href={`/tags/${tag}`}>{tag}</a>
-										{i < post.tags!.length - 1 && " | "}
-									</>
-								))}
-							</>
-						)}
 					</p>
 					<hr />
 				</div>

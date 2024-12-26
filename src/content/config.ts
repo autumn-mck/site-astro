@@ -12,7 +12,6 @@ const markdownPostSchema = ({ image }: { image: ImageFunction }) =>
 		updated: z.date().optional(),
 
 		previewImage: image().optional(),
-		tags: z.array(z.string()).optional(),
 	});
 
 const markdownPosts = defineCollection({
