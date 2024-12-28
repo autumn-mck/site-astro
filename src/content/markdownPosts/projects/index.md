@@ -203,6 +203,24 @@ The end result of which is networks which can drive a car pretty well based on o
 
 <div class="project even">
   <div class="description">
+  <h2 id="driver">WOPR</h2>
+
+A web app to generate an SVG with the given text using the HP1345A's font, hosted at <https://wopr.mck.is/>.
+
+Most of the credit goes to Poul-Henning Kamp for [reverse engineering the HP1345A's character generator](https://phk.freebsd.dk/hacks/Wargames/) - I've just strapped it to a web app to make it easier to use for simple use-cases.
+
+Source code not currently available, as it's related to my final year project, and I need to check that won't cause any issues.
+
+  </div>
+  <div class="preview">
+
+![A strange game. The only winning move is not to play. How about a nice game of chess?](./imgs/wopr.png)
+
+  </div>
+</div>
+
+<div class="project odd">
+  <div class="description">
   <h2 id="rtweekend">RTWeekend</h2>
 
 Multithreaded CPU raytracer written in C#. Based on the "Ray Tracing in One Weekend" book. Features:
@@ -224,7 +242,7 @@ Although performance could significantly be improved by running the processing o
   </div>
 </div>
 
-<div class="project odd">
+<div class="project even">
   <div class="description">
   <h2 id="website">Personal website</h2>
 
@@ -244,7 +262,7 @@ You can [read why I picked Astro](/blog/2024/new-site), or [look at how this sit
   </div>
 </div>
 
-<div class="project even">
+<div class="project odd">
   <div class="description">
   <h2 id="the-last-stand">The Last Stand</h2>
 
@@ -264,7 +282,7 @@ We worked great as a group, and stuck together for several group projects after 
   </div>
 </div>
 
-<div class="project odd">
+<div class="project even">
   <div class="description">
   <h2 id="powdertoy">SandSim</h2>
 
@@ -283,7 +301,7 @@ Will likely return to this one in the future to improve and expand on it, and se
   </div>
 </div>
 
-<div class="project even">
+<div class="project odd">
   <div class="description">
   <h2 id="musicbee-install">MusicBee install script</h2>
 
@@ -304,7 +322,7 @@ A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows 
   </div>
 </div>
 
-<div class="project odd">
+<div class="project even">
   <div class="description">
   <h2 id="a2-project">A2 Project</h2>
 
@@ -324,7 +342,7 @@ I'm very happy with the end result.
   </div>
 </div>
 
-<div class="project even">
+<div class="project odd">
   <div class="description">
   <h2 id="csc1028">CSC1028</h2>
 
@@ -341,7 +359,7 @@ See my [blog post for CSC1028](/CSC1028/) for a lot more info.
   </div>
 </div>
 
-<div class="project odd">
+<div class="project even">
   <div class="description">
     <h2>git-music-log</h2>
 
