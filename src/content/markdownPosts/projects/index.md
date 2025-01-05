@@ -112,16 +112,15 @@ The widget on my site's homepage that displays the music I'm currently listening
 
 Work in progress - current final year project for my Computer Science degree, for displaying GNSS (Global Navigation Satellite System) data on a matrix of displays.
 
-The video is a snapshot of the current progress, showing 30mins of movement of satellites across earth at 60x speed. A lot more still to do!
+A snapshot of the current progress, with maps showing the locations of satellites, bar charts of signal to noise ratios, and other stats. Still a couple more months to go!
 
 (The style and name are inspired by the 1983 film "WarGames", not any suggestion or desire for military use)
 
   </div>
   <div class="preview">
-    <video autoplay loop muted controls>
-      <source src="/videos/gnss-war-room.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+
+![Screenshot showing several windows, including a map of the earth with the locations of satellites overlayed, and other extracted statistics.](./imgs/gnss.png)
+
   </div>
 </div>
 
