@@ -54,6 +54,24 @@ I've made a whole bunch of projects for fun in the last few years, and have a fe
 
 <div class="project odd">
   <div class="description">
+    <h2 id="gnss-war-room">GNSS War Room</h2>
+
+Work in progress - current final year project for my Computer Science degree, for displaying GNSS (Global Navigation Satellite System) data on a matrix of displays.
+
+A snapshot of the current progress, with maps showing the locations of satellites, bar charts of signal to noise ratios, and other stats. Still a couple more months to go!
+
+(The style and name are inspired by the 1983 film "WarGames", not any suggestion or desire for military use)
+
+  </div>
+  <div class="preview">
+
+![Screenshot showing several windows, including a map of the earth with the locations of satellites overlayed, and other extracted statistics.](./imgs/gnss.png)
+
+  </div>
+</div>
+
+<div class="project even">
+  <div class="description">
     <h2 id="weird-fe">weird-fe</h2>
 
 An experimental attempt to write my own frontend for [Akkoma](https://akkoma.social/) (and anything else supporting the [Mastodon API](https://docs.joinmastodon.org/))
@@ -80,7 +98,7 @@ Supports:
   </div>
 </div>
 
-<div class="project even">
+<div class="project odd">
   <div class="description">
   <h2 id="musicdisplay">MusicDisplay</h2>
 
@@ -102,24 +120,6 @@ The widget on my site's homepage that displays the music I'm currently listening
   <script src="https://music-display.mck.is/musicDisplayComponent.js" is:inline></script>
 
 ![Autumn's back again by northh](../blog/2024/small-projects-for-fun/autumns-back-again.png)
-
-  </div>
-</div>
-
-<div class="project odd">
-  <div class="description">
-    <h2 id="gnss-war-room">GNSS War Room</h2>
-
-Work in progress - current final year project for my Computer Science degree, for displaying GNSS (Global Navigation Satellite System) data on a matrix of displays.
-
-A snapshot of the current progress, with maps showing the locations of satellites, bar charts of signal to noise ratios, and other stats. Still a couple more months to go!
-
-(The style and name are inspired by the 1983 film "WarGames", not any suggestion or desire for military use)
-
-  </div>
-  <div class="preview">
-
-![Screenshot showing several windows, including a map of the earth with the locations of satellites overlayed, and other extracted statistics.](./imgs/gnss.png)
 
   </div>
 </div>
