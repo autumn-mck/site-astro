@@ -48,19 +48,19 @@ li > p {
 
 # Projects
 
-I've made a whole bunch of projects for fun in the last few years, and have a few from university too. Here's a list of most of them!
+I've made a whole bunch of projects for fun and to learn in the last few years, including a few from university too. Here's a list of most of them!
 
 <!-- nothing makes sense, so i might as well make nonsense -->
 
 <div class="project odd">
   <div class="description">
-    <h2 id="gnss-war-room">GNSS War Room</h2>
+    <h2 id="gnss-war-room">GNSS "War Room"</h2>
 
-Work in progress - current final year project for my Computer Science degree, for displaying GNSS (Global Navigation Satellite System) data on a matrix of displays.
+Work in progress - final year project for my Computer Science degree, for displaying GNSS (Global Navigation Satellite System) data on a matrix of displays.
 
-A snapshot of the current progress, with maps showing the locations of satellites, bar charts of signal to noise ratios, and other stats. Still a couple more months to go!
+Currently features maps showing the locations of satellites, bar charts of signal to noise ratios, and other stats. Still a couple more months to go! Primarily focused on providing native windows through PyQt, however a demo of the experimental [web UI](https://gnss.mck.is/) is also up! (Won't be accurate for the current time, will contain whichever data I was recently testing with for now)
 
-(The style and name are inspired by the 1983 film "WarGames", not any suggestion or desire for military use)
+(The idea was heavily inspired by the 1983 film "WarGames", where the "War room" part of the name comes from!)
 
   </div>
   <div class="preview">
