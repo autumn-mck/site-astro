@@ -117,7 +117,7 @@ The widget on my site's homepage that displays the music I'm currently listening
         websocketUrl="wss://music-display.mck.is/now-playing-ws">
   </music-display>
 
-  <script src="https://music-display.mck.is/musicDisplayComponent.js" is:inline></script>
+  <script src="https://music-display.mck.is/musicDisplayComponent.js" async is:inline></script>
 
 ![Autumn's back again by northh](../blog/2024/small-projects-for-fun/autumns-back-again.png)
 
