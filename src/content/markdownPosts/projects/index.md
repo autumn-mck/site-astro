@@ -60,7 +60,7 @@ Work in progress - final year project for my Computer Science degree, for displa
 
 Currently features maps showing the locations of satellites, bar charts of signal to noise ratios, and other stats. Still a couple more months to go! Primarily focused on providing native windows through PyQt, however a demo of the experimental [web UI](https://gnss.mck.is/) is also up! (Won't be accurate for the current time, will contain whichever data I was recently testing with for now)
 
-The idea was heavily inspired by the 1983 film "WarGames", where the "War room" part of the name comes from! The [GNSS War Room code](https://github.com/autumn-mck/gnss-war-room) is available if you want to see the current progress.
+The idea was heavily inspired by the 1983 film "WarGames", where the "War room" part of the name comes from! The [GNSS War Room code](https://github.com/autumn-mck/gnss-war-room#readme) is available if you want to see the current progress.
 
   </div>
   <div class="preview">
