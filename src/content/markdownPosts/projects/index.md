@@ -65,7 +65,7 @@ The idea was heavily inspired by the 1983 film "WarGames", where the "War room" 
   </div>
   <div class="preview">
 
-![Screenshot showing several windows, including a map of the earth with the locations of satellites overlayed, and other extracted statistics.](./imgs/gnss.png)
+![Screenshot showing several windows, including a map of the earth with the locations of satellites overlayed, and other extracted statistics.](./imgs/gnss.avif)
 
   </div>
 </div>
