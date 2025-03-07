@@ -4,9 +4,9 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/text.css";
 import PostPreview from "../components/PostPreview.astro";
 
-const posts = (await getCollection("markdownPosts")).sort((a, b) =>
-	compareByPublishDate(a, b)
-);
+const posts = (await getCollection("markdownPosts"))
+	.sort((a, b) => compareByPublishDate(a, b))
+	.filter((post) => post.data.public);
 
 const years: number[] = [];
 posts.forEach((post) => {

@@ -12,6 +12,8 @@ const markdownPostSchema = ({ image }: { image: ImageFunction }) =>
 		updated: z.date().optional(),
 
 		previewImage: image().optional(),
+
+		public: z.boolean().optional().default(true),
 	});
 
 const markdownPosts = defineCollection({
