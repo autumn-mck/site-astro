@@ -156,6 +156,7 @@ section h2:first-child {
 section {
 	border-top: 1px solid var(--accent);
 	border-bottom: 1px solid var(--accent);
+	background-color: var(--base-below);
 }
 
 /* Don't double separators when chaining sections */
