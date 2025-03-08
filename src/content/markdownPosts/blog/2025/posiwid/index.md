@@ -11,14 +11,14 @@ If you haven't seen the video titled ["I Emailed My Doctor 133 Times: The Crisis
 
 ## The system
 
-The way the system is currently set up in the UK, to get your gender legally recognised (assuming your gender identity happens to fall neatly into the binary deemed acceptable by the UK government), you must send an application to the government's "Gender Recognition Panel", who decide if you "trans enough" (not an actual quote) to be legally recognised as your own gender. They apparently <q cite="https://www.gov.uk/apply-gender-recognition-certificate">look at your application within 22 weeks of applying</q>. How it takes them almost 6 months to read a few letters, I have no idea.
+The way the system is currently set up in the UK, to get your gender legally recognised (assuming your gender identity happens to fall neatly into the binary deemed acceptable by the UK government), you must send an application to the government's "Gender Recognition Panel", who decide if you're "trans enough" (not an actual quote) to be legally recognised as your own gender. They apparently <q cite="https://www.gov.uk/apply-gender-recognition-certificate">look at your application within 22 weeks of applying</q>. How it takes them almost 6 months to read a few letters, I have no idea.
 
 As part of this application, you are required to have two reports from medical doctors and/or a clinical psychologist, which according to the UK government's website, <q cite="https://www.gov.uk/apply-gender-recognition-certificate/what-documents-you-need">you’ll probably need to pay for them even if you use NHS medical practitioners.</q> Plus paying £5 for the application itself. It's a wonderful healthcare system we have here.
 
 One of these reports must confirm your diagnosis of "gender dysphoria", a definitely real diagnosis that is always 100% of the time absolutely applicaple. To get this diagnosis, you must either:
 
 **a.** attempt to navigate the NHS system by getting referred to a Gender Identity Clinic/Gender Dysphoria Clinic by your GP, and get a gender dysphoria diagnosis there  
-**b.** if you can afford to pay, sign up to one of several private clinics - all online, since none exist in Northern Ireland
+**b.** sign up to one of several private clinics, if you can afford to pay - all online, since none exist in Northern Ireland
 
 As an example for how expensive private is, one clinic charges: £195 for a "set-up fee", £30 every month for a "monthly membership", £65 for a consultation to create your "transition pack", then £185 for the 45 minute "formal diagnosis session", for a minimum of £475. That doesn't even include hormones, blood tests, etc, which I've heard from a friend costs an extra ~£40 per month on average.
 
