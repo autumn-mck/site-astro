@@ -2,6 +2,7 @@
 title: Uses
 description: Some stuff I use!
 noHeader: true
+public: false
 ---
 
 # Hardware/software I use

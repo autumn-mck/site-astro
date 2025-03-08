@@ -2,6 +2,7 @@
 title: Projects
 description: A list of most of the projects I've worked on
 noHeader: true
+public: false
 ---
 
 <style>
