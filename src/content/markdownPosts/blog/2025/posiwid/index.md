@@ -15,7 +15,7 @@ The way the system is currently set up in the UK, to get your gender legally rec
 
 As part of this application, you are required to have two reports from medical doctors and/or a clinical psychologist, which according to the UK government's website, <q cite="https://www.gov.uk/apply-gender-recognition-certificate/what-documents-you-need">you’ll probably need to pay for them even if you use NHS medical practitioners.</q> Plus paying £5 for the application itself. It's a wonderful healthcare system we have here.
 
-One of these reports must confirm your diagnosis of "gender dysphoria", a definitely real diagnosis that is always 100% of the time absolutely applicaple. To get this diagnosis, you must either:
+One of these reports must confirm your diagnosis of "gender dysphoria", a definitely real diagnosis that is always 100% of the time absolutely applicable. To get this diagnosis, you must either:
 
 **a.** attempt to navigate the NHS system by getting referred to a Gender Identity Clinic/Gender Dysphoria Clinic by your GP, and get a gender dysphoria diagnosis there  
 **b.** sign up to one of several private clinics, if you can afford to pay - all online, since none exist in Northern Ireland
@@ -28,7 +28,7 @@ As for the NHS, there is a single clinic to cover all of Northern Ireland - the 
 
 A couple of years after I realised I was trans, I began attempting to take the NHS pathway. When going to my GP to ask to be referred, I was able to cite the Royal College of GPs' guidance on ["The role of the GP in transgender care"](https://www.rcgp.org.uk/representing-you/policy-areas/transgender-care), which they say is "to promptly refer, where appropriate, to a Gender Identity Clinic". (As in, not refuse, or introduce arbitrary delays, which I have heard from others attempting to do the same).
 
-Thankfully in my case, my GP listened to me, and within a few weeks I received a letter from the Brackenburn clinic (despite the NHS having my email address), asking me to email or phone them to confirm that I did actually wish to opt into the service - an unnecessary step which only serves to add further delays, with the risk of people missing the letter and not added to the waiting list, therefore being forgotten about. A week later, I received another two seperate letters from the Brackenburn clinic to confirm I had been added to the waiting list, and say they are "unable to provide ... a timeframe regarding an initial appointment".
+Thankfully in my case, my GP listened to me, and within a few weeks I received a letter from the Brackenburn clinic (despite the NHS having my email address), asking me to email or phone them to confirm that I did actually wish to opt into the service - an unnecessary step which only serves to add further delays, with the risk of people missing the letter and not added to the waiting list, therefore being forgotten about. A week later, I received another two separate letters from the Brackenburn clinic to confirm I had been added to the waiting list, and say they are "unable to provide ... a timeframe regarding an initial appointment".
 
 In an <abbr title="Frequently Asked Questions">FAQ</abbr> that has [since been removed](https://web.archive.org/web/20191217023650/https://belfasttrust.hscni.net/pdf/BrackenburnClinic-FAQ.pdf) from their website, Brackenburn state they "endeavour to see people for their first appointment within the set target of 13 weeks". At time of writing, I have been waiting for 52 weeks.
 
