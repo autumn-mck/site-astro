@@ -7,7 +7,21 @@ public: false
 
 # Hardware/software I use
 
-I always enjoy hearing other people talk about what hardware/software they use, so here's my current setup and some thoughts on it! It's also interesting for me to look back and see how what I use has changed over time.
+I always enjoy hearing other people talk about what hardware/software they use, so here's my current setup and some thoughts on it!
+
+---
+
+## Software
+
+![Screnshot of a terminal showing neofetch. There is a small bar on the top, with virtual desktops and open applications on the left, and tray icons, a clock, and window controls on the right. The desktop background is shipyard cranes at sunset.](./imgs/desktop-kde.png)
+
+I've been running Linux on both my desktop and laptop for a few years now! I'm really happy with my current setup - It gets out of the way when I'm getting work done, but still allows me to mess around and tweak stuff when I feel like it.
+
+Most of it is pretty standard, but there's a few extras like using [polonium](https://github.com/zeroxoneafour/polonium) for tiling windows and [KDE Rounded Corners](https://github.com/matinlotfali/KDE-Rounded-Corners) for nice rounded window corners.
+
+![3 windows tiled with 2 on the left, 1 on the right](./imgs/desktop-kde-bromite.png)
+
+I use a completely different setup on my laptop, however it ends up looking almost identical. It's currently set up with Hyprland on NixOS to learn a bit more about both of them, although in future I might switch it to be identical to my desktop. My VPS is also running NixOS, and it's been fantastic for that!
 
 ---
 
@@ -16,12 +30,12 @@ I always enjoy hearing other people talk about what hardware/software they use, 
 ### Desktop (Built Summer 2019)
 
 **CPU**: Ryzen 5 3600x - it's been a great! I should have just gone for the non-X version and saved £50 though  
-**GPU**: 7800XT - Recently upgraded from a RTX 2060 - partly to allow me to run whatever I need at 4k, partly to avoid nvidia's drivers that didn't properly support wayland  
+**GPU**: 7800XT - a recent upgrade, partly to allow me to run whatever I need at 4k, partly to avoid nvidia's drivers that didn't properly support wayland  
 **RAM**: 16gb at 3466MT/s, not much to comment on - the only times I run out of RAM are when I accidentally write a loop that eats up gigabytes of RAM  
 **Motherboard**: B450 Tomahawk - Enough I/O, works well! Mostly picked because it supports updating its BIOS from a USB stick, which was needed because I built this system only days after the 3600x released.  
 **Case**: A Fractal North case. High airflow gives me a quiet PC, and in my opinion it's easily the best looking ATX case in the last few years!
 
-Overall I love it! It's been fantastic, and although it's been upgraded somewhat, it's lasted extremely well over the last 5 years.
+Overall I love it! It's been fantastic, and although it's been upgraded somewhat, it's lasted extremely well over the last 6 years.
 
 ### Peripherals
 
@@ -32,15 +46,13 @@ Overall I love it! It's been fantastic, and although it's been upgraded somewhat
 
 ### Laptop
 
-Lenovo IdeaPad 14ARE05 I got in 2020 for ~£400, which was an amazing deal.
+Framework 13 with an AMD 7840U - it's a fantastic laptop, and been very useful to me in the last year!
 
-The 4300u is an excellent CPU, gives great battery life (+ a 57Wh battery!) while performing well enough for my needs. It's been great for whatever university work needs done, and a bit of indie games and emulation on the side. I've since bought another 512gb of storage to add to the 128gb I bought it with.
-
-Maybe I'll eventually look into what Framework are up to with more repairable laptops, but I plan on keeping this laptop for as long as I can, it's been great!
+Previously I had a Lenovo IdeaPad 14ARE05 I got in 2020 for ~£400, which was an amazing deal. I wrote a whole [blog post](/blog/2024/14are05-review/) about it for some reason! The only reason I replaced it was that 8GB of memory was no longer enough for me, so I was able to give it to somebody else.
 
 ### Phone
 
-Currently using a Samsung Z Flip 4 I received from a family member who was switching back to iOS. After using it for several months I'm still not sure I see the advantages of a flip folding phone like this? It's been more of an (_extremely_ minor) annoyance to keep having to flip it open for everything. Still a very nice phone otherwise though!
+Currently using a Samsung S24, unfortuntely the standard, boring choice is sometimes the right one. Using Nova Launcher as I love the "Swipe to open folder" feature (If you know anything open source that also has this, please let me know!)
 
 Previously I was using a OnePlus 7t. It was a really nice phone in a lot of ways, but the quality of support from OnePlus wasn't great, and it became buggier over time with some features, like running two apps side by side on the top and bottom of the screen, breaking completely after an update and never being fixed after a year or two. I've since installed LineageOS and keep it around and set up in case I need it as a backup phone.
 
@@ -48,40 +60,4 @@ I used to use iOS, but after using Android for a few years now I don't think I c
 
 ---
 
-## Software
-
-I'm currently using Linux on both my desktop and laptop (with a backup Windows install on the 128gb drive on my laptop just in case I need it for anything)
-
-![Screnshot of a terminal showing neofetch. There is a small bar on the top, with virtual desktops and open applications on the left, and tray icons, a clock, and window controls on the right. The desktop background is a bridge at sunset.](./imgs/desktop-kde.png)
-
-I'm really happy with my current setup - It gets out of the way when I'm wanting to get some work done, but still allows me to mess around and tweak stuff when I feel like it.
-
-Most of it is pretty standard, but there's a few extras like using [polonium](https://github.com/zeroxoneafour/polonium) for tiling windows and [Lightly Shaders](https://github.com/a-parhom/LightlyShaders) for nice rounded window corners.
-
-![3 windows tiled with 2 on the left, 1 on the right](./imgs/desktop-kde-bromite.png)
-
-### Previous setups
-
-I also have more screenshots of other previous setups lying around:
-
-<figure>
-
-![Screenshot of a Hyprland desktop on my laptop, showing the output of neofetch.](./imgs/laptop-hyprland-nixos.webp)
-
-<figcaption>For a while I tried out Hyprland on NixOS - NixOS is extremely cool, just not right for me!</figcaption>
-
-</figure>
-
-<figure>
-
-![](./imgs/desktop-kde-old.png)
-
-<figcaption>My current setup is pretty much this from a year and a half ago with only some stuff tweaked and moved around</figcaption>
-
-</figure>
-
-![Screenshot of a KDE desktop on Endeavour OS, using latte-dock, and a top bar for a tray, with some graphs showing hardware usage, and an abstract video of the solar system as the background.](./imgs/laptop-endeavour-kde-old.png)
-
-![Screenshot of my previous Windows 10 desktop setup showing some of the software mentioned above - Wallpaper Engine is used for an animated rocket/space-themed background, Rainmeter used to display currently playing music and hardware usage, and the OpenShell menu open.](./imgs/desktop-win10.webp)
-
-![The same Windows 10 desktop as above, showing the output of winfetch, and file explorer using a custom theme.](./imgs/desktop-win10-fetch.png)
+Last updated: 2025-03-09
