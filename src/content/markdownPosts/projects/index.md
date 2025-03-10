@@ -57,11 +57,11 @@ I've made a whole bunch of projects for fun and to learn in the last few years, 
   <div class="description">
     <h2 id="gnss-war-room">GNSS "War Room"</h2>
 
-Work in progress - final year project for my Computer Science degree, for displaying GNSS (Global Navigation Satellite System) data on a matrix of displays.
+Current final year project to display GNSS (Global Navigation Satellite System) data on a matrix of displays in QUB's Cyber Physical Systems Lab.
 
-Currently features maps showing the locations of satellites, bar charts of signal to noise ratios, and other stats. Still a couple more months to go! Primarily focused on providing native windows through PyQt, however a demo of the experimental [web UI](https://gnss.mck.is/) is also up! (Won't be accurate for the current time, will contain whichever data I was recently testing with for now)
+Primarily focused on providing a Qt desktop UI, however a demo of the [web UI](https://gnss.mck.is/) is also available! Currently features: 3d globe overlayed with satellite locations and trails (web view only), charts of signal to noise ratios for each satellite, statistics derived from the GNSS data, polar grid of satellite locations, etc.
 
-The idea was heavily inspired by the 1983 film "WarGames", where the "War room" part of the name comes from! The [GNSS War Room code](https://github.com/autumn-mck/gnss-war-room#readme) is available if you want to see the current progress.
+Heavily inspired by the 1983 film "WarGames", where the "War room" part of the name comes from! The [GNSS War Room code](https://github.com/autumn-mck/gnss-war-room#readme) is available if you want to see the current progress.
 
   </div>
   <div class="preview">
