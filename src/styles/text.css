@@ -171,6 +171,10 @@ section:last-child {
 	padding-bottom: 0;
 }
 
+section.footnotes {
+	padding-bottom: 1rem;
+}
+
 details {
 	padding: 0.7rem 1rem;
 	margin: 0.5rem 1rem;
