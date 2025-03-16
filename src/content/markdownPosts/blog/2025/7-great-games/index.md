@@ -2,6 +2,7 @@
 title: 7 great games I played for the first time in 2024
 description: "'I want shorter games with worse graphics made by people who are paid more to work less and I'm not kidding'"
 previewImage: ./animal.png
+published: 2025-01-01
 ---
 
 ## Citizen Sleeper
@@ -62,7 +63,9 @@ A game about buying milk, and mental illness. It's short. It's good. Play milk o
 
 ## Tactical Breach Wizards
 
-Released: 2024, playtime: 6.7 hours
+Released: 2024, playtime: 6.7 hours[^1]
+
+[^1]: Note: the game is longer than this, I'm only a couple hours in and just love it already
 
 ![Midway through a scenario against the less lethal pyromancer and traffic warlock](wizzards.avif)
 
