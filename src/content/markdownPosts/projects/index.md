@@ -59,7 +59,7 @@ I've made a whole bunch of projects for fun and to learn in the last few years, 
 
 Current final year project to display GNSS (Global Navigation Satellite System) data on a matrix of displays in QUB's Cyber Physical Systems Lab.
 
-Primarily focused on providing a Qt desktop UI, however a demo of the [web UI](https://gnss.mck.is/) is also available! Currently features: 3d globe overlayed with satellite locations and trails (web view only), charts of signal to noise ratios for each satellite, statistics derived from the GNSS data, polar grid of satellite locations, etc.
+Primarily focused on providing a Qt desktop UI, however a demo (in testing, may not be up to date) of the [web UI](https://gnss.mck.is/) is also available! Currently features: 3d globe overlayed with satellite locations and trails (web view only), charts of signal to noise ratios for each satellite, statistics derived from the GNSS data, polar grid of satellite locations, etc.
 
 Heavily inspired by the 1983 film "WarGames", where the "War room" part of the name comes from! The [GNSS War Room code](https://github.com/autumn-mck/gnss-war-room#readme) is available if you want to see the current progress.
 
