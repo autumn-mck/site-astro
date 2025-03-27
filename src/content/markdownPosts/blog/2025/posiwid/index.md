@@ -10,20 +10,24 @@ Hiya! I'm Autumn, a trans woman currently living in Northern Ireland. This post 
 
 It's primarily focused on Northern Ireland, not just because I live here, but also because when searching online for information about the system for trans people in the UK, NI is usually either barely mentioned, or just completely forgotten about.
 
-If you haven't seen the video titled ["I Emailed My Doctor 133 Times: The Crisis In the British Healthcare System"](https://www.youtube.com/watch?v=v1eWIshUzr8), by Abigail Thorn, I strongly recommend it. She's funnier than I am, and my conclusions are inspired by hers.
+If you haven't seen the video titled ["I Emailed My Doctor 133 Times: The Crisis In the British Healthcare System"](https://www.youtube.com/watch?v=v1eWIshUzr8), by Abigail Thorn, I strongly recommend it - she manages to be funnier than I am.
 
 ## The way it works from a distance
 
 The way the system is currently set up in the UK, to get your gender legally recognised (assuming your gender identity happens to fall neatly into the binary deemed acceptable by the UK government), you must send an application to the government's Gender Recognition Panel, who decide if you're "trans enough" (not an actual quote) to be legally recognised as your own gender.
 
-As part of this application, you are required to have two reports from medical doctors and/or a clinical psychologist, which according to the UK government's website, <q cite="https://www.gov.uk/apply-gender-recognition-certificate/what-documents-you-need">you’ll probably need to pay for them even if you use NHS medical practitioners</q>, plus paying £5 (previously £140) for the application itself. They apparently <q cite="https://www.gov.uk/apply-gender-recognition-certificate">look at your application within 22 weeks of applying</q>. How it takes them almost 6 months to read a few letters, I have no idea.
+As part of this application, you are required to have two reports from medical doctors and/or a clinical psychologist, which according to the UK government's website, "you’ll probably need to pay for them even if you use NHS medical practitioners"[^1], plus paying £5 (previously £140) for the application itself. They apparently "look at your application within 22 weeks of applying"[^2]. How it takes them almost 6 months to read a few letters, I have no idea.
+
+[^1]: [Apply for a Gender Recognition Certificate: What documents you need](https://www.gov.uk/apply-gender-recognition-certificate/what-documents-you-need)
+
+[^2]: [Apply for a Gender Recognition Certificate: Overview](https://www.gov.uk/apply-gender-recognition-certificate)
 
 One of these reports must confirm your diagnosis of "gender dysphoria", a definitely real diagnosis that is always 100% of the time absolutely applicable. To get this diagnosis, you must either:
 
-**a.** attempt to navigate the NHS[^1] system by getting referred to a Gender Identity Clinic/Gender Dysphoria Clinic by your GP, and get a gender dysphoria diagnosis there, or  
+**a.** attempt to navigate the NHS[^3] system by getting referred to a Gender Identity Clinic/Gender Dysphoria Clinic by your GP, and get a gender dysphoria diagnosis there, or  
 **b.** sign up to one of several private clinics, if you can afford to pay - all online, since none exist in Northern Ireland
 
-[^1]: When I say NHS in relation to Northern Ireland, technically I mean Health and Social Care
+[^3]: When I say NHS in relation to Northern Ireland, technically I mean Health and Social Care
 
 Getting access to healthcare, be it hormones, surgery, etc, works similarly, requiring you to go through either a gender clinic or privately.
 
@@ -47,7 +51,11 @@ In an [FAQ that has since been removed](https://web.archive.org/web/201912170236
 
 ## The vast desert (the bit the title spoils)
 
-Despite being told <q cite="https://belfasttrust.hscni.net/service/brackenburn-clinic/">we are no longer giving out waiting list position numbers</q>, I can still make a guess. Last month, I made an <abbr title="Freedom of Information">FoI</abbr> request to the Belfast Health and Social Care Trust. After taking longer than the twenty working days they <q cite="https://www.legislation.gov.uk/ukpga/2000/36/section/10">must</q> respond within, I received the [latest numbers as of the end of 2024](https://belfasttrust.hscni.net/download/720/march/21673/33142-brackenburn-gender-identity-clinic-waiting-times.pdf).
+Despite being told "we are no longer giving out waiting list position numbers"[^4], I can still make a guess. Last month, I made an <abbr title="Freedom of Information">FoI</abbr> request to the Belfast Health and Social Care Trust. After taking longer than the twenty working days they "must"[^5] respond within, I received the [latest numbers as of the end of 2024](https://belfasttrust.hscni.net/download/720/march/21673/33142-brackenburn-gender-identity-clinic-waiting-times.pdf).
+
+[^4]: [Belfast Trust: Brackenburn Clinic](https://belfasttrust.hscni.net/service/brackenburn-clinic/)
+
+[^5]: [Freedom of Information Act 2000, Section 10](https://www.legislation.gov.uk/ukpga/2000/36/section/10)
 
 As of the start of March 2025, there are currently 1,083 people currently on the waiting list. In 2024, only 13 people on this list were seen for initial appointments. This isn't lower than normal, in 2023 there were also only 13 people seen for initial appointments. At this current rate, anybody joining the waiting list can currently expect to wait **_over 83 years for an initial appointment_**. You won't actually have to wait this long though - many people in front of you in the waiting list will die of old age, or otherwise, before they ever receive their initial appointments.
 
@@ -63,7 +71,7 @@ It doesn't need to be this way. I am far from alone in saying the UK needs to ge
 
 I've attempted to contact my local MLAs with the following email, not that I expected much to come out of that alone. (Did you know you can contact your local MLAs about transferred matters, including health? You can see who represents you using [TheyWorkForYou](https://www.theyworkforyou.com/), and see their phone numbers or email addresses on the [Northern Ireland Assembly](https://aims.niassembly.gov.uk/mlas/emails.aspx) website!)
 
-So far I have received responses from 2 of my 5 MLAs.
+I received responses from 2 of my 5 MLAs.
 
 <section>
 
@@ -87,17 +95,27 @@ https://belfasttrust.hscni.net/download/720/march/21673/33142-brackenburn-gender
 
 Doug Beattie (UUP) responded to say "I see no meaningful movement on this until there is recurrent funding", mentioning no plan to do anything to actually get funding. When asked again, he responded "The Finance department is held by Sinn Fein, they have not allocated recurrent funding for the health minister to deal with waiting lists. Until they do, sadly, I can only see the GIC waiting list grown until the funding is found." Not his fault, that's fair. He didn't mention a plan to secure funding - maybe he doesn't have time to come up with one.
 
-<q cite="https://www.newsletter.co.uk/news/politics/mlas-reject-uup-motion-on-banning-vulnerable-men-from-womens-prisons-as-alliance-brand-move-insensitive-4953326">Nobody is saying that all transgender women are predatory, but, again, the very presence of a male in a space designed for women creates problems</q> - Doug Beattie, after proprosing legislation to force trans women into men's prisons last month. Interesting what he does have time for.
+"Nobody is saying that all transgender women are predatory, but, again, the very presence of a male in a space designed for women creates problems"[^6] - Doug Beattie, after proprosing legislation to force trans women into men's prisons last month. Interesting what he does have time for.
+
+[^6]: ["MLAs reject UUP motion on banning 'vulnerable' men from women's prisons - as Alliance brand move 'insensitive'"](https://www.newsletter.co.uk/news/politics/mlas-reject-uup-motion-on-banning-vulnerable-men-from-womens-prisons-as-alliance-brand-move-insensitive-4953326)
 
 ---
 
-Eóin Tennyson (Alliance) responded to say "... the Minister of Health has advised that his Department is currently developing a new model of care for gender identity services in Northern Ireland.", and that "The Minister has further advised ... to develop a business case for the additional resources necessary to effectively restart gender identity services in Northern Ireland. ... The business case was due to be submitted prior to Christmas, and I will again contact the Department to seek an update on its status." He also offered to have my individual case raised with the Department directly, which I do appreciate, even though I expect nothing to of it.
+Eóin Tennyson (Alliance) responded to say "... the Minister of Health has advised that his Department is currently developing a new model of care for gender identity services in Northern Ireland.", and that "The Minister has further advised ... to develop a business case for the additional resources necessary to effectively restart gender identity services in Northern Ireland. ... The business case was due to be submitted prior to Christmas, and I will again contact the Department to seek an update on its status." He also offered to have my individual case raised with the Department directly, below.
 
-I asked if the new model being developed plans to move towards an informed consent model, as otherwise it will not resolve the fundamental issue of locking treatment and support behind higher standards for trans people that create the waiting list issue in the first place. "Unfortunately, I do not yet have that level of insight in respect of the Gender Review Group's work which is confidential at this stage." ???
+I asked Eóin if the new model being developed plans to move towards an informed consent model, as otherwise it will not resolve the fundamental issue of locking treatment and support behind higher standards for trans people that create the waiting list issue in the first place. "Unfortunately, I do not yet have that level of insight in respect of the Gender Review Group's work which is confidential at this stage."
+
+Two weeks after my case was raised with the department directly, I was sent the response.
+
+"Following significant engagement, my Department has developed a proposal for a new Lifespan Gender Service to create a more efficient patient pathway, a faster patient flow rate through endocrine, to ensure waiting lists decrease and patients receive the care they need in a timely way.
+
+My officials are currently considering the business case for the new Lifespan Gender Service, including its funding requirements. They will shortly provide me with advice for my consideration."
+
+We will if the "Lifespan Gender Service" fundamentally changes anything.
 
 ---
 
-Jonathan Buckley (DUP), Diane Dodds (DUP), and John O'Dowd (Sinn Féin) have not yet responded.
+3 weeks later, Jonathan Buckley (DUP), Diane Dodds (DUP), and John O'Dowd (Sinn Féin) have not yet responded.
 
 ## There are oases
 
