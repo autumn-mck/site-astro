@@ -105,7 +105,7 @@ Eóin Tennyson (Alliance) responded to say "... the Minister of Health has advis
 
 I asked Eóin if the new model being developed plans to move towards an informed consent model, as otherwise it will not resolve the fundamental issue of locking treatment and support behind higher standards for trans people that create the waiting list issue in the first place. "Unfortunately, I do not yet have that level of insight in respect of the Gender Review Group's work which is confidential at this stage."
 
-Two weeks after my case was raised with the department directly, I was sent the response.
+Two weeks after my case was raised with the department directly, I was sent the response from Mike Nesbitt (UUP), the current Minister of Health.
 
 "Following significant engagement, my Department has developed a proposal for a new Lifespan Gender Service to create a more efficient patient pathway, a faster patient flow rate through endocrine, to ensure waiting lists decrease and patients receive the care they need in a timely way.
 
@@ -115,7 +115,11 @@ We will if the "Lifespan Gender Service" fundamentally changes anything.
 
 ---
 
-3 weeks later, Jonathan Buckley (DUP), Diane Dodds (DUP), and John O'Dowd (Sinn Féin) have not yet responded.
+John O'Dowd (Sinn Féin) responded to say "Sinn Féin will continue to lobby the Health Minister requesting detail on how his department intends to address this issue." So it seems that Sinn Féin are blaming the UUP for not doing anything, while the UUP blame Sinn Féin for not providing funding to do anything.
+
+---
+
+1 month later, Jonathan Buckley (DUP) and Diane Dodds (DUP) have not yet responded.
 
 ## There are oases
 
