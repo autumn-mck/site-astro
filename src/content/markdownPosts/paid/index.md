@@ -5,6 +5,8 @@ noHeader: true
 public: false
 ---
 
+<section>
+
 | Title                                 | Where       | When                              | Salary                | Per hour | Holidays |
 | ------------------------------------- | ----------- | --------------------------------- | --------------------- | -------- | -------- |
 | None (sandwich production line)       | Around Noon | June - September 2021 (part time) | £1,575 total          | £8.91    | N/A[^1]  |
@@ -12,6 +14,8 @@ public: false
 | Placement software engineer (trainee) | Kainos      | June 2023 - June 2024             | £19,000               | £9.13    | 35 days  |
 | Summer Student                        | CERN        | June - August 2025                | 93 CHF per day (~£86) | £10.75   | 0 days   |
 | Software Engineer (Associate)         | Kainos      | September 2025 - now              | £33,000               | £15.87   | 35 days  |
+
+</section>
 
 A log of what I've been paid at anything resembling a job, to help anybody else compare to see if they're being paid equally and fairly.
 
