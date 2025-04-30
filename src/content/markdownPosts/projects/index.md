@@ -57,16 +57,18 @@ I've made a whole bunch of projects for fun and to learn in the last few years, 
   <div class="description">
     <h2 id="gnss-war-room">GNSS "War Room"</h2>
 
-Current final year project to display GNSS (Global Navigation Satellite System) data on a matrix of displays in QUB's Cyber Physical Systems Lab.
+Visualising GNSS (Global Navigation Satellite System) data at QUB's Cyber Physical Systems Lab.
 
-Primarily focused on providing a Qt desktop UI, however a demo (in testing, may not be up to date) of the [web UI](https://gnss.mck.is/) is also available! Currently features: 3d globe overlayed with satellite locations and trails (web view only), charts of signal to noise ratios for each satellite, statistics derived from the GNSS data, polar grid of satellite locations, etc.
+Provides both a native Qt UI, along with a [web UI](https://gnss.mck.is/)! Features: 3D globe overlayed with satellite locations and trails (web view only), charts of signal to noise ratios for each satellite, statistics derived from the GNSS data, polar grid of satellite locations, etc. Heavily inspired by the 1983 film "WarGames", where the "War room" part of the name comes from!
 
-Heavily inspired by the 1983 film "WarGames", where the "War room" part of the name comes from! The [GNSS War Room code](https://github.com/autumn-mck/gnss-war-room#readme) is available if you want to see the current progress.
+Written with Python using PyQt and pyserial, with the web UI using Flask, typescript, and three.js.
+
+The [GNSS War Room code](https://github.com/autumn-mck/gnss-war-room#readme) is available on GitHub.
 
   </div>
   <div class="preview">
 
-![Screenshot showing several windows, including a map of the earth with the locations of satellites overlayed, and other extracted statistics.](./imgs/gnss.avif)
+![Photo showing several windows, including a map of the earth with the locations of satellites overlayed, and other extracted statistics.](./imgs/cpsl.avif)
 
   </div>
 </div>
@@ -94,7 +96,7 @@ Supports:
   </div>
 <div class="preview">
 
-![Screenshot of a thread of replies to a post](./imgs/weird-fe.png)
+![Screenshot of a thread of replies to a post](./imgs/weird-fe.avif)
 
   </div>
 </div>
