@@ -12,12 +12,12 @@
 	"dependencies": {
 		"@astrojs/check": "0.9.4",
 		"@astrojs/rss": "4.0.11",
-		"@astrojs/sitemap": "3.2.1",
-		"@catppuccin/vscode": "^3.16.1",
-		"astro": "5.4.1",
+		"@astrojs/sitemap": "3.3.1",
+		"@catppuccin/vscode": "^3.17.0",
+		"astro": "5.7.10",
 		"astro-html-beautifier": "^1.0.4",
 		"sharp": "^0.33.5",
-		"typescript": "^5.8.2"
+		"typescript": "^5.8.3"
 	},
 	"devDependencies": {
 		"prettier-plugin-astro": "^0.14.1"
