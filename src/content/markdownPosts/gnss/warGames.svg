@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<svg version="1.1"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="1055" height="110">
+		<rect x="0" y="0" width="1055" height="110" fill="#0" />
+		<rect
+			x="5" y="5"
+			width="100" height="100"
+			fill="#000000" />
+<rect
+			x="110" y="5"
+			width="100" height="100"
+			fill="#FFFFFF" />
+<rect
+			x="215" y="5"
+			width="100" height="100"
+			fill="#63f68d" />
+<rect
+			x="320" y="5"
+			width="100" height="100"
+			fill="#296CFC" />
+<rect
+			x="425" y="5"
+			width="100" height="100"
+			fill="#FF00FF" />
+<rect
+			x="530" y="5"
+			width="100" height="100"
+			fill="#28FEF7" />
+<rect
+			x="635" y="5"
+			width="100" height="100"
+			fill="#FF2016" />
+<rect
+			x="740" y="5"
+			width="100" height="100"
+			fill="#F3FE58" />
+<rect
+			x="845" y="5"
+			width="100" height="100"
+			fill="#3950ff" />
+<rect
+			x="950" y="5"
+			width="100" height="100"
+			fill="#E0E0E0" />
+
+	</svg>

@@ -171,6 +171,17 @@ section:has(table) {
 	}
 }
 
+section:has(math) {
+	border: none;
+	background-color: var(--base);
+	padding: 0.5rem;
+	margin: 0.5rem;
+
+	+ p {
+		margin-top: 0;
+	}
+}
+
 /* Don't double separators when chaining sections */
 section + section,
 section:first-child {
