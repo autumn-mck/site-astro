@@ -1,6 +1,6 @@
 ---
 title: 7 great games I played for the first time in 2024
-description: "'I want shorter games with worse graphics made by people who are paid more to work less and I'm not kidding'"
+description: Not deliberately a listicle
 previewImage: ./animal.png
 published: 2025-01-01
 ---
