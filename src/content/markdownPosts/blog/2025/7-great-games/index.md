@@ -82,7 +82,7 @@ You should play Actual Peach Blizzards.
 - (the) Gnorp Apologue - This is the usecase for writing your own game engine in rust
 - Balatro
 
-## 5 Games I'm looking forward to in 2025:
+## I'm looking forward to in 2025:
 
 - Silksong - 2025 for sure!
 - Citizen Sleeper 2: Starward Vector - played the demo
