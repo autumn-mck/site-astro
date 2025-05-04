@@ -44,7 +44,7 @@ export const filesystem = {
 	home: {
 		autumn: {
 			".secret.txt": "you found a secret!",
-			"me.webp": (document.getElementById("img")! as HTMLImageElement).src,
+			"me.avif": (document.getElementById("img")! as HTMLImageElement).src,
 			projects: {},
 			blog: {},
 			uses: {},
