@@ -1,4 +1,4 @@
-export const NAME = "James McKee";
+export const NAME = "Autumn McKee";
 const firstName = NAME.split(" ")[0];
 
 export const SITE_TITLE = `💻 ${firstName}'s small space on the web`;
