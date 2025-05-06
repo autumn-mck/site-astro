@@ -34,6 +34,7 @@ h6 {
 
 p {
 	margin: 1.5rem 0;
+	line-height: 1.4;
 }
 
 p,
@@ -48,6 +49,12 @@ ol {
 	overflow-wrap: break-word;
 	margin-left: 1.2rem;
 	margin-right: 1.2rem;
+}
+
+p,
+ul,
+ol {
+	font-size: 18px;
 }
 
 /* Fix line height when title wraps */
