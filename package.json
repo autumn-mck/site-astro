@@ -16,10 +16,14 @@
 		"@catppuccin/vscode": "^3.17.0",
 		"astro": "5.7.10",
 		"astro-html-beautifier": "^1.0.4",
+		"markdown-it": "^14.1.0",
+		"sanitize-html": "^2.16.0",
 		"sharp": "^0.33.5",
 		"typescript": "^5.8.3"
 	},
 	"devDependencies": {
-		"prettier-plugin-astro": "^0.14.1"
+		"prettier-plugin-astro": "^0.14.1",
+		"@types/markdown-it": "^14.1.2",
+		"@types/sanitize-html": "^2.16.0"
 	}
 }

@@ -25,6 +25,13 @@ const { title, description } = Astro.props;
 		<title>{title} | {consts.SITE_DOMAIN}</title>
 		<meta name="description" content={description} />
 
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title={description}
+			href={new URL("rss.xml", Astro.site)}
+		/>
+
 		<!-- 
 			o/
 			you found a secret!

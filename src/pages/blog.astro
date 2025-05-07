@@ -15,16 +15,12 @@ posts.forEach((post) => {
 	}
 });
 
-function compareByPublishDate(a: any, b: any) {
-	return (
-		(b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0)
-	);
+export function compareByPublishDate(a: any, b: any) {
+	return (b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0);
 }
 
 function yearNotYetAdded(years: number[], post: any) {
-	return (
-		post.data.published && !years.includes(post.data.published.getFullYear())
-	);
+	return post.data.published && !years.includes(post.data.published.getFullYear());
 }
 ---
 
