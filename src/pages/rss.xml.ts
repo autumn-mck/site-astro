@@ -33,19 +33,16 @@ export async function GET(context: AstroGlobal) {
 			if (src.startsWith("/images")) {
 				// images starting with `/images/` is the public dir
 				img.setAttribute("src", context.site + src.replace("/", ""));
-			} else if (src.startsWith("./") || true) {
+			} else {
 				// remove prefix of `./`
 				const prefixRemoved = src.replace("./", "");
 				// create prefix absolute path from root dir
 				const imagePathPrefix = `/src/content/markdownPosts/${post.slug}/${prefixRemoved}`;
-				console.log("imagePathPrefix", imagePathPrefix);
 
 				// call the dynamic import and return the module
 				const imagePath = await imagesGlob[imagePathPrefix]?.()?.then(
 					(res) => res.default
 				);
-
-				console.log("imagePath", imagePath);
 
 				if (imagePath) {
 					const optimizedImg = await getImage({ src: imagePath });
@@ -55,9 +52,6 @@ export async function GET(context: AstroGlobal) {
 						context.site + optimizedImg.src.replace("/", "")
 					);
 				}
-			} else {
-				console.error("src unknown", src);
-				throw Error("src unknown");
 			}
 		}
 
