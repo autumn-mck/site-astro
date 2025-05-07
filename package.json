@@ -17,6 +17,7 @@
 		"astro": "5.7.10",
 		"astro-html-beautifier": "^1.0.4",
 		"markdown-it": "^14.1.0",
+		"node-html-parser": "^7.0.1",
 		"sanitize-html": "^2.16.0",
 		"sharp": "^0.33.5",
 		"typescript": "^5.8.3"
