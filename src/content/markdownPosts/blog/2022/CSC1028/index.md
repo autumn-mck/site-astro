@@ -13,7 +13,7 @@ tags:
 
 # URL Understanding Tool
 
-This project was created over the course of 10 weeks for my CSC1028 module, and although it is not a fully complete project, it provides a great framework for future work.
+This project was created over the course of 10 weeks for my CSC1028 module, and although it is not a fully complete project, it provides a framework for future work.
 
 ### Aims of the project
 

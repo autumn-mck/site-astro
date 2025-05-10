@@ -11,6 +11,8 @@ tags:
   - javascript
 ---
 
+Note: I no longer have a copy of project sonar's data lying around, please don't email me to ask (even if you claim to be part of a "cyber security team in my goverment"). Also, there might be a better way of doing what I've done in this post - this was admittedly just docummenting the first way I discovered.
+
 ## What is Project Sonar?
 
 [Project Sonar](https://opendata.rapid7.com/) is a data collection project containing information from scans across the internet: DNS records, SSL Certificates, and also scans of many commonly used ports with TCP/UDP.
