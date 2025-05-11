@@ -6,17 +6,17 @@ updated: 2024-11-26
 previewImage: ./fediverse.png
 ---
 
-This blog post is a couple of thoughts on running a fediverse instance after growing one from a single user instance to a community of about 20 friends over a year and a half - a few things I think went well, what I could've done better, and a caution that it's not as easy as it seems.
+This blog post is a couple of thoughts on running a fediverse instance after growing one from a single user instance to a community of about 20 friends over a year and a half - a few things I think went well, what I could've done better, and a caution that it's not as easy as I originally thought it would be.
 
-This isn't a blog post to explain the fediverse - if you've not heard of it before, then unfortunately you're not the target audience for this post. In short, it's a social network that on the backend functions similarly to email, in that people can be on different providers (gmail, icloud, etc) and still talk to each other. (Although the fediverse is a lot less centralised than email, with thousands of instances of all sizes)
+This isn't a blog post to explain the fediverse. In short, it's a social network that on the backend functions similarly to email, in that people can be on different providers (gmail, icloud, etc) and still talk to each other. (Although the fediverse is a lot less centralised than email, with thousands of instances of all sizes)
 
 ## The easy bit
 
-There's not too much involved in the technical side, at least on the small scale. (When things scale up it definitely gets a lot more complex - admins like Jo on tech.lgbt deserve a lot of thanks for all the work they do to keep an instance of that size running smoothly!)
+There's not too much involved in the technical side, at least on the small scale. (when things scale up it definitely gets a lot more complex - admins like Jo on tech.lgbt deserve a lot of thanks for all the work they do to keep an instance of that size running smoothly)
 
 Initially setting up fedi software confused me a bit, having never really hosted anything myself before, but following the documentation got me going fairly quickly, and as far as I know it's only gotten easier since then (some instance software seems to have added install scripts to make the setup as easy as possible, which is great for helping people get started!)
 
-Ongoing maintenance didn't involve much either. Updates are easy and only take a couple of minutes. Even when I chose to migrate the whole instance to a dedicated machine (hosting others who are popular and post *hard* means a noticable spike in CPU usage every time they post), everything went smoothly and everything was back up and running within an hour.
+Ongoing maintenance didn't involve much either. Updates are easy and only take a couple of minutes. Even when I chose to migrate the whole instance to a dedicated machine (hosting others who are popular and post _hard_ means a noticable spike in CPU usage every time they post), everything went smoothly and everything was back up and running within an hour.
 
 There were some mysterious ongoing issues even the developers seemed to have no clue what to do about (nobody seems to be sure if pleroma/akkoma database "rot" is real or not, and it is only spoken about with superstition and in hushed tones, in case it might overhear), but everything still kept working.
 
