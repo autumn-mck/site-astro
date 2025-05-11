@@ -4,6 +4,7 @@ description: At what point does a system functionally not exist?
 published: 2025-03-07
 updated: 2025-03-14
 public: false
+previewImage: ./Wait.png
 ---
 
 Hiya! I'm Autumn, a trans woman currently living in Northern Ireland. This post is about the waiting list masquerading as a healthcare system for trans people in the UK.
