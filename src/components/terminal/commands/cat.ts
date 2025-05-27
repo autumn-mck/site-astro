@@ -74,7 +74,7 @@ async function catFile(
 	options: Record<string, string | boolean>,
 	file: string
 ) {
-	const imageExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
+	const imageExtensions = ["jpg", "jpeg", "png", "gif", "webp", "avif"];
 	const fullFilePath = tryParsePath(file);
 
 	const obj = getObjAtPath(fullFilePath);
