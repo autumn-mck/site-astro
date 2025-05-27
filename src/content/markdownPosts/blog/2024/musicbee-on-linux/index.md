@@ -72,6 +72,8 @@ And that's it! MusicBee now works.
 
 Except of course not. One of the artists of an album I own uses japanese characters, which seems to be displayed as just boxes. Installing `cjkfonts` (fonts with chinese, japanese, and korean characters) with winetricks seems to _partially_ fix the issue - except places where the text is bolded, where it still just displays boxes. I've not been able to find a better solution yet unfortunately, although I only discovered this issue a few weeks ago, so I'm still searching.
 
+Also as a note, if you want to scrobble to an external service, but are getting an error saying "Cannot connect to LastFM" or similar, try installing `lib32-gnutls` or whatever it's named for your distro (I encountered this with Arch, but it doesn't seem to be an issue on NixOS)
+
 Ok, now it actually works!
 
 ## But what if we want to go further?
@@ -131,7 +133,7 @@ EOL
 chmod +x ./launch.sh
 ```
 
-And it works! Perfect.
+And everything works! Perfect.
 
 ## But what if we want to go even further?
 
