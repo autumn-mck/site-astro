@@ -3,7 +3,6 @@ title: "The mirage of a system: An 83 year long waiting list"
 description: At what point does a system functionally not exist?
 published: 2025-03-07
 updated: 2025-03-14
-public: false
 previewImage: ./Wait.png
 ---
 
@@ -120,7 +119,7 @@ John O'Dowd (Sinn Féin) responded to say "Sinn Féin will continue to lobby the
 
 ---
 
-2 months later, Jonathan Buckley (DUP) and Diane Dodds (DUP) have not yet responded.
+3 months later, Jonathan Buckley (DUP) and Diane Dodds (DUP) have not yet responded.
 
 ## There are oases
 
