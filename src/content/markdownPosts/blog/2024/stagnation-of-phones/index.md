@@ -1,6 +1,6 @@
 ---
-title: Phones have stagnated in their current form
-description: And that's kinda ok! They're pretty good as they are
+title: We reached peak smartphone years ago
+description: Maybe that's ok? They're pretty good as they are
 published: 2024-04-21
 ---
 
