@@ -92,9 +92,9 @@ async function catFile(
 	if (typeof obj === "function") {
 		await catText(obj.toString(), options);
 	} else if (typeof obj === "string") {
-		const extenstion = file.split(".")?.pop()!;
+		const extension = file.split(".")?.pop()!;
 
-		if (imageExtensions.includes(extenstion)) {
+		if (imageExtensions.includes(extension)) {
 			printImage(obj);
 		} else {
 			await catText(obj, options);

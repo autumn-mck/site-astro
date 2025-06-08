@@ -16,7 +16,7 @@ There's not too much involved in the technical side, at least on the small scale
 
 Initially setting up fedi software confused me a bit, having never really hosted anything myself before, but following the documentation got me going fairly quickly, and as far as I know it's only gotten easier since then (some instance software seems to have added install scripts to make the setup as easy as possible, which is great for helping people get started!)
 
-Ongoing maintenance didn't involve much either. Updates are easy and only take a couple of minutes. Even when I chose to migrate the whole instance to a dedicated machine (hosting others who are popular and post _hard_ means a noticable spike in CPU usage every time they post), everything went smoothly and everything was back up and running within an hour.
+Ongoing maintenance didn't involve much either. Updates are easy and only take a couple of minutes. Even when I chose to migrate the whole instance to a dedicated machine (hosting others who are popular and post _hard_ means a noticeable spike in CPU usage every time they post), everything went smoothly and everything was back up and running within an hour.
 
 There were some mysterious ongoing issues even the developers seemed to have no clue what to do about (nobody seems to be sure if pleroma/akkoma database "rot" is real or not, and it is only spoken about with superstition and in hushed tones, in case it might overhear), but everything still kept working.
 

@@ -13,7 +13,7 @@ I always enjoy hearing other people talk about what hardware/software they use, 
 
 ## Software
 
-![Screnshot of a terminal showing neofetch. There is a small bar on the top, with virtual desktops and open applications on the left, and tray icons, a clock, and window controls on the right. The desktop background is shipyard cranes at sunset.](./imgs/desktop-kde.png)
+![Screenshot of a terminal showing neofetch. There is a small bar on the top, with virtual desktops and open applications on the left, and tray icons, a clock, and window controls on the right. The desktop background is shipyard cranes at sunset.](./imgs/desktop-kde.png)
 
 I've been running Linux on both my desktop and laptop for a few years now! I'm really happy with my current setup - It gets out of the way when I'm getting work done, but still allows me to mess around and tweak stuff when I feel like it.
 
@@ -41,7 +41,7 @@ Overall I love it! It's been fantastic, and although it's been upgraded somewhat
 
 **Screen**: Second-hand 27 inch 1080p 60Hz VA (Not perfect, but hard to beat for the price of free that I got it for)  
 **Keyboard**: Keychron K3 Pro - feels great to type on, not too loud, not too big. Perfectly gets out of the way to allow me to do whatever I'm doing  
-**Mouse**: Logitech G502 HERO - I like it a lot but wouldn't recommend it, as I'm now on my seccond - the first developed serious issues with double clicking when it was only clicked once  
+**Mouse**: Logitech G502 HERO - I like it a lot but wouldn't recommend it, as I'm now on my second - the first developed serious issues with double clicking when it was only clicked once  
 **Headphones**: Beyerdynamic DT 990s - Great open back headphones! Comfy and they sound good.
 
 ### Laptop

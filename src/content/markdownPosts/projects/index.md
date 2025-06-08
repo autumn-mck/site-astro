@@ -59,7 +59,7 @@ I've made a whole bunch of projects for fun and to learn in the last few years, 
 
 Visualising GNSS (Global Navigation Satellite System) data at QUB's Cyber Physical Systems Lab.
 
-Provides both a native Qt UI, along with a [web UI](https://gnss.mck.is/)! Features: 3D globe overlayed with satellite locations and trails (web view only), charts of signal to noise ratios for each satellite, statistics derived from the GNSS data, polar grid of satellite locations, etc. Heavily inspired by the 1983 film "WarGames", where the "War room" part of the name comes from!
+Provides both a native Qt UI, along with a [web UI](https://gnss.mck.is/)! Features: 3D globe overlaid with satellite locations and trails (web view only), charts of signal to noise ratios for each satellite, statistics derived from the GNSS data, polar grid of satellite locations, etc. Heavily inspired by the 1983 film "WarGames", where the "War room" part of the name comes from!
 
 Written with Python using PyQt and pyserial, with the web UI using Flask, typescript, and three.js.
 
@@ -68,7 +68,7 @@ The [GNSS War Room code](https://github.com/autumn-mck/gnss-war-room#readme) is 
   </div>
   <div class="preview">
 
-![Photo showing several windows, including a map of the earth with the locations of satellites overlayed, and other extracted statistics.](./imgs/cpsl.avif)
+![Photo showing several windows, including a map of the earth with the locations of satellites overlaid, and other extracted statistics.](./imgs/cpsl.avif)
 
   </div>
 </div>
@@ -83,7 +83,7 @@ Written partly to experiment with whatever ideas I found interesting at the time
 
 Supports:
 
-- Viewing posts (with attatchments, content warnings, etc)
+- Viewing posts (with attachments, content warnings, etc)
 - Viewing replies to a post in a threaded view
 - Viewing a user's posts, bio, etc.
 - Viewing an instance's federated timeline
@@ -230,7 +230,7 @@ Multithreaded CPU raytracer written in C#. Based on the "Ray Tracing in One Week
 - Reflections (inc. reflections of reflections) - Refraction (e.g. light passing through glass spheres)
 - Accurate shadows
 - Depth of field
-- Multithreaded for significantly increaded performance
+- Multithreaded for significantly increased performance
 
 Although performance could significantly be improved by running the processing on the GPU, it was still a very fun project!
 
@@ -288,7 +288,7 @@ We worked great as a group, and stuck together for several group projects after 
   <div class="description">
   <h2 id="powdertoy">SandSim</h2>
 
-A small particle/powder toy simulator. Very basic - its flaws are definitely noticable if you're looking for them, however it's still a lot of fun to mess around with, seeing how much just a few simple rules can create!
+A small particle/powder toy simulator. Very basic - its flaws are definitely noticeable if you're looking for them, however it's still a lot of fun to mess around with, seeing how much just a few simple rules can create!
 
 Will likely return to this one in the future to improve and expand on it, and see how I can increase performance.
 

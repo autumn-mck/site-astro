@@ -157,7 +157,7 @@ I'd also recommend looking at [MDN](https://developer.mozilla.org/en-US/docs/Moz
 
 The browser addon is similar in concept to the electron application, except with the front-end for displaying data being decoupled from the backend for requesting data.
 
-The backend is stored in `backround.js`, which as the name suggests, runs in the background. It uses event listeners to tell when the user changes to a different tab/web page, and if the data for that page has not been requested, request it and cache it by storing it in the addon storage.
+The backend is stored in `background.js`, which as the name suggests, runs in the background. It uses event listeners to tell when the user changes to a different tab/web page, and if the data for that page has not been requested, request it and cache it by storing it in the addon storage.
 
 The front-end is in `popup/urlInfo.html` (This, and the background script file, are determined in `manifest.json`.), which provides a UI similar to the electron app whenever the user clicks on the toolbar button, which queries the cache and displays the data for the user's current tab.
 

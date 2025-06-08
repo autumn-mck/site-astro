@@ -96,7 +96,7 @@ GNSS satellites contain precise and accurate atomic clocks. By making use of sig
 
 [^3]: P. R. Escobal, H. F. Fliegel, R. M. Jaffe, P. M. Muller, K. M. Ong, and O. H. Vonroos, 'A 3-D Multilateration: A Precision Geodetic Measurement System', JPL Q. Tech. Rev., vol. 2, no. 3, 1972, [Online]. Available: https://ntrs.nasa.gov/citations/19730002255
 
-[^4]: PA3FUA, 'GPS - NMEA sentance information'. [Online]. Available: https://aprs.gids.nl/nmea/
+[^4]: PA3FUA, 'GPS - NMEA sentence information'. [Online]. Available: https://aprs.gids.nl/nmea/
 
 It would be useful to have a display of data from a GNSS receiver on a matrix of displays in QUB's Cyber Lab, to aid with teaching, research, or testing, as it would provide a visual representation of GNSS data and quality information. Although this matrix of displays has already been built (see <a href="#displays">The matrix of displays in the Cyber Lab</a>), it currently received very limited use.
 
@@ -206,7 +206,7 @@ Similarly, a set of non-functional requirements (as in how the system should do 
 
 - As the idea for the project was originally inspired by the movie WarGames, the system should have a similar aesthetic to the "war room" in the movie [5] (colour scheme, font, etc.)
 - The system should be able to run for a period of one month without crashing or encountering other issues. (Due to the time constraints of this project, this is the longest possible significant amount of time)
-- The system should process data in real-time, i.e. within one cycle of mains power - 50hz, so 20ms. (not end-to-end latency as dependant on too many uncontrollable external factors, e.g. screen refresh rate)
+- The system should process data in real-time, i.e. within one cycle of mains power - 50hz, so 20ms. (not end-to-end latency as dependent on too many uncontrollable external factors, e.g. screen refresh rate)
 - The application should allows multiple colour schemes to be selected from, e.g. a light theme to adapt to brighter environments
 - Application should be configurable through a configuration file in a human readable format, i.e. no need to change the code to change which windows appear on startup
 - Chosen map projection should attempt to minimise distortion or aim for equal-area projection (rather than preserving Rhumb lines as straight lines (i.e. Mercator projection))
@@ -256,7 +256,7 @@ Below is an example configuration of the system in the Cyber lab. Note that alth
 
 The default colour palette used for the application makes use of contrasting saturated colours, intended to mimic the look of a display from the 1980s – specifically those from WarGames' "war room". Against the black background, all other colours pass the Web Content Accessibility Guidelines (WCAG) 2.2 [^10] on both contrast for graphical objects and user interface components (level AA), and normal text (level AA) [^11]. Due to its colours being manually picked to be close to those of WarGames [^5], it is the preset choice in the example configuration.
 
-[^10]: Web Content Accessibilty Guidelines, Dec. 12, 2024. [Online]. Available: https://www.w3.org/TR/WCAG2/
+[^10]: Web Content Accessibility Guidelines, Dec. 12, 2024. [Online]. Available: https://www.w3.org/TR/WCAG2/
 
 [^11]: Contrast Checker. WebAIM. [Online]. Available: https://webaim.org/resources/contrastchecker/
 
@@ -400,7 +400,7 @@ Development was conducted primarily on Linux, specifically within an Arch Linux 
 
 #### 4.3 Libraries/packages
 
-The pySerial library [^26] is used to read the raw NMEA sentances produced by the GNSS receiver, which can then be parsed by the pynmeagps library [^27]. Several Python packages for parsing NMEA messages appear to be available (pynmea2, pynmeagps, etc.) however after testing all were found to be equally suitable for this project. For the purpose of making a decision, pynmeagps was chosen.
+The pySerial library [^26] is used to read the raw NMEA sentences produced by the GNSS receiver, which can then be parsed by the pynmeagps library [^27]. Several Python packages for parsing NMEA messages appear to be available (pynmea2, pynmeagps, etc.) however after testing all were found to be equally suitable for this project. For the purpose of making a decision, pynmeagps was chosen.
 
 To assist in reading the configuration files, the pyjson5 [^28] is used to read JSON5 files (an extension of JSON that supports comments, trailing commas, etc.) [^29], as this allows the configuration to be documented within the file itself. The dataclass-wizard library [^30] is then used to map the dictionaries parsed from the configuration files to Python's dataclasses to provide more reliable type-hinting, aiming to improve the robustness of the application. Finally, the python-dotenv library [^31] is used to provide an alternate method for loading environment variables that should not be stored with the rest of the configuration, e.g. the password for publishing to the MQTT broker.
 

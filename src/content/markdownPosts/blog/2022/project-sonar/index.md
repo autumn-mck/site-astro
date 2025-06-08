@@ -11,7 +11,7 @@ tags:
   - javascript
 ---
 
-Note: I no longer have a copy of project sonar's data lying around, please don't email me to ask (even if you claim to be part of a "cyber security team in my goverment"). Also, there might be a better way of doing what I've done in this post - this was admittedly just docummenting the first way I discovered.
+Note: I no longer have a copy of project sonar's data lying around, please don't email me to ask (even if you claim to be part of a "cyber security team in my government"). Also, there might be a better way of doing what I've done in this post - this was admittedly just documenting the first way I discovered.
 
 ## What is Project Sonar?
 
@@ -32,7 +32,7 @@ The port scans can also be used to guess at what software a server is running an
 
 I'll also explain a bit about what data Project Sonar contains:
 
-#### Foreward DNS (FDNS)
+#### Forward DNS (FDNS)
 
 Contains data from the [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System) (DNS), used to get from a [hostname](https://en.wikipedia.org/wiki/Hostname) like "example.com" to an IP address like `93.184.216.34` (A records for an IPv4 address, AAAA record for an IPv6 address, or a CNAME rerecord, which points to another hostname). It also stores information like where an email should be sent to and what to do with an email if it is suspected of being spam (See [DKIM](https://www.gov.uk/government/publications/email-security-standards/domainkeys-identified-mail-dkim) for more on that). For more on DNS records, [Cloudflare](https://www.cloudflare.com/en-gb/learning/dns/dns-records/) has some good documentation.
 
@@ -165,7 +165,7 @@ Next, we need to fetch the data. There are 2 options for this:
 - Stream the data from the web and parse it as we receive it
   Both options are shown in this tutorial (See [Parsing a local copy of Project Sonar](#parsing-a-local-copy-of-project-sonar) and [Fetching and parsing an online version of Project Sonar](#fetching-and-parsing-an-online-version-of-project-sonar)).
 
-I'd probably reccommend using the local copy, as it does not depend on your internet connection's reliability, but it does require you to have the space to store the compressed file, in addition to the storage space required by the MongoDB database itself.
+I'd probably recommend using the local copy, as it does not depend on your internet connection's reliability, but it does require you to have the space to store the compressed file, in addition to the storage space required by the MongoDB database itself.
 
 Project Sonar's data can be found at <https://opendata.rapid7.com/sonar.fdns_v2/>. In this guide, I'm going to be parsing the DNS A Records, so, we need the file ending in `-fdns_a.json.gz`. Do note that the file is large (17gb) and be careful not to unzip it - uncompressed, it is over 200gb!
 
@@ -302,7 +302,7 @@ You can call your database and collection whatever you want - this is just what 
 We also don't want redundant data building up each time we run our program - let's add something to drop the collection each time the program is run. (We don't need to add anything to create the collection again - MongoDB does this automatically for us whenever we try to add data to it.)
 
 ```js
-// Drop the collection containg Project Sonar data
+// Drop the collection containing Project Sonar data
 try {
 	await client.db("test_db").collection("sonardata").drop();
 } catch {}
@@ -369,7 +369,7 @@ async function createManyListings(
 }
 ```
 
-The only thing to note here is that we're telling MongoDB that our data is not/does not need to be ordered, helping increase our performance slightly. Running the program now will begin filling up our database with data. Unfortunately, this is still a slow process - We have about 1.7 billion lines to parse! Finally, you may also run into memory issues with NodeJS, as by default it can only use [up to 1.7gb of memory](https://www.the-data-wrangler.com/nodejs-memory-limits/), and MongoDB cannot always keep up with the rate we are sending it data at (It's inconsistant). Since we only need our application to run for long enough to allow us to fetch all the data, we can take the quick and easy approach of just giving NodeJS more memory. We can do this by running `node --max-old-space-size=8000 fetchData.js`.
+The only thing to note here is that we're telling MongoDB that our data is not/does not need to be ordered, helping increase our performance slightly. Running the program now will begin filling up our database with data. Unfortunately, this is still a slow process - We have about 1.7 billion lines to parse! Finally, you may also run into memory issues with NodeJS, as by default it can only use [up to 1.7gb of memory](https://www.the-data-wrangler.com/nodejs-memory-limits/), and MongoDB cannot always keep up with the rate we are sending it data at (It's inconsistent). Since we only need our application to run for long enough to allow us to fetch all the data, we can take the quick and easy approach of just giving NodeJS more memory. We can do this by running `node --max-old-space-size=8000 fetchData.js`.
 
 ## Querying MongoDB
 

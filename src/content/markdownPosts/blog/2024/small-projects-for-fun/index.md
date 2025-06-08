@@ -32,7 +32,7 @@ So I started thinking over the minimum parts I'd need to get working:
 
 I already knew MusicBee (the music player I normally use on desktop) had some sort of plugin system, since it's already how I was sharing what I was listening to on Discord - presumably I should be able to do something similar, just sending the data to my website instead?
 
-Thankfully the [MusicBee website](https://www.getmusicbee.com/help/api/) has at least some documentaion on the plugin API, the requirements for it (targeting .NET Framework 4.0), and an interface for all the methods it supports.  
+Thankfully the [MusicBee website](https://www.getmusicbee.com/help/api/) has at least some documentation on the plugin API, the requirements for it (targeting .NET Framework 4.0), and an interface for all the methods it supports.  
 Mildly annoying for me that it's .NET Framework (the version that only runs on windows) as I usually use linux, but I can easily switch to windows for compiling and testing the plugin, it should still run fine through wine later on. (Also getting to use more C# was nice, I've been enjoying it a lot recently!)
 
 Some quick browsing through the provided `MusicBeeApiInterface` and DiscordBee's source code, I found the methods I'd need for getting info about the currently playing song, and how to received notifications when the song changes - it was all pretty nice to use! It also provided the album art as a base64 encoded string, which made it even easier for me to test sending stuff to the server.
@@ -200,7 +200,7 @@ I have no idea which one is "correct" (or if there even is an answer to that), b
 
 I still needed to host this server I'd made somewhere - I decided rather than tying myself to a specific cloud provider and potentially dealing with issues from that in the future, I'd just host it on the cheapest Hetzner cloud instance. (I've been using their servers for a couple of years now an not had any issues yet, and their stuff is actually reasonably priced)
 
-I also decided to use this as a chance to try out NixOS on a server, and use Caddy instead of Nginx for the reverse proxy. I honestly can't beleive how simple this was to set up compared to anything I've done with Nginx in the past, it was just a few lines in my `configuration.nix`:
+I also decided to use this as a chance to try out NixOS on a server, and use Caddy instead of Nginx for the reverse proxy. I honestly can't believe how simple this was to set up compared to anything I've done with Nginx in the past, it was just a few lines in my `configuration.nix`:
 
 ```nix
 services.caddy = {

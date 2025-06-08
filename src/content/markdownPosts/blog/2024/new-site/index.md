@@ -13,7 +13,7 @@ Whoops, hi again! It's been a bit longer than I meant it to be since my last upd
 
 ![Screenshot of the main page of the current site design](./new-site.png)
 
-The new site is built with [Astro](https://astro.build/), and... that's pretty much it actually! I enjoy keeping my site pretty minimal, and the extra flexability writing my own CSS gives me.  
+The new site is built with [Astro](https://astro.build/), and... that's pretty much it actually! I enjoy keeping my site pretty minimal, and the extra flexibility writing my own CSS gives me.  
 Why astro?
 
 - It works well as a static site generator (I don't need to worry much about hosting for now when it's just a bunch of static files when built)

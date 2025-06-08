@@ -29,7 +29,7 @@ The main reason I picked this laptop specifically! It was one of the first and c
 
 It's able to get bright enough for most of the time, but it's definitely too dim for direct sunlight (thankfully with the weather here, that's pretty rare)
 I don't have any fancy tools for measuring colour accuracy, but to me it's a good looking and well-balanced screen, what you'd expect from a decent IPS panel.
-Mine has no noticable uniformity issues, and the matte screen and good viewing angles have made it a great screen for my general use.
+Mine has no noticeable uniformity issues, and the matte screen and good viewing angles have made it a great screen for my general use.
 
 At 60Hz it's not any smoother than any of the rest of my monitors, but given the performance of the integrated graphics, it'd only really be the mouse cursor and moving windows around that would benefit. (Again at the price, I'm not really complaining or expecting better)
 
@@ -65,7 +65,7 @@ Left side:
 - Barrel plug (5.5x2.5, centre positive) - the power brick it came with was a 65w charger, which has made the charging experience about as nice as it could be without also being USB C
 - USB C 3.0 port - supports charging and DisplayPort over USB C thankfully! So I can still charge it with the other USB-C chargers I have
 - HDMI port - Not had any need to use it
-- 3.5mm headphone/mic combo jack - has ocasionally had issues with crackling while trying to drive 250ohm DT990s, but otherwise worked well enough
+- 3.5mm headphone/mic combo jack - has occasionally had issues with crackling while trying to drive 250ohm DT990s, but otherwise worked well enough
 
 Right side:
 

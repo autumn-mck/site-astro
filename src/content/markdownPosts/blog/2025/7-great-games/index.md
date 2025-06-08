@@ -13,7 +13,7 @@ Released: 2022, playtime: 8.1 hours
 
 You play as a robot who has just escaped from the corporation that legally owned you, and they'll soon be hunting you down. Your body is falling apart, and requires constant upkeep to be able to get anything done, the materials for which you'll need to obtain in ways that feel dubiously legal. <!-- you can tell that the person who made it is also trans -->
 
-That's not what citizen sleeper is about though - it's a game about hope, about existing in a world that feels at times actively hostile to your existance yet existing anyway, about people helping each other, and maybe working towards something better.
+That's not what citizen sleeper is about though - it's a game about hope, about existing in a world that feels at times actively hostile to your existence yet existing anyway, about people helping each other, and maybe working towards something better.
 
 There's also a fantastic [interview with the developer](https://www.youtube.com/watch?v=ofBbL2vT20g) which has criminally few views.
 

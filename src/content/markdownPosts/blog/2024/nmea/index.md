@@ -7,7 +7,7 @@ published: 2024-11-20
 
 [Skip to the glossary](#what-does-any-of-this-stuff-mean) at the bottom if you don't know what any of that means, we don't have time for that now!
 
-First, connect your antenna to your receiver via the SMA connector labelled "RF IN". Connect the the receiver to your computer via USB, making sure to use the port lablled "POWER + GPS" on the receiver. The reciever should power on, and two LEDs should begin pulsing every second.
+First, connect your antenna to your receiver via the SMA connector labelled "RF IN". Connect the the receiver to your computer via USB, making sure to use the port lablled "POWER + GPS" on the receiver. The receiver should power on, and two LEDs should begin pulsing every second.
 
 ## In the command line
 

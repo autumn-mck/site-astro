@@ -12,13 +12,13 @@ The 7t is definitely still a fantastic phone, but this also prompted me to check
 
 ### Screens
 
-The 90Hz screen of the 7t is still amazingly smooth and responsive. On newer phones 120Hz is becoming more common, and it is marginally smoother - but I can only spot the difference if I have the two side by side, and it's such a small diference I don't think it's worth the battery life.
+The 90Hz screen of the 7t is still amazingly smooth and responsive. On newer phones 120Hz is becoming more common, and it is marginally smoother - but I can only spot the difference if I have the two side by side, and it's such a minor improvement I don't think it's worth the battery life.
 
 (The easiest way to make any android phone feel snappier is to set the animation scales to 0.5x in developer settings - I honestly feel like this should be the default)
 
 Like the 7t, most new phone screens are also still beautiful OLEDs of some type or another - high dynamic range, good viewing angles, vibrant colours. If you have a phone, it's very likely it has the best screen you have access to.
 
-Screen resolution increases are far beyond the point of diminishing returns and just at the point of not being noticable at all. Even with the current phone sizes, 1080p is more than enough for individual pixels to not be noticable. It's nice that it seems most new phones are chosing not to waste money and battery life to go above this.
+Screen resolution increases are far beyond the point of diminishing returns and just at the point of not being noticeable at all. Even with the current phone sizes, 1080p is more than enough for individual pixels to not be noticeable. It's nice that it seems most new phones are choosing not to waste money and battery life to go above this.
 
 Phone bezels haven't been pushed out much further - screens have been about as close to the edge as they can be for a while now, with great screen-to-body ratios.
 
@@ -30,7 +30,7 @@ These days, software is a much more important part of how photos look. The camer
 
 ![Close-up photo of ice crystals](./7t-photo-2.jpg)
 
-Compared to photos from the flip 4, I really can't tell if it's better or not? If I'm having to pixel peep to find any differences then they must be pretty negligable. Both can take fantastic photos, which is more than good enough for me!
+Compared to photos from the flip 4, I really can't tell if it's better or not? If I'm having to pixel peep to find any differences then they must be pretty negligible. Both can take fantastic photos, which is more than good enough for me!
 
 ![Photo of the flowerbeds in front of the palm house in Botanic Gardens, Belfast](./flip4-photo-1.jpg)
 

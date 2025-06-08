@@ -32,7 +32,7 @@ Every page but the index page used a custom version of [Simple.css](https://simp
 
 ## v0 - handwritten - 2021ish
 
-![Version zero's index page - A photo of me on the left along with some links to social medias, and an extremely long wall of text on the right about me. The background is a photo of a field at sunset](./v0-index.png)
+![Version zero's index page - A photo of me on the left along with some links to social media, and an extremely long wall of text on the right about me. The background is a photo of a field at sunset](./v0-index.png)
 
 I don't know why I thought trying to cram so much text on the right was a good idea?  
 Gradually grew over time to become v1. For the most part I prefer how v1 looks, although I do quite like how I styled the h-card on the left.
