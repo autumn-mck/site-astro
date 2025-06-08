@@ -16,11 +16,15 @@ posts.forEach((post) => {
 });
 
 export function compareByPublishDate(a: any, b: any) {
-	return (b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0);
+	return (
+		(b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0)
+	);
 }
 
 function yearNotYetAdded(years: number[], post: any) {
-	return post.data.published && !years.includes(post.data.published.getFullYear());
+	return (
+		post.data.published && !years.includes(post.data.published.getFullYear())
+	);
 }
 ---
 
@@ -29,7 +33,11 @@ function yearNotYetAdded(years: number[], post: any) {
 		<h1>
 			Posts
 			<a id="rss" href="/rss.xml" target="_blank" rel="noopener noreferrer">
-				<svg xmlns="http://www.w3.org/2000/svg" aria-label="RSS" role="img" viewBox="0 0 512 512"
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					aria-label="RSS"
+					role="img"
+					viewBox="0 0 512 512"
 					><path d="m0 0H512V512H0" fill="#f80"></path><path
 						fill="#fff"
 						d="m109 271A132 133 0 01241 403h60A192 193 0 00109 211v-54A246 247 0 01355 403h60A306 307 0 00109 97m35 235a35 35 0 102 0"
