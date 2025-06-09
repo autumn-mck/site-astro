@@ -228,7 +228,7 @@ This means all I need to do to add it to any page is:
 <script src="https://music-display.mck.is/musicDisplayComponent.js"></script>
 ```
 
-<style>
+<style is:global>
 	music-display {
 		display: flex;
 		--base: #181926;

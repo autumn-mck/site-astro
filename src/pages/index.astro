@@ -70,7 +70,7 @@ I'm quick to learn and I can work with people in a team"
 		is:inline></script>
 </Layout>
 
-<style>
+<style is:global>
 	main {
 		display: flex;
 		flex-direction: row;
@@ -79,7 +79,6 @@ I'm quick to learn and I can work with people in a team"
 		justify-content: center;
 		align-items: center;
 		min-height: calc(100vh - 6rem);
-	}
 
 	h1 {
 		margin-top: 0;
@@ -129,6 +128,7 @@ I'm quick to learn and I can work with people in a team"
 		animation-iteration-count: infinite;
 		transform-origin: 0 90%;
 		display: inline-block;
+		}
 	}
 
 	@keyframes wave {

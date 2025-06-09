@@ -11,7 +11,7 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<a href={`/${post.slug}/`}>
+<a class="post-preview" href={`/${post.slug}/`}>
 	<div class="preview-container">
 		{
 			post.data.previewImage && (
@@ -42,8 +42,8 @@ const { post } = Astro.props;
 	</p>
 </a>
 
-<style>
-	a {
+<style is:global>
+	.post-preview {
 		color: var(--text);
 		display: flex;
 		flex-direction: column;
@@ -53,64 +53,68 @@ const { post } = Astro.props;
 		width: 100%;
 		height: 100%;
 		text-decoration: none;
-	}
 
-	img {
-		object-fit: cover;
-		border-radius: 0;
-	}
+		&:visited {
+			color: var(--text);
+		}
 
-	.preview-image {
-		width: 100%;
-		aspect-ratio: 16 / 9;
-		transition:
-			filter 0.2s,
-			scale 0.2s;
-	}
+		img {
+			object-fit: cover;
+			border-radius: 0;
+		}
 
-	.no-image {
-		background-image: linear-gradient(
-			-80deg,
-			#f5bde6 0% 9%,
-			#c6a0f6 9% 18%,
-			#ed8796 18% 27%,
-			#ee99a0 27% 36%,
-			#f5a97f 36% 45%,
-			#eed49f 45% 54%,
-			#a6da95 54% 63%,
-			#8bd5ca 63% 72%,
-			#91d7e3 72% 81%,
-			#7dc4e4 81% 90%,
-			#8aadf4 90% 100%
-		);
-	}
+		.preview-image {
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			transition:
+				filter 0.2s,
+				scale 0.2s;
+		}
 
-	.preview-container {
-		width: 100%;
-		aspect-ratio: 16 / 9;
-		overflow: hidden;
-		border-bottom: 1px solid var(--base-below-below);
-	}
+		.no-image {
+			background-image: linear-gradient(
+				-80deg,
+				#f5bde6 0% 9%,
+				#c6a0f6 9% 18%,
+				#ed8796 18% 27%,
+				#ee99a0 27% 36%,
+				#f5a97f 36% 45%,
+				#eed49f 45% 54%,
+				#a6da95 54% 63%,
+				#8bd5ca 63% 72%,
+				#91d7e3 72% 81%,
+				#7dc4e4 81% 90%,
+				#8aadf4 90% 100%
+			);
+		}
 
-	a:hover .preview-image {
-		filter: brightness(1.1);
-		scale: 1.08;
-	}
+		.preview-container {
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			overflow: hidden;
+			border-bottom: 1px solid var(--base-below-below);
+		}
 
-	.title {
-		margin: 0;
-		padding: 0.5rem;
-		text-decoration: 1px underline;
-	}
+		a:hover .preview-image {
+			filter: brightness(1.1);
+			scale: 1.08;
+		}
 
-	a:hover .title {
-		text-decoration: none;
-	}
+		.title {
+			margin: 0;
+			padding: 0.5rem;
+			text-decoration: 1px underline;
+		}
 
-	p {
-		margin: 0;
-		padding: 0.5rem;
-		padding-top: 0;
-		text-decoration: none;
+		a:hover .title {
+			text-decoration: none;
+		}
+
+		p {
+			margin: 0;
+			padding: 0.5rem;
+			padding-top: 0;
+			text-decoration: none;
+		}
 	}
 </style>

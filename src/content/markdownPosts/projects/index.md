@@ -5,7 +5,7 @@ noHeader: true
 public: false
 ---
 
-<style>
+<style is:global>
 main {
   width: 140ch;
 }
@@ -16,6 +16,24 @@ h2 {
 
 li > p {
   margin: 0;
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 2rem 1.2rem;
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* slide to the left */

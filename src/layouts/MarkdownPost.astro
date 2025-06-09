@@ -18,56 +18,38 @@ const post = data;
 		border: 1px solid var(--accent);
 		border-radius: 0.5rem;
 		overflow: hidden;
-	}
 
-	img,
-	video {
-		max-height: 50rem;
-		object-fit: contain;
-	}
-
-	.project {
-		display: flex;
-		flex-direction: row;
-		gap: 1rem;
-		margin: 2rem 1.2rem;
-
-		p,
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			margin-left: 0;
-			margin-right: 0;
-		}
-	}
-
-	.preview {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		flex-basis: 380%;
-
-		&.less-wide {
-			flex-basis: 100%;
+		img,
+		video {
+			max-height: 50rem;
+			object-fit: contain;
 		}
 
-		&.mid-wide {
-			flex-basis: 240%;
+		.preview {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			flex-basis: 380%;
+
+			&.less-wide {
+				flex-basis: 100%;
+			}
+
+			&.mid-wide {
+				flex-basis: 240%;
+			}
+
+			p {
+				margin: 0;
+			}
 		}
 
-		p {
-			margin: 0;
-		}
-	}
+		.description {
+			min-width: 30ch;
 
-	.description {
-		min-width: 30ch;
-
-		p:first-child {
-			margin-top: 0;
+			p:first-child {
+				margin-top: 0;
+			}
 		}
 	}
 
