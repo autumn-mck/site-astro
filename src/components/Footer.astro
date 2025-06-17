@@ -12,9 +12,10 @@ import greenTeam from "../images/green-team.svg";
 				>source available on GitHub</a
 			>.
 			<br />
-			<a href="https://512kb.club">
+			<!-- <a href="https://512kb.club">
 				<Image src={greenTeam} alt="512kb club member" /></a
-			>
+			> -->
+			<span class="greeting"></span>
 		</small>
 	</p>
 </footer>
@@ -43,3 +44,75 @@ import greenTeam from "../images/green-team.svg";
 		}
 	}
 </style>
+
+<script>
+	// copied from bee <3
+
+	let datetime = new Date();
+	const month = datetime.getMonth() + 1;
+	const date = datetime.getDate();
+
+	let greetings = [
+		{
+			month: 1,
+			day: [1, 2, 3],
+			greeting: "happy new year! 🎉",
+		},
+		{
+			month: 2,
+			day: 29,
+			greeting: "ribbit 🐸",
+		},
+		{
+			month: 3,
+			day: 14,
+			greeting: "π 🥧 π 🥧 π 🥧 π",
+		},
+		{
+			month: 5,
+			day: 25,
+			greeting: "don't panic!",
+		},
+		{
+			month: 6,
+			day: -1,
+			greeting: "happy june! 🏳‍🌈 🏳️‍⚧️",
+		},
+		{
+			month: 6,
+			day: 14,
+			greeting: " 💜",
+		},
+		{
+			month: 9,
+			day: 20,
+			greeting: "happy red panda day! :3",
+		},
+		{
+			month: 11,
+			day: 20,
+			greeting: "we remember those who perished on the climb",
+		},
+		{
+			month: 12,
+			day: [24, 25, 26],
+			greeting: "merry christmas! 🎄",
+		},
+	];
+
+	for (let greeting of greetings) {
+		const monthMatches = greeting.month === month;
+		const dateMatches =
+			greeting.day === date ||
+			greeting.day === -1 ||
+			(greeting.day instanceof Array && greeting.day.includes(date));
+
+		if (monthMatches && dateMatches) {
+			const greetingElements = document.querySelectorAll(".greeting");
+			for (let greetingElement of greetingElements) {
+				greetingElement.innerHTML += greeting.greeting;
+			}
+			document.title += ` ∗ ${greeting.greeting}`;
+		}
+	}
+</script>
