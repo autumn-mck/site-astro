@@ -67,14 +67,6 @@ function yearNotYetAdded(years: number[], post: any) {
 			border: 1px solid var(--accent);
 			border-radius: 0.5rem;
 
-			@media screen and (max-width: calc(95ch + 2rem)) {
-				main {
-					width: calc(100% - 4vw);
-					margin-left: 2vw;
-					margin-right: 2vw;
-				}
-			}
-
 			ul {
 				list-style: none;
 				padding: 0;
@@ -104,6 +96,14 @@ function yearNotYetAdded(years: number[], post: any) {
 					width: 2rem;
 					height: 2rem;
 				}
+			}
+		}
+
+		@media screen and (max-width: calc(95ch + 2rem)) {
+			main {
+				width: calc(100% - 4vw);
+				margin-left: 2vw;
+				margin-right: 2vw;
 			}
 		}
 	</style>
