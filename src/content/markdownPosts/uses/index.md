@@ -17,11 +17,11 @@ I always enjoy hearing other people talk about what hardware/software they use, 
 
 I've been running Linux on both my desktop and laptop for a few years now! I'm really happy with my current setup - It gets out of the way when I'm getting work done, but still allows me to mess around and tweak stuff when I feel like it.
 
-Most of it is pretty standard, but there's a few extras like using [polonium](https://github.com/zeroxoneafour/polonium) for tiling windows and [KDE Rounded Corners](https://github.com/matinlotfali/KDE-Rounded-Corners) for nice rounded window corners.
+Most of it is pretty standard, but there's a few extras like using [krohnkite](https://github.com/anametologin/krohnkite/) for tiling windows and [LightlyShaders](https://github.com/a-parhom/LightlyShaders) for nice rounded window corners.
 
 ![3 windows tiled with 2 on the left, 1 on the right](./imgs/desktop-kde-bromite.png)
 
-I use a completely different setup on my laptop, however it ends up looking almost identical. It's currently set up with Hyprland on NixOS to learn a bit more about both of them, although in future I might switch it to be identical to my desktop. My VPS is also running NixOS, and it's been fantastic for that!
+I've been using Arch Linux for years now and love it, it's provided a reliable rolling base for me to build on in any way I've needed. I tried NixOS for a couple years and while I love it, it's ultimately not for me. My VPS is still running NixOS though, and it's been fantastic for that!
 
 ---
 
@@ -60,4 +60,4 @@ I used to use iOS, but after using Android for a few years now I don't think I c
 
 ---
 
-Last updated: 2025-03-09
+Last updated: 2025-07-08
