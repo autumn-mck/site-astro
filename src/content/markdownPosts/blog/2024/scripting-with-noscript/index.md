@@ -2,8 +2,11 @@
 title: Pseudoscripting with <noscript>
 description: Browsers hate this one weird trick!
 published: 2024-12-13
+updated: 2025-07-08
 previewImage: ./noscript.png
 ---
+
+Update: a couple months later, this has been mostly outdated by the new [CSS' if()](https://developer.mozilla.org/en-US/docs/Web/CSS/if) function - I recommend you go read about it, CSS gets cooler and cooler every year :D
 
 The new Container Style Query allows you to combine CSS that should only be applied when javascript is disabled with the rest of your CSS, in the same file/stylesheet.
 
