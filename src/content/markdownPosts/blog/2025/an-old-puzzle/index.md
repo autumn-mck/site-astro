@@ -1,7 +1,7 @@
 ---
 title: Decoding a 20 year old puzzle
 description: Deobfuscating and deciphering
-published: 2025-07-30
+published: 2025-07-31
 previewImage: ./preview.png
 ---
 
