@@ -67,7 +67,7 @@ li > p {
 
 # Projects
 
-I've made a whole bunch of projects for fun and to learn in the last few years, including a few from university too. Here's a list of most of them!
+In the last few years I've made a bunch of projects, both to learn, and for the fun of making things. Here's some of the most interesting ones!
 
 <!-- nothing makes sense, so i might as well make nonsense -->
 
