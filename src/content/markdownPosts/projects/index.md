@@ -81,8 +81,6 @@ Provides both a native Qt UI, along with a [web UI](https://gnss.mck.is/)! Featu
 
 Written with Python using PyQt and pyserial, with the web UI using Flask, typescript, and three.js.
 
-The [GNSS War Room code](https://github.com/autumn-mck/gnss-war-room#readme) is available on GitHub.
-
   </div>
   <div class="preview">
 
@@ -109,8 +107,6 @@ Supports:
 - Quote posts
 - Akkoma's subset of [MFM](https://misskey-hub.net/en/docs/for-users/features/mfm/)
 
-[weird-fe code](https://github.com/autumn-mck/weird-fe)
-
   </div>
 <div class="preview">
 
@@ -123,12 +119,12 @@ Supports:
   <div class="description">
   <h2 id="musicdisplay">MusicDisplay</h2>
 
-The widget on my site's homepage that displays the music I'm currently listening to, that I also wrote a [blog post](/blog/2024/small-projects-for-fun/) on. Has 4 parts:
+The widget on my site's homepage that displays the music I'm currently listening to. Has 4 parts:
 
-- A MusicBee plugin written in C# to send the currently playing song to a server (Desktop)
-- A Poweramp plugin/Android app to send the currently playing song to a server (Android)
-- A server written in TypeScript with Bun to receive the currently playing song, and provide an API and/or websocket for the client (Server)
-- A web component written with vanilla JS and CSS to display the currently playing song (Client)
+- MusicBee plugin (C#, Desktop)
+- Poweramp plugin (Java, Android)
+- Backend written using Bun to receive the currently playing song, and provide an API and/or websocket for the client (TypeScript, Server)
+- Web component written with vanilla JS and CSS to display the currently playing song (JavaScript, Client)
 
   </div>
   <div class="preview less-wide">
@@ -149,9 +145,9 @@ The widget on my site's homepage that displays the music I'm currently listening
   <div class="description">
   <h2 id="markov-fetch">Markov Fetch</h2>
 
-A script to create a database of posts compatible with the [mstdn-ebooks](https://github.com/Lynnesbian/mstdn-ebooks) or [pleroma-ebooks](https://github.com/ioistired/pleroma-ebooks)-based [markov](https://en.wikipedia.org/wiki/Markov_chain) bots, that supports instances using secure/authorised fetch. Rather than using ActivityPub outboxes and pretending to be an instance, which [authorised fetch breaks](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch), this script relies on the bot's instance's API to fetch copies of posts.
+A script to create a database of posts compatible with the [mstdn-ebooks](https://github.com/Lynnesbian/mstdn-ebooks) or [pleroma-ebooks](https://github.com/ioistired/pleroma-ebooks)-based [markov](https://en.wikipedia.org/wiki/Markov_chain) bots.
 
-[Authorised-markov-fetch code](https://github.com/autumn-mck/authorised-markov-fetch)
+"Better" than the original in that it supports instances using secure/authorised fetch! Rather than using ActivityPub outboxes and pretending to be an instance, which [authorised fetch breaks](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch), this script relies on the bot's instance's API to fetch copies of posts.
 
   </div>
   <div class="preview">
@@ -168,8 +164,6 @@ A script to create a database of posts compatible with the [mstdn-ebooks](https:
 A theme for the [MusicBee](https://www.getmusicbee.com/) music player based on the very nice [Catppuccin](https://github.com/catppuccin/catppuccin) colour palettes. The project of mine I use most regularly!
 
 Uses a combination of `bash`, `imagemagick`, `xdotool`, `wine`, and `Xvfb` (X virtual framebuffer) to automate creating the 112 different variations of the theme for every combination of theme/accent colour.
-
-[Catppuccin-MusicBee code and releases](https://github.com/catppuccin/musicbee)
 
   </div>
   <div class="preview">
@@ -189,8 +183,6 @@ Uses the less accurate [Euler method](https://en.wikipedia.org/wiki/Euler_method
 
 Includes several pre-set situations, including a fictional but nice-looking system (shown), a stable 3-body figure-8 system, a binary star system, and our solar system to scale (with and without moons)
 
-[PlanetPhysics code](https://github.com/autumn-mck/PlanetPhysics)
-
   </div>
   <div class="preview">
     <video autoplay loop muted controls>
@@ -204,14 +196,11 @@ Includes several pre-set situations, including a fictional but nice-looking syst
   <div class="description">
   <h2 id="driver">Driver</h2>
 
-A from-scratch application with several parts:
+A system for creating and improving genetic neural networks. Written entirely from scratch to allow me to better understand how simple networks function, the maths behind them, and how they can perform surprisingly well!
 
-- A 2D arcade-style driving simulation that feels fun to drive around in
-- A system for creating and improving genetic neural networks written entirely from scratch to allow me to better understand how simple networks function, the maths behind them, and how they can perform surprisingly well!
+The physics system used is also entirely custom.
 
-The end result of which is networks which can drive a car pretty well based on only a handful of sensors (5 distances to the edge of the track at different angles by default)
-
-[Driver code](https://github.com/autumn-mck/MonoGameDriver)
+The end result of which is networks which can drive a 2D car fairly well using only a handful of sensors (5 distances to the edge of the track at different angles)
 
   </div>
   <div class="preview mid-wide">
@@ -245,17 +234,15 @@ Source code not currently available, as it's related to my final year project, a
 
 Multithreaded CPU raytracer written in C#. Based on the "Ray Tracing in One Weekend" book. Features:
 
-- Reflections (inc. reflections of reflections) - Refraction (e.g. light passing through glass spheres)
+- Reflections (including reflections of reflections) - Refraction (e.g. light passing through glass spheres)
 - Accurate shadows
 - Depth of field
 - Multithreaded for significantly increased performance
 
 Although performance could significantly be improved by running the processing on the GPU, it was still a very fun project!
 
-[Raytracer code](https://github.com/autumn-mck/RTWeekend)
-
   </div>
-  <div class="preview">
+  <div class="preview mid-wide">
 
 ![Example output of the program, showing spheres of different sizes and different materials](./imgs/rtWeekend.webp)
 
@@ -271,8 +258,6 @@ The website you're currently browsing! Built using [Astro](https://astro.build/)
 Made to be as lightweight as possible, with the main page being only 40kb, images and everything, having both an FCP and LCP of 0.3s.
 
 You can [read why I picked Astro](/blog/2024/new-site), or [look at how this site has changed over time](/changelog)!
-
-[Website code](https://github.com/autumn-mck/site-astro)
 
   </div>
   <div class="preview">
@@ -292,8 +277,6 @@ I designed and wrote the majority of the CSS for the layout, along with the temp
 
 We worked great as a group, and stuck together for several group projects after this one.
 
-[Last Stand Code](https://github.com/autumn-mck/LastStand), or [play The Last Stand here](https://last-stand.mck.is/)!
-
   </div>
   <div class="preview">
 
@@ -309,8 +292,6 @@ We worked great as a group, and stuck together for several group projects after 
 A small particle/powder toy simulator. Very basic - its flaws are definitely noticeable if you're looking for them, however it's still a lot of fun to mess around with, seeing how much just a few simple rules can create!
 
 Will likely return to this one in the future to improve and expand on it, and see how I can increase performance.
-
-[PowderSim code](https://github.com/autumn-mck/ParticleSim)
 
   </div>
   <div class="preview">
@@ -332,10 +313,8 @@ A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows 
 - Creates an improved XDG Desktop entry
 - Installs Discordbee and Wine-Discord IPC bridge to allow the song you're currently listening to to be displayed as a status
 
-[MusicBee install script here](https://gist.github.com/autumn-mck/6d7fcbbc08f5d18be09f2cc219084675)
-
   </div>
-  <div class="preview">
+  <div class="preview mid-wide">
 
 ![Screenshot of MusicBee running on linux](./imgs/musicbee-linux.avif)
 
@@ -346,13 +325,10 @@ A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows 
   <div class="description">
   <h2 id="a2-project">A2 Project</h2>
 
-This application was my A2 coursework project for Software Systems Development, written between 10/11/2020 and 14/03/2021 using
+This application was my A2 coursework for Software Systems Development, written between 10/11/2020 and 14/03/2021 using
 C# and WPF. See the [git repo](https://github.com/autumn-mck/A2-Project) for more details and features
 
-This is still a project I'm very proud of - It's got a few minor flaws, but it has some features I put a lot of work into and
-I'm very happy with the end result.
-
-[A2 Project Code](https://github.com/autumn-mck/A2-Project)
+This is still an app I'm still very proud of, it was effectively my first large project - It's got a few minor flaws, but it has some features I put a lot of work into and I'm very happy with the end result.
 
   </div>
   <div class="preview">
@@ -369,10 +345,8 @@ I'm very happy with the end result.
 My project for the "Compute Science Challenges" (CSC1028) module I opted to do at university, providing all sorts of metadata on a given URL.
 See my [blog post for CSC1028](/CSC1028/) for a lot more info.
 
-[CSC1028 code](https://github.com/autumn-mck/CSC1028APIs)
-
   </div>
-  <div class="preview less-wide">
+  <div class="preview mid-wide">
 
 ![UI showing several data sources, including a SimilarWeb rank, DNS lookup, phishing/malware data, earliest archive date, and all subdomains](./imgs/1028.png)
 
@@ -387,8 +361,6 @@ A project written as a joke to see if it was possible to store a record of what 
 
 It seemingly is possible! And you shouldn't do it, because again, databases exist.
 
-[git-music-log code](https://github.com/autumn-mck/git-music-log)
-
   </div>
 
   <div class="preview">
@@ -397,11 +369,3 @@ It seemingly is possible! And you shouldn't do it, because again, databases exis
 
   </div>
 </div>
-
-## WebGenJava
-
-The program I wrote to convert markdown to HTML for a previous version of this website. Although there are already existing solutions that
-offer this sort of functionality (eg [pandoc](https://pandoc.org/)), I wanted something that gave me slightly more
-control over the result.
-
-[WebGenJava code](https://github.com/autumn-mck/WebGenJava) (Please, don't use it)
