@@ -1,17 +1,17 @@
 ---
-title: Decoding a 20 year old puzzle
+title: Decoding a 20-Year-Old Puzzle
 description: Deobfuscating and deciphering
 published: 2025-07-31
 previewImage: ./preview.png
 ---
 
-Yesterday I was at a workshop on [web penetration testing](https://indico.cern.ch/event/1560038/attachments/3088048/5517717/2025%20web%20pentesting%20-%20summer%20student%20workshop.pdf) for CERN summer students; although I'd covered most of the content myself previously, the excercises were a lot of fun to work through! The extra puzzle at the end especially hooked me:
+Yesterday I was at a workshop on [web penetration testing](https://indico.cern.ch/event/1560038/attachments/3088048/5517717/2025%20web%20pentesting%20-%20summer%20student%20workshop.pdf) for CERN summer students; although I'd covered most of the content myself previously, the exercises were a lot of fun to work through! The extra puzzle at the end especially hooked me:
 
 > "This is not a real exercise for finding security bugs, but rather a puzzle for those who finished other exercises and want to have a more difficult challenge.
 >
-> Open [secret.html](./secret.html). As you see, it is a single HTML file with some JavaScript embedded. There is a secret message that will only be revealed when you provide a correct password. Find the password! It should be simple - how a static HTML page could possibly hide something, right?
+> Open [secret.html](./secret.html). As you see, it is a single HTML file with some JavaScript embedded. There is a secret message that will only be revealed when you provide a correct password. Find the password! It should be simple - how could a static HTML page possibly hide something, right?
 >
-> (I found this puzzle public on the Web - I don't know who's the author, so I can't credit him/her. The steps to solve the puzzle proposed in part Hint and Solution are mine - there could be other ways to solve it.)"
+> (I found this puzzle public on the Web - I don't know who's the author, so I can't credit them. The steps to solve the puzzle proposed in part Hint and Solution are mine - there could be other ways to solve it.)"
 
 ![Screenshot of a page containing a text box asking for a password to be entered, with a button labeled "Go!"](page.png)
 
@@ -48,14 +48,14 @@ _Note: The code is modified to be slightly more readable_
 
 </center>
 
-Viewing the source, there's already a couple of noticable things:
+Viewing the source, there's already a couple of noticeable things:
 
 - There's almost no actual HTML to the page, essentially only a html tag and a script tag - no input field asking for the password
 - A function not seemingly defined anywhere (`hp_d01`) is being called
 - The script tags have a `LANGUAGE="JavaScript"` attribute, depricated in HTML 4.01 in 1999
 - All the javascript is obfuscated
 
-Interestingly, none of the "javascript deobfuscators" that I found quickly online seem to have any idea what to do with it. Good news for us - that means we have the fun of figuring it out for ourselves!
+Interestingly, none of the "javascript deobfuscators" that I found online seem to have any idea what to do with it. Good news for us - that means we have the fun of figuring it out for ourselves!
 
 While we could use "Inspect" to view the state of the DOM after the javascript has run, but it's possible it could rewrite the DOM multiple times to hide something from it, so to make sure we should decode it ourselves. Running `console.log(unescape("%3C%53%43..."))` we get:
 
@@ -102,7 +102,7 @@ function hp_d01(string) {
 }
 ```
 
-Running the rest of the obfuscated javascript through `unescape` and `hp_d01`, we finally get the HTML being rendered by the browser, along with two functions for us to look at.
+Running the rest of the obfuscated javascript through `unescape` and `hp_d01`, we finally get the HTML being rendered by the browser, along with two functions for us to look at:
 
 ```html
 <script language="JavaScript">
@@ -161,9 +161,7 @@ function f(form) {
 
 	if (hash == 124313) {
 		var Secret = "" + "\x68\x56\x42\..." + "";
-
 		var s = Kod(Secret, pass);
-
 		document.write(s);
 	} else {
 		alert("Wrong password!");
@@ -226,17 +224,12 @@ function isPrintableASCII(str: string) {
 
 for (let password of passwords) {
 	const decoded = attemptDecode(password);
-
 	if (!isPrintableASCII(decoded)) continue;
-	if (decoded.includes("@")) continue;
-	if (decoded.includes("+")) continue;
-	if (decoded.includes("#")) continue;
-	if (decoded.includes("`")) continue;
-	if (decoded.includes("$")) continue;
+	if (/[+@#`$]/.test(decoded)) continue;
 
 	console.log("Found possibly valid password", password);
 	console.log("Decoded:", decoded);
 }
 ```
 
-This is enough to get the secret message! With the assumptions made to get here, it's possible this approach wouldn't have worked, but I got lucky. If you want the message and password, this has given you everything to decode it!
+Checking all these passwords took less than 5 seconds, and is enough to get the secret message! With the assumptions made to get here, it's possible this approach wouldn't have worked, but I got lucky. If you want the message and password, this has given you everything to decode it!
