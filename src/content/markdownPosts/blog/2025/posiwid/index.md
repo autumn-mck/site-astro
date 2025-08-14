@@ -2,7 +2,7 @@
 title: "The mirage of a system: An 83 year long waiting list"
 description: At what point does a system functionally not exist?
 published: 2025-03-07
-updated: 2025-03-14
+updated: 2025-08-14
 previewImage: ./Wait.png
 ---
 
@@ -10,7 +10,7 @@ Hiya! I'm Autumn, a trans woman currently living in Northern Ireland. This post 
 
 It's primarily focused on Northern Ireland, not just because I live here, but also because when searching online for information about the system for trans people in the UK, NI is usually either barely mentioned, or just completely forgotten about.
 
-If you haven't seen the video titled ["I Emailed My Doctor 133 Times: The Crisis In the British Healthcare System"](https://www.youtube.com/watch?v=v1eWIshUzr8), by Abigail Thorn, I strongly recommend it - she manages to be funnier than I am.
+If you haven't seen the video titled ["I Emailed My Doctor 133 Times: The Crisis In the British Healthcare System"](https://www.youtube.com/watch?v=v1eWIshUzr8), by Abigail Thorn, I strongly recommend it - it dives deeper into the whole system in England, and is very well produced!
 
 ## The way it works from a distance
 
@@ -41,15 +41,15 @@ Even in theory, this system sucks. It's overly complex, with a whole bunch of un
 - Dysphoria sure is a real, I've felt it enough, but as a requirement for healthcare it means people to either lie as needed to get the treatment that will help them, or be honest and risk being denied.
 - A governmental Gender Recognition Panel reads more like the setup for a joke than part of any system designed to help people.
 
-## The mirage vanishes as you approach it
+## The mirage
 
 A couple of years after I realised I was trans, I began attempting to take the NHS pathway. When going to my GP to ask to be referred, I was able to cite the Royal College of GPs' guidance on ["The role of the GP in transgender care"](https://www.rcgp.org.uk/representing-you/policy-areas/transgender-care), which they say is "to promptly refer, where appropriate, to a Gender Identity Clinic". (As in, not refuse, or introduce arbitrary delays, which I have heard from others attempting to do the same).
 
 Thankfully in my case, my GP listened to me, and within a few weeks I received a letter from the Brackenburn clinic (despite the NHS having my email address), asking me to email or phone them to confirm that I did actually wish to opt into the service - an unnecessary step which only serves to add further delays, with the risk of people missing the letter and not added to the waiting list, therefore being forgotten about. A week later, I received another two separate letters from the Brackenburn clinic to say I had been added to the waiting list, and also that they are "unable to provide ... a timeframe regarding an initial appointment".
 
-In an [FAQ that has since been removed](https://web.archive.org/web/20191217023650/https://belfasttrust.hscni.net/pdf/BrackenburnClinic-FAQ.pdf) from their website, Brackenburn state they "endeavour to see people for their first appointment within the set target of 13 weeks". At time of writing, I have been waiting for 52 weeks.
+In an [FAQ that has since been removed](https://web.archive.org/web/20191217023650/https://belfasttrust.hscni.net/pdf/BrackenburnClinic-FAQ.pdf) from their website, Brackenburn state they "endeavour to see people for their first appointment within the set target of 13 weeks". At time of writing (March 2025), I have been waiting for 52 weeks.
 
-## The vast desert (the bit the title spoils)
+## The desert
 
 Despite being told "we are no longer giving out waiting list position numbers"[^4], I can still make a guess. Last month, I made an <abbr title="Freedom of Information">FoI</abbr> request to the Belfast Health and Social Care Trust. After taking longer than the twenty working days they "must"[^5] respond within, I received the [latest numbers as of the end of 2024](https://belfasttrust.hscni.net/download/720/march/21673/33142-brackenburn-gender-identity-clinic-waiting-times.pdf).
 
@@ -57,7 +57,9 @@ Despite being told "we are no longer giving out waiting list position numbers"[^
 
 [^5]: [Freedom of Information Act 2000, Section 10](https://www.legislation.gov.uk/ukpga/2000/36/section/10)
 
-As of the start of March 2025, there are currently 1,083 people currently on the waiting list. In 2024, only 13 people on this list were seen for initial appointments. This isn't lower than normal, in 2023 there were also only 13 people seen for initial appointments. At this current rate, anybody joining the waiting list can currently expect to wait **_over 83 years for an initial appointment_**. You won't actually have to wait this long though - many people in front of you in the waiting list will die of old age, or otherwise, before they ever receive their initial appointments.
+As of the start of March 2025, there are currently 1,083 people currently on the waiting list. In 2024, only 13 people on this list were seen for initial appointments. This isn't lower than normal, in 2023 there were also only 13 people seen for initial appointments. At this current rate, anybody joining the waiting list can currently expect to wait **_over 83 years for an initial appointment_**[^6]. You won't actually have to wait this long though - many people in front of you in the waiting list will die of old age, or otherwise, before they ever receive their initial appointments.
+
+[^6]: I have no idea how the average wait for people getting an initial appointment last year was 4 years, when reportedly, there were already people [waiting for 7 years last year](https://www.belfastlive.co.uk/news/northern-ireland/northern-irelands-only-nhs-gender-29969172)
 
 Also shockingly, **_not a single person under the age of 18 was seen for an initial appointment in 2024_**, through the "Knowing Our Identity" service.
 
@@ -67,11 +69,11 @@ The system, as it is, does not want trans people to exist in Northern Ireland, u
 
 It doesn't need to be this way. I am far from alone in saying the UK needs to get rid of the system as it is, remove the waiting lists and requirements to be trans enough by somebody else's standards, and move to an informed consent model similar to other countries.
 
-## I'm not sure how politics fits into my metaphor
+## No winds of change
 
 I've attempted to contact my local MLAs with the following email, not that I expected much to come out of that alone. (Did you know you can contact your local MLAs about transferred matters, including health? You can see who represents you using [TheyWorkForYou](https://www.theyworkforyou.com/), and see their phone numbers or email addresses on the [Northern Ireland Assembly](https://aims.niassembly.gov.uk/mlas/emails.aspx) website!)
 
-I received responses from 2 of my 5 MLAs.
+I received responses from 3 of my 5 MLAs.
 
 <section>
 
@@ -95,9 +97,9 @@ https://belfasttrust.hscni.net/download/720/march/21673/33142-brackenburn-gender
 
 Doug Beattie (UUP) responded to say "I see no meaningful movement on this until there is recurrent funding", mentioning no plan to do anything to actually get funding. When asked again, he responded "The Finance department is held by Sinn Fein, they have not allocated recurrent funding for the health minister to deal with waiting lists. Until they do, sadly, I can only see the GIC waiting list grown until the funding is found." Not his fault, that's fair. He didn't mention a plan to secure funding - maybe he doesn't have time to come up with one.
 
-"Nobody is saying that all transgender women are predatory, but, again, the very presence of a male in a space designed for women creates problems"[^6] - Doug Beattie, after proprosing legislation to force trans women into men's prisons last month. Interesting what he does have time for.
+"Nobody is saying that all transgender women are predatory, but, again, the very presence of a male in a space designed for women creates problems"[^7] - Doug Beattie, after proprosing legislation to force trans women into men's prisons last month. Interesting what he does have time for.
 
-[^6]: ["MLAs reject UUP motion on banning 'vulnerable' men from women's prisons - as Alliance brand move 'insensitive'"](https://www.newsletter.co.uk/news/politics/mlas-reject-uup-motion-on-banning-vulnerable-men-from-womens-prisons-as-alliance-brand-move-insensitive-4953326)
+[^7]: ["MLAs reject UUP motion on banning 'vulnerable' men from women's prisons - as Alliance brand move 'insensitive'"](https://www.newsletter.co.uk/news/politics/mlas-reject-uup-motion-on-banning-vulnerable-men-from-womens-prisons-as-alliance-brand-move-insensitive-4953326)
 
 ---
 
@@ -115,17 +117,17 @@ We will if the "Lifespan Gender Service" fundamentally changes anything.
 
 ---
 
-John O'Dowd (Sinn Féin) responded to say "Sinn Féin will continue to lobby the Health Minister requesting detail on how his department intends to address this issue." So it seems that Sinn Féin are blaming the UUP for not doing anything, while the UUP blame Sinn Féin for not providing funding to do anything.
+John O'Dowd (Sinn Féin) responded to say "Sinn Féin will continue to lobby the Health Minister requesting detail on how his department intends to address this issue." So it seems that Sinn Féin are blaming the UUP for not doing anything, while the UUP blame Sinn Féin for not providing funding to do anything. (at times it very much seems to me as if the whole political system of Northern Ireland is designed to not function at all)
 
 ---
 
-3 months later, Jonathan Buckley (DUP) and Diane Dodds (DUP) have not yet responded.
+5 months later, Jonathan Buckley (DUP) and Diane Dodds (DUP) have not yet responded.
 
 ## There are oases
 
-We continue to fight, as we always have.
+We continue to fight and survive, as we always have.
 
-We don't need somebody else's approval to exist.
+You don't need somebody else's approval to exist.
 
 Community is more important than ever. Be kind, and support each other.
 
