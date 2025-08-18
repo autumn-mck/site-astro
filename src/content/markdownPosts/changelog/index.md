@@ -7,11 +7,7 @@ public: false
 
 # Changelog
 
-Redesigning a site is fun! It gives me a chance to try out some new ideas, and see how the browser landscape has changed since I last looked.
-
-(I've also just noticed that this reveals I've not changed the photo of myself since the very first version yet, whoops! I don't take photos of myself very often, but I've a couple interesting ideas for what would make a good new one)
-
-Here's how this site has changed over time:
+Redesigning a site is fun! It gives me a chance to try out some new ideas, and see how the browser landscape has changed since I last looked. Here's how this site has changed over time:
 
 ## v2 - Astro - 2024
 
