@@ -2,7 +2,6 @@
 title: Changelog
 description: This site's changelog
 noHeader: true
-public: false
 ---
 
 # Changelog
