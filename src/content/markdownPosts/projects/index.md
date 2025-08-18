@@ -212,6 +212,38 @@ The end result of which is networks which can drive a 2D car fairly well using o
 
 <div class="project even">
   <div class="description">
+  <h2 id="vistars-restyled">Datapack toolkit</h2>
+
+An easy-to-use Minecraft worldgen datapack configuration tool, made alongside [Bee](https://everloste.github.io/)!
+
+Still early in development, currently only supporting custom configuration screens, but with plenty more planned (editing structure set placement, picking biome definition providers from a set of packs)
+
+  </div>
+  <div class="preview">
+
+![UI showing options for editing a Minecraft datapack](./imgs/dptoolkit.png)
+
+  </div>
+</div>
+
+<div class="project odd">
+  <div class="description">
+  <h2 id="vistars-restyled">Vistars restyled</h2>
+
+A restyled version of CERN's Vistar displays, optimised for use as background screensaver or similar! Making it easier to get cool looking beam data displayed anywhere.
+
+In no way designed to replace the proper version - my only goal is to look cool with it :D
+
+  </div>
+  <div class="preview">
+
+![Graphs from the LHC Synchrotron Light Monitor](./imgs/vistar.png)
+
+  </div>
+</div>
+
+<div class="project even">
+  <div class="description">
   <h2 id="driver">WOPR</h2>
 
 A web app to generate an SVG with the given text using the HP1345A's font, hosted at <https://wopr.mck.is/>.

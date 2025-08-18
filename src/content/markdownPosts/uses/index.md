@@ -13,7 +13,7 @@ I always enjoy hearing other people talk about what hardware/software they use, 
 
 ## Software
 
-![Screenshot of a terminal showing neofetch. There is a small bar on the top, with virtual desktops and open applications on the left, and tray icons, a clock, and window controls on the right. The desktop background is shipyard cranes at sunset.](./imgs/desktop-kde.png)
+![Screenshot of a terminal showing neofetch. There is a small bar on the top, with virtual desktops and open applications on the left, and tray icons, a clock, and window controls on the right. The desktop background is shipyard cranes at sunset.](./imgs/neofetch.png)
 
 I've been running Linux on both my desktop and laptop for a few years now! I'm really happy with my current setup - It gets out of the way when I'm getting work done, but still allows me to mess around and tweak stuff when I feel like it.
 
