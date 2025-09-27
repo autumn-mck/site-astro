@@ -18,15 +18,14 @@ But when I switched to linux and tried out a range of music players that support
 
 Some quick searching brought up this [thread on the MusicBee forum](https://getmusicbee.com/forum/index.php?topic=30205.0). Perfect! So it looks like all we need to install to set up the [wine prefix](https://wiki.archlinux.org/title/Wine#WINEPREFIX) is `dotnet48`, `xmllite`, and `gdiplus`. This could be done through [winetricks](https://wiki.winehq.org/Winetricks)' GUI, but I'm looking to automate this! (After all, it's definitely worth spending an hour now to save one minute of clicking buttons in the future).
 
-So to automate it, we'll export a couple of environment variables: Since dotnet48 apparently has issues in 64-bit wine prefixes, and MusicBee is 32-bit regardless, we can just use a 32-bit wine prefix. Normally wineboot prompts us to install wine-mono, but we don't seem to need it for MusicBee, so we'll disable that too.
+So to automate it, we'll export a couple of environment variables: Normally wineboot prompts us to install wine-mono, but we don't seem to need it for MusicBee, so we'll disable that too.
 
 ```sh
 export WINEPREFIX="$HOME/.local/share/wineprefixes/MusicBee/"
-export WINEARCH="win32"
 export WINEDLLOVERRIDES="mscoree,mshtml=" # We don't need wine-mono installed, no need to give a warning over it. https://bugs.winehq.org/show_bug.cgi?id=47316#c4
 export WINEDEBUG=-all # Don't print any debugging messages for wine
 
-winetricks arch=32 --unattended dotnet48 xmllite gdiplus
+winetricks --unattended dotnet48 xmllite gdiplus
 ```
 
 Note: If for some reason you're like me and want to compile a [MusicBee skin](https://github.com/catppuccin/musicbee), this wine prefix is able to run the required `SkinCreator.exe`.
