@@ -91,32 +91,6 @@ Written with Python using PyQt and pyserial, with the web UI using Flask, typesc
 
 <div class="project even">
   <div class="description">
-    <h2 id="weird-fe">weird-fe</h2>
-
-An experimental attempt to write my own frontend for [Akkoma](https://akkoma.social/) (and anything else supporting the [Mastodon API](https://docs.joinmastodon.org/))
-
-Written partly to experiment with whatever ideas I found interesting at the time, meaning the frontend is served as a completely static site, and heavily uses [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) for rendering the UI. Written almost entirely from scratch to gain more experience working with a limited set of tools and see how things work as low a level is possible for a web app.
-
-Supports:
-
-- Viewing posts (with attachments, content warnings, etc)
-- Viewing replies to a post in a threaded view
-- Viewing a user's posts, bio, etc.
-- Viewing an instance's federated timeline
-- Emoji reactions, including custom emojis
-- Quote posts
-- Akkoma's subset of [MFM](https://misskey-hub.net/en/docs/for-users/features/mfm/)
-
-  </div>
-<div class="preview">
-
-![Screenshot of a thread of replies to a post](./imgs/weird-fe.avif)
-
-  </div>
-</div>
-
-<div class="project odd">
-  <div class="description">
   <h2 id="musicdisplay">MusicDisplay</h2>
 
 The widget on my site's homepage that displays the music I'm currently listening to. Has 4 parts:
@@ -141,18 +115,46 @@ The widget on my site's homepage that displays the music I'm currently listening
   </div>
 </div>
 
-<div class="project even">
+<div class="project odd">
   <div class="description">
-  <h2 id="markov-fetch">Markov Fetch</h2>
+    <h2 id="gnss-war-room">WOPR Display Fork</h2>
 
-A script to create a database of posts compatible with the [mstdn-ebooks](https://github.com/Lynnesbian/mstdn-ebooks) or [pleroma-ebooks](https://github.com/ioistired/pleroma-ebooks)-based [markov](https://en.wikipedia.org/wiki/Markov_chain) bots.
+A fork of UnexpectedMaker's WOPR display project, implementing new features, including automatically dimming the display at night and displaying GNSS data, and improving existing features by fixing flickering issues, improving the display of the clock, and better generating random codes.
 
-"Better" than the original in that it supports instances using secure/authorised fetch! Rather than using ActivityPub outboxes and pretending to be an instance, which [authorised fetch breaks](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch), this script relies on the bot's instance's API to fetch copies of posts.
+Was a lot of fun to solder together and figure out how development for boards like this works :D
+
+Powered by the ESP32-based TinyS3 board, using C++.
 
   </div>
   <div class="preview">
 
-![Screenshot of code](./imgs/markov.png)
+![A rectangular 7 segment LED display is sitting on a table, displaying the longitude as -5.94](./imgs/wopr-display.avif)
+
+  </div>
+</div>
+
+<div class="project even">
+  <div class="description">
+    <h2 id="weird-fe">weird-fe</h2>
+
+An experimental attempt to write my own frontend for [Akkoma](https://akkoma.social/) (and anything else supporting the [Mastodon API](https://docs.joinmastodon.org/))
+
+Written partly to experiment with whatever ideas I found interesting at the time, meaning the frontend is served as a completely static site, and heavily uses [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) for rendering the UI. Written almost entirely from scratch to gain more experience working with a limited set of tools and see how things work as low a level is possible for a web app.
+
+Supports:
+
+- Viewing posts (with attachments, content warnings, etc)
+- Viewing replies to a post in a threaded view
+- Viewing a user's posts, bio, etc.
+- Viewing an instance's federated timeline
+- Emoji reactions, including custom emojis
+- Quote posts
+- Akkoma's subset of [MFM](https://misskey-hub.net/en/docs/for-users/features/mfm/)
+
+  </div>
+<div class="preview">
+
+![Screenshot of a thread of replies to a post](./imgs/weird-fe.avif)
 
   </div>
 </div>
@@ -283,6 +285,22 @@ Although performance could significantly be improved by running the processing o
 
 <div class="project even">
   <div class="description">
+  <h2 id="markov-fetch">Markov Fetch</h2>
+
+A script to create a database of posts compatible with the [mstdn-ebooks](https://github.com/Lynnesbian/mstdn-ebooks) or [pleroma-ebooks](https://github.com/ioistired/pleroma-ebooks)-based [markov](https://en.wikipedia.org/wiki/Markov_chain) bots.
+
+"Better" than the original in that it supports instances using secure/authorised fetch! Rather than using ActivityPub outboxes and pretending to be an instance, which [authorised fetch breaks](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch), this script relies on the bot's instance's API to fetch copies of posts.
+
+  </div>
+  <div class="preview">
+
+![Screenshot of code](./imgs/markov.png)
+
+  </div>
+</div>
+
+<div class="project odd">
+  <div class="description">
   <h2 id="website">Personal website</h2>
 
 The website you're currently browsing! Built using [Astro](https://astro.build/), which I'm using as a static site generator to combine my typescript, markdown, and vanilla CSS into a working site!
@@ -299,7 +317,7 @@ You can [read why I picked Astro](/blog/2024/new-site), or [look at how this sit
   </div>
 </div>
 
-<div class="project odd">
+<div class="project even">
   <div class="description">
   <h2 id="the-last-stand">The Last Stand</h2>
 
@@ -317,7 +335,7 @@ We worked great as a group, and stuck together for several group projects after 
   </div>
 </div>
 
-<div class="project even">
+<div class="project odd">
   <div class="description">
   <h2 id="powdertoy">SandSim</h2>
 
@@ -334,7 +352,7 @@ Will likely return to this one in the future to improve and expand on it, and se
   </div>
 </div>
 
-<div class="project odd">
+<div class="project even">
   <div class="description">
   <h2 id="musicbee-install">MusicBee install script</h2>
 
@@ -353,7 +371,7 @@ A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows 
   </div>
 </div>
 
-<div class="project even">
+<div class="project odd">
   <div class="description">
   <h2 id="a2-project">A2 Project</h2>
 
@@ -370,7 +388,7 @@ This is still an app I'm still very proud of, it was effectively my first large 
   </div>
 </div>
 
-<div class="project odd">
+<div class="project even">
   <div class="description">
   <h2 id="csc1028">CSC1028</h2>
 
@@ -385,7 +403,7 @@ See my [blog post for CSC1028](/CSC1028/) for a lot more info.
   </div>
 </div>
 
-<div class="project even">
+<div class="project odd">
   <div class="description">
     <h2>git-music-log</h2>
 
