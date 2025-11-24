@@ -121,7 +121,7 @@ John O'Dowd (Sinn Féin) responded to say "Sinn Féin will continue to lobby the
 
 ---
 
-5 months later, Jonathan Buckley (DUP) and Diane Dodds (DUP) have not yet responded.
+8 months later, Jonathan Buckley (DUP) and Diane Dodds (DUP) have not yet responded.
 
 ## There are oases
 
