@@ -1,0 +1,53 @@
+:root {
+	--base-above-above: #494d64;
+	--base-above: #24273a;
+	--base: #1e2030;
+	--base-below: #181926;
+	--base-below-below: #161320;
+
+	--text: #cad3f5;
+	--text-inverted: #181926;
+
+	--accent: #c6a0f6; /* Mauve */
+	--accent-2: #7dc4e4; /* Blue */
+
+	--mono-font: monospace;
+
+	--code: #ee99a0;
+
+	--border-radius: 5px;
+}
+
+html {
+	font-family: sans-serif;
+	background: var(--base);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-image: url("/images/montreux.avif");
+	filter: brightness(0.5) contrast(1.05) blur(3px);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -9;
+}
+
+body {
+	margin: 0;
+	color: var(--text);
+}
+
+::selection {
+	background: #c6a0f6;
+	color: #181926;
+}

@@ -1,0 +1,127 @@
+---
+const places = [
+	{
+		name: "Home",
+		path: "/",
+		emoji: "🏠",
+	},
+	{
+		name: "Projects",
+		path: "/projects",
+		emoji: "🗃️",
+	},
+	{
+		name: "Blog",
+		path: "/blog",
+		emoji: "📝",
+	},
+	{
+		name: "Uses",
+		path: "/uses",
+		emoji: "💻",
+	},
+];
+---
+
+<header>
+	<div id="nav-container">
+		<nav>
+			{
+				places.map((place) => (
+					<a href={place.path} rel="prefetch-intent" aria-label={place.name}>
+						<div class="location">
+							<span class="emoji">{`${place.emoji}`}</span>
+							{`~${place.path}`}
+						</div>
+					</a>
+				))
+			}
+		</nav>
+	</div>
+</header>
+
+<style is:global>
+	header {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+
+		nav {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: right;
+			align-items: center;
+			padding: 1rem 1rem;
+			gap: 1rem;
+			background: var(--base-above);
+			border-bottom-left-radius: 0.5rem;
+			border-bottom-right-radius: 0.5rem;
+			border: 1px solid var(--accent);
+			border-top: none;
+		}
+
+		nav a {
+			color: var(--text);
+			text-decoration: none;
+			white-space: nowrap;
+		}
+
+		.location {
+			background: var(--base-above-above);
+			padding: 0.5rem 1rem;
+			border-radius: 0.5rem;
+			transition-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
+			transition:
+				filter 0.2s,
+				transform 0.15s;
+		}
+
+		.emoji {
+			display: none;
+		}
+
+		a:hover .location {
+			filter: brightness(1.1);
+		}
+
+		a:visited {
+			color: var(--text);
+		}
+
+		a:active .location {
+			transform: scale(0.88);
+		}
+	}
+
+	@media (max-width: 125ch) {
+		header {
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+
+			h1 {
+				text-align: center;
+			}
+		}
+	}
+
+	@media (max-width: 50ch) {
+		header {
+			nav {
+				border-radius: 0;
+				border-left: none;
+				border-right: none;
+				justify-content: center;
+				padding: 1rem 2rem;
+			}
+
+			#nav-container {
+				width: 100%;
+			}
+
+			.emoji {
+				display: inline;
+			}
+		}
+	}
+</style>

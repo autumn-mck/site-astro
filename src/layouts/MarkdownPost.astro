@@ -1,0 +1,100 @@
+---
+import "../styles/text.css";
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import Layout from "./Layout.astro";
+
+type Props = CollectionEntry<"markdownPosts">;
+
+const { body, data } = Astro.props;
+const post = data;
+---
+
+<style is:global>
+	main {
+		margin: 1rem auto;
+		width: 95ch;
+		background: var(--base);
+		border: 1px solid var(--accent);
+		border-radius: 0.5rem;
+		overflow: hidden;
+		text-wrap: balance;
+
+		img,
+		video {
+			max-height: 50rem;
+			object-fit: contain;
+		}
+
+		.preview {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			flex-basis: 380%;
+
+			&.less-wide {
+				flex-basis: 100%;
+			}
+
+			&.mid-wide {
+				flex-basis: 240%;
+			}
+
+			p {
+				margin: 0;
+			}
+		}
+
+		.description {
+			min-width: 30ch;
+
+			p:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+
+	@media screen and (max-width: calc(95ch + 2rem)) {
+		main {
+			width: calc(100% - 4vw) !important;
+			margin-left: 2vw;
+			margin-right: 2vw;
+		}
+
+		.project {
+			flex-direction: column;
+		}
+	}
+</style>
+
+<Layout title={post.title} description={post.description}>
+	<main>
+		{
+			!post.noHeader && (
+				<div class="title">
+					<h1>{post.title}</h1>
+
+					<p>
+						{post.description && <i>{post.description}</i>}
+						<br />
+						{post.published && (
+							<>
+								Published on <FormattedDate date={post.published} />.
+							</>
+						)}
+						{post.updated && (
+							<>
+								Last updated on
+								<FormattedDate date={post.updated} />.
+							</>
+						)}
+						{body.split(/\s+/).length} words.
+					</p>
+					<hr />
+				</div>
+			)
+		}
+
+		<slot />
+	</main>
+</Layout>

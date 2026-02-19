@@ -1,0 +1,177 @@
+---
+import { SITE_DOMAIN, NAME } from "../consts";
+
+import Layout from "../layouts/Layout.astro";
+import AboutTerminal from "../components/AboutTerminal.astro";
+
+import profilePicture from "../../public/images/purplekitty.avif";
+
+const firstName = NAME.split(" ")[0];
+const firstNameLower = firstName.toLowerCase();
+
+const githubUsername = "autumn-mck";
+---
+
+<Layout title="Home" description=`${firstName}'s small space on the web'`>
+	<main>
+		<section id="left-col">
+			<AboutTerminal
+				user=`${firstNameLower}@mck`
+				name={NAME}
+				items={[
+					{
+						name: "email",
+						textContent: `${firstNameLower} at ${SITE_DOMAIN}`,
+						href: `mailto:${firstNameLower}%40${SITE_DOMAIN}`,
+					},
+					{
+						name: "github",
+						textContent: `${githubUsername}`,
+						href: `https://github.com/${githubUsername}`,
+					},
+					// {
+					// 	name: "git backup",
+					// 	textContent: `git.mck.is/autumn`,
+					// 	href: `https://git.mck.is/autumn`,
+					// },
+				]}
+				image={{
+					src: profilePicture,
+					alt: "A profile picture depicting a purple cat, from an old MacOS 7 wallpaper",
+				}}
+			/>
+		</section>
+
+		<section id="right-col">
+			<h1>About</h1>
+			<p>
+				Heya <span aria-hidden="true">o<span id="arm">/</span></span><br />
+				I'm {firstName}, a software developer currently based in Northern
+				Ireland.
+			</p>
+			<p>
+				<br />
+				While you're here, you can look at some <a href="/projects"
+					>projects I've worked on</a
+				>, or read the couple of <a href="/blog">blog posts I've written</a>!
+			</p>
+
+			<p class="greeting"><br /></p>
+
+			<!-- 
+"Try me! Try me!
+Cause I bet I've got what you really need
+I'm quick to learn and I can work with people in a team"
+			-->
+		</section>
+	</main>
+
+	<script
+		async
+		src="https://music-display.mck.is/musicDisplayComponent.js"
+		is:inline></script>
+</Layout>
+
+<style is:global>
+	main {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		min-height: calc(100vh - 6rem);
+
+		h1 {
+			margin-top: 0;
+			font-size: 2rem;
+			margin-bottom: 0.6rem;
+		}
+
+		p {
+			margin: 0;
+			font-size: 1.3rem;
+			line-height: 1.4;
+		}
+
+		a,
+		a:visited {
+			color: var(--text);
+			text-decoration: underline var(--accent-2);
+			transition: 60ms linear;
+		}
+
+		a:hover,
+		a:focus {
+			text-decoration: underline var(--accent);
+			color: var(--accent);
+			transition: 60ms linear;
+		}
+
+		#left-col {
+			display: flex;
+			justify-content: center;
+			width: 56%;
+			height: 100%;
+		}
+
+		#right-col {
+			display: flex;
+			flex-direction: column;
+			width: 75%;
+			max-width: 50ch;
+			margin-right: auto;
+			padding: 1rem;
+		}
+
+		#arm {
+			animation-name: wave;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			transform-origin: 0 90%;
+			display: inline-block;
+		}
+	}
+
+	@keyframes wave {
+		0% {
+			transform: rotate(0deg);
+		}
+		10% {
+			transform: rotate(14deg);
+		}
+		20% {
+			transform: rotate(-8deg);
+		}
+		30% {
+			transform: rotate(14deg);
+		}
+		40% {
+			transform: rotate(-4deg);
+		}
+		50% {
+			transform: rotate(10deg);
+		}
+		60% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(0deg);
+		}
+	}
+
+	@media (max-width: 1300px) {
+		main {
+			flex-direction: column;
+			margin-top: 2.5rem;
+			#left-col {
+				width: 100%;
+			}
+
+			#right-col {
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+	}
+</style>

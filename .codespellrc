@@ -1,0 +1,4 @@
+[codespell]
+skip = node_modules, dist, .astro, bun.lock, markdown-style-guide.md
+count =
+quiet-level = 3
