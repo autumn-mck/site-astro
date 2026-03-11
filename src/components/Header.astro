@@ -3,22 +3,18 @@ const places = [
 	{
 		name: "Home",
 		path: "/",
-		emoji: "🏠",
 	},
 	{
 		name: "Projects",
 		path: "/projects",
-		emoji: "🗃️",
 	},
 	{
 		name: "Blog",
 		path: "/blog",
-		emoji: "📝",
 	},
 	{
 		name: "Uses",
 		path: "/uses",
-		emoji: "💻",
 	},
 ];
 ---
@@ -29,10 +25,7 @@ const places = [
 			{
 				places.map((place) => (
 					<a href={place.path} rel="prefetch-intent" aria-label={place.name}>
-						<div class="location">
-							<span class="emoji">{`${place.emoji}`}</span>
-							{`~${place.path}`}
-						</div>
+						<div class="location">{`~${place.path}`}</div>
 					</a>
 				))
 			}
@@ -76,10 +69,6 @@ const places = [
 				transform 0.15s;
 		}
 
-		.emoji {
-			display: none;
-		}
-
 		a:hover .location {
 			filter: brightness(1.1);
 		}
@@ -117,10 +106,6 @@ const places = [
 
 			#nav-container {
 				width: 100%;
-			}
-
-			.emoji {
-				display: inline;
 			}
 		}
 	}
