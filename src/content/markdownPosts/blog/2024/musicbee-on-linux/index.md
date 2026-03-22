@@ -2,7 +2,7 @@
 title: MusicBee on Linux
 description: Wine is magic!
 published: 2024-01-26
-updated: 2024-02-02
+updated: 2026-03-22
 previewImage: ./discordbee.png
 tags:
   - musicbee
@@ -10,7 +10,7 @@ tags:
   - programming
 ---
 
-**If you're just wanting a script to install musicbee, see this [installation script](https://gist.github.com/autumn-mck/6d7fcbbc08f5d18be09f2cc219084675)!**. Be careful when running scripts you find on the internet.
+**If you're just wanting a script to install musicbee, see this [installation script](https://gist.github.com/autumn-mck/6d7fcbbc08f5d18be09f2cc219084675)!**. It will likely be more up-to-date than this blog post is. Be careful when running scripts you find on the internet.
 
 When I was using Windows, [MusicBee](https://getmusicbee.com/) was easily my favourite music player - for its customizability, how feature-rich it felt, and for me to as easily as possible play music the way I want to play it (either by artist or by album).
 
@@ -119,7 +119,7 @@ rm -r "$HOME/.local/share/applications/wine/Programs/MusicBee/"
 ```
 
 Trying to play a file from the file manager doesn't seem to work by default though :(  
-MusicBee does apparently [support playing a file via the command line](https://breezewiki.com/musicbee/wiki/Command_Line_Parameters), so let's see what we can do with that! Just giving it the default linux file path doesn't seem to work - not too surprising, it's probably only expecting something in the Windows format. So we'll add a little script to rewrite that for us! All that's needed is to replace the '/'s with '\\'s, and say it's on the Z: drive (What wine uses to represent the linux system's folders).
+MusicBee does [support specifying the file as a command line argument](https://breezewiki.com/musicbee/wiki/Command_Line_Parameters), so let's see what we can do with that! Just giving it the default linux file path doesn't seem to work - not too surprising, it's probably only expecting something in the Windows format. So we'll add a little script to rewrite that for us! All that's needed is to replace the '/'s with '\\'s, and say it's on the Z: drive (What wine uses to represent the linux system's folders).
 
 This is the `launch.sh` file used for the desktop file above:
 
