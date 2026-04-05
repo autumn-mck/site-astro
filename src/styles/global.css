@@ -35,7 +35,7 @@ body::before {
 	width: 100vw;
 	height: 100vh;
 	background-image: url("/images/montreux.avif");
-	filter: brightness(0.5) contrast(1.05) blur(3px);
+	filter: brightness(0.35) contrast(1.05) blur(3px) saturate(1.5);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
