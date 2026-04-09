@@ -4,7 +4,7 @@ description: From the beginning
 published: 2022-02-01
 updated: 2022-03-04
 previewImage: ./bg-sonar.jpg
-slug: project-sonar
+id: project-sonar
 tags:
   - programming
   - university

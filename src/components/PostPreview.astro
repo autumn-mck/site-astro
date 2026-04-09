@@ -11,7 +11,7 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<a class="post-preview" href={`/${post.slug}/`}>
+<a class="post-preview" href={`/${post.id}/`}>
 	<div class="preview-container">
 		{
 			post.data.previewImage && (

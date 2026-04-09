@@ -22,7 +22,7 @@ export async function GET(context: AstroGlobal) {
 	const feed: RSSFeedItem[] = [];
 
 	for (const post of posts) {
-		const body = markdownParser.render(post.body);
+		const body = markdownParser.render(post.body || "(empty post)");
 		const html = htmlParser.parse(body);
 		const images = html.querySelectorAll("img");
 
@@ -37,7 +37,7 @@ export async function GET(context: AstroGlobal) {
 				// remove prefix of `./`
 				const prefixRemoved = src.replace("./", "");
 				// create prefix absolute path from root dir
-				const imagePathPrefix = `/src/content/markdownPosts/${post.slug}/${prefixRemoved}`;
+				const imagePathPrefix = `/src/content/markdownPosts/${post.id}/${prefixRemoved}`;
 
 				// call the dynamic import and return the module
 				const imagePath = await imagesGlob[imagePathPrefix]?.()?.then(
@@ -59,7 +59,7 @@ export async function GET(context: AstroGlobal) {
 			title: post.data.title,
 			pubDate: post.data.published,
 			description: post.data.description,
-			link: `/${post.slug}`,
+			link: `/${post.id}`,
 			// sanitize the new html string with corrected image paths
 			content: sanitizeHtml(html.toString(), {
 				allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),

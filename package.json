@@ -10,11 +10,11 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/check": "0.9.6",
-		"@astrojs/rss": "4.0.15",
-		"@astrojs/sitemap": "3.7.0",
+		"@astrojs/check": "0.9.8",
+		"@astrojs/rss": "4.0.18",
+		"@astrojs/sitemap": "3.7.2",
 		"@catppuccin/vscode": "^3.18.1",
-		"astro": "5.17.2",
+		"astro": "6.1.5",
 		"astro-html-beautifier": "^1.0.4",
 		"markdown-it": "^14.1.1",
 		"node-html-parser": "^7.0.2",

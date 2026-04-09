@@ -1,5 +1,6 @@
-import { defineCollection, z } from "astro:content";
-import { type ImageFunction } from "astro:content";
+import { defineCollection, type ImageFunction } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from "astro/loaders";
 
 const markdownPostSchema = ({ image }: { image: ImageFunction }) =>
 	z.object({
@@ -17,7 +18,11 @@ const markdownPostSchema = ({ image }: { image: ImageFunction }) =>
 	});
 
 const markdownPosts = defineCollection({
-	type: "content",
+	loader: glob({
+		pattern: "**/[^_]*.{md,mdx}",
+		base: "./src/content/markdownPosts",
+	}),
+	// type: "content",
 	schema: markdownPostSchema,
 });
 
