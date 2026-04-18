@@ -13,6 +13,7 @@ export default defineConfig({
 	compressHTML: false,
 	prefetch: {
 		prefetchAll: true,
+		prefetchStrategy: "viewport",
 	},
 	integrations: [sitemap(), htmlBeautifier()],
 	build: {
