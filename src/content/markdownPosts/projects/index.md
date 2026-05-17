@@ -6,6 +6,14 @@ public: false
 ---
 
 <style is:global>
+body::before {
+  width: 140ch;
+}
+
+body {
+  width: 140ch;
+}
+
 main {
   width: 140ch;
 }

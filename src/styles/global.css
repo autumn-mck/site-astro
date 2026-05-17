@@ -27,7 +27,7 @@ html {
 	box-sizing: border-box;
 }
 
-body::before {
+html::before {
 	content: "";
 	position: fixed;
 	top: 0;
@@ -43,8 +43,12 @@ body::before {
 }
 
 body {
-	margin: 0;
 	color: var(--text);
+	/* text-transform: lowercase; */
+}
+
+pre {
+	text-transform: none;
 }
 
 ::selection {
