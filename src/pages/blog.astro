@@ -115,10 +115,11 @@ function yearNotYetAdded(years: number[], post: any) {
 		}
 
 		@media screen and (max-width: calc(95ch + 2rem)) {
-			main {
-				width: calc(100% - 4vw);
-				margin-left: 2vw;
-				margin-right: 2vw;
+			body, body::before {
+				width: 100% !important;
+				border: 0;
+				margin-left: 0;
+				margin-right: 0;
 			}
 		}
 	</style>
